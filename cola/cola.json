@@ -12,6 +12,260 @@
       "publicado": "2026-11-04T09:06:14+00:00",
       "ig_id": "18454530616121689",
       "enlace": "https://www.instagram.com/p/DfUGGwNiRbt/"
+    },
+    {
+      "id": "lote1-01",
+      "fecha": "2026-11-01",
+      "titulo": "El Kraken asoma frente al Ángel",
+      "texto": "El mar ya no es seguro: tiburones, medusas, serpientes marinas y cangrejos gigantes nadan entre las islas y muerden lo que flota. Cada tanto, frente a la isla del Ángel, emerge el Kraken con sus tentáculos. Y si pescás en agua honda, a veces pica un tiburón.",
+      "imagen": "imagenes/fuente/lote1-01.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-02",
+      "fecha": "2026-11-02",
+      "titulo": "Las Profundidades",
+      "texto": "Mazmorras que se arman distintas cada vez, sala por sala. Hay cuatro entradas: la Grieta bajo el cementerio del Ángel, las Catacumbas Profundas de Ventoria, la Raíz Madre de Lumen y el Faro de las Tormentas. Poné tu llave en el pedestal, ganale al reloj y la llave sube de nivel.",
+      "imagen": "imagenes/fuente/lote1-02.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-03",
+      "fecha": "2026-10-31",
+      "titulo": "El Asesino: tres caminos en las sombras",
+      "texto": "Asesinato, Combate y Espectro: 27 habilidades entre sigilo, venenos en el arma, ataques por la espalda y ejecuciones. Te enseña la maestra Nyssa, en las ruinas.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-04",
+      "fecha": "2026-11-02",
+      "titulo": "Tres islas nuevas",
+      "texto": "El Archipiélago de Trébol (niveles 5 a 12), la Isla de Lumen con la ciudad élfica de Nelulen en las copas de los árboles (20 a 30) y la Costa de las Tormentas (35 a 45). Y las islas de siempre dejaron de ser redondas: penínsulas, cabos, bahías e islotes que se cruzan caminando.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-05",
+      "fecha": "2026-11-03",
+      "titulo": "Los Ecos: leyendas que vuelven",
+      "texto": "Se vienen los Ecos: figuras de la historia que aparecen en el mundo, cada una con su lugar, su misión y su recompensa. Los primeros son bien patriotas: el General San Martín, Jorge Luis Borges y dos leyendas del fútbol que te van a desafiar a los jueguitos.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "etiqueta": "PRÓXIMAMENTE"
+    },
+    {
+      "id": "lote1-06",
+      "fecha": "2026-11-02",
+      "titulo": "Bestiario: 20 criaturas nuevas",
+      "texto": "Arañas de corteza, fuegos fatuos, ents corrompidos, osos, murciélagos, serpientes de arena, buitres, cocodrilos, sirenas, tritones y más. Cada una con sus habilidades, su botín y su voz, repartidas por todas las islas.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-07",
+      "fecha": "2026-11-02",
+      "titulo": "Ciudades con vida",
+      "texto": "La gente duerme de noche y sale de día, las puertas se abren cuando te acercás y los guardias hacen su ronda. Hay humo en las chimeneas, perros, chicos jugando, gatos en las plazas, talleres que suenan y charla en la posada.",
+      "imagen": "imagenes/fuente/lote1-07.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-08",
+      "fecha": "2026-10-31",
+      "titulo": "El Cazador y su mascota",
+      "texto": "28 habilidades en tres árboles, trampas, aceite que se prende fuego y una mascota que pelea a tu lado y obedece desde su propia barra.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-09",
+      "fecha": "2026-10-31",
+      "titulo": "Explorar tiene premio",
+      "texto": "Miradores que destapan el mapa, 153 Piezas del Mundo para encontrar, 38 cofres escondidos y el Códice, con 31 páginas de historia del mundo. El mapa empieza en niebla y se descubre a medida que lo recorrés.",
+      "imagen": "imagenes/fuente/lote1-09.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-10",
+      "fecha": "2026-11-03",
+      "titulo": "Cada zona con su clima",
+      "texto": "Nieve en las montañas, tormentas de arena en el desierto, ceniza en el volcán y tormentas en el mar, con olas que crecen. Y cuando escampa, a veces sale el arcoíris.",
+      "imagen": "imagenes/fuente/lote1-10.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-11",
+      "fecha": "2026-11-02",
+      "titulo": "El yeti, jefe del mundo",
+      "texto": "Una bestia de las nieves con cuatro habilidades y un anillo propio en su botín. Mejor juntá un grupo antes de ir a buscarlo.",
+      "imagen": "imagenes/fuente/lote1-11.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-12",
+      "fecha": "2026-11-03",
+      "titulo": "Fragmentos de dios",
+      "texto": "Hubo una guerra entre diecinueve dioses, y los derrotados se partieron en pedazos repartidos por el mundo. Son rarísimos, nadie avisa cuando aparecen y el primero que toca uno absorbe su poder. Pero ojo: solo podés llevar un dios a la vez.",
+      "imagen": "imagenes/fuente/lote1-12.jpg",
+      "estado": "pendiente",
+      "intentos": 0,
+      "etiqueta": "PRÓXIMAMENTE"
+    },
+    {
+      "id": "lote1-13",
+      "fecha": "2026-11-02",
+      "titulo": "El druida invoca al bosque",
+      "texto": "Desde el nivel 14, el druida llama a los Espíritus del Bosque: dos arbolitos que pelean a su lado y se deshacen en un estallido.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-14",
+      "fecha": "2026-11-02",
+      "titulo": "Manadas y patrullas",
+      "texto": "Los enemigos ya no esperan solos: andan en manadas que recorren su región detrás de un líder, y los bandidos patrullan entre la granja y su escondite en grupos con tanque, arquero y chamán.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-15",
+      "fecha": "2026-10-31",
+      "titulo": "Diálogos con opciones",
+      "texto": "Hablar con los personajes ahora tiene respuestas para elegir, y cada misión se cuenta con la voz de quien te la da. Además, una columna de luz te marca el objetivo y podés compartir misiones con tu grupo.",
+      "imagen": "imagenes/fuente/lote1-15.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-16",
+      "fecha": "2026-11-02",
+      "titulo": "Guerreros del mar",
+      "texto": "Una nueva facción con base en el Refugio del Faro, en la Costa de las Tormentas. La Capitana Nerea te recibe: subí de Remero a Guerrero del mar, con su propia armadura y sus misiones.",
+      "imagen": "imagenes/fuente/lote1-16.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-17",
+      "fecha": "2026-11-03",
+      "titulo": "Talentos en los tres árboles",
+      "texto": "Repartí tus puntos entre las tres especializaciones de tu clase como quieras: la principal es la que tiene más puntos y cambia sola, gratis y en cualquier lado. Los árboles ahora se entrelazan, con caminos que se cruzan y bonos propios de cada especialización.",
+      "imagen": "imagenes/fuente/lote1-17.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-18",
+      "fecha": "2026-11-01",
+      "titulo": "El Pueblo del Ángel crece",
+      "texto": "Casas más grandes y amuebladas, calles nuevas y la Plaza de los Oficios con sus siete puestos, cada uno con su dueño.",
+      "imagen": "imagenes/fuente/lote1-18.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-19",
+      "fecha": "2026-11-03",
+      "titulo": "Enemigos más listos",
+      "texto": "Arqueros que mantienen la distancia, chamanes, sanadores y emboscadores. Salen de las zonas de daño, van por tu sanador, te interrumpen los hechizos y, si les va mal, huyen a buscar a los suyos.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-20",
+      "fecha": "2026-11-03",
+      "titulo": "Jugar en grupo",
+      "texto": "Buscador de grupo: anotate con tu rol y tu destino y el juego arma el grupo. Además, un líder que invita y pasa el mando, marcas de objetivo y lista de amigos.",
+      "imagen": "imagenes/fuente/lote1-20.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-21",
+      "fecha": "2026-11-01",
+      "titulo": "27 tipos de armas",
+      "texto": "Dagas, estoques, manguales, guadañas, alabardas, ballestas, rifles, libros y escudos, entre otras. Las de las mismas manos hacen el mismo daño por segundo: elegí la que más te guste.",
+      "imagen": "imagenes/fuente/lote1-21.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-22",
+      "fecha": "2026-11-03",
+      "titulo": "Eventos de zona y raros nuevos",
+      "texto": "Veinte eventos que pasan sin aviso por el mundo, con premio para quien esté ahí. También aparecen raros nuevos como el Cangrejo Emperador, el Toro de Ventoria y la Sirena de las Tormentas, y las mazmorras tienen botín propio.",
+      "imagen": "imagenes/fuente/lote1-22.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-23",
+      "fecha": "2026-11-03",
+      "titulo": "Emotes",
+      "texto": "Saludá, bailá y festejá con seis animaciones nuevas, desde el chat o con la rueda en la tecla Y. Y hay un logro para quien baile en las capitales.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-24",
+      "fecha": "2026-10-31",
+      "titulo": "Golpes con peso",
+      "texto": "Cada golpe se siente: chispas del color de la escuela de magia, un destello, la cámara que tiembla con los golpes grandes y un instante de pausa en los críticos. Y la amenaza funciona como en los MMO clásicos: el tanque tiene que ganarse el aggro.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-25",
+      "fecha": "2026-10-31",
+      "titulo": "Primeros pasos en el Ángel",
+      "texto": "Nora te acompaña en tus primeras misiones, aparecen consejos la primera vez que pasa algo y con F1 tenés la ayuda completa. En el pueblo te espera una cadena de bienvenida para conocer a todos.",
+      "imagen": "imagenes/fuente/lote1-25.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-26",
+      "fecha": "2026-11-02",
+      "titulo": "Interfaz renovada",
+      "texto": "Una bolsa que se ordena sola, con buscador y auto-botín; mapa con capas; chat con susurros, pestañas y links de objetos; y un menú principal con Continuar y nombre al azar para tu personaje.",
+      "imagen": "imagenes/fuente/lote1-26.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-27",
+      "fecha": "2026-11-02",
+      "titulo": "Con mando y en inglés",
+      "texto": "Ahora podés jugar el juego entero con mando, y cada acción admite dos teclas. Y World of Pieces ya está también en inglés.",
+      "imagen": "imagenes/fuente/lote1-27.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "lote1-28",
+      "fecha": "2026-11-04",
+      "titulo": "Más fluido en PCs modestas",
+      "texto": "Nueva opción de carga de CPU aparte de la calidad gráfica, física nueva para que las peleas grandes no traben el juego, y lo lejano de las islas se duerme. Si tu PC es modesta, vas a notar la diferencia.",
+      "imagen": "imagenes/fuente/lote1-28.jpg",
+      "estado": "pendiente",
+      "intentos": 0
     }
   ]
 }

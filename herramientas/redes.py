@@ -268,7 +268,7 @@ def publicar(seco: bool) -> None:
     imagen_fuente = RAIZ / pendiente["imagen"] if pendiente.get("imagen") else None
     destino = RAIZ / "imagenes" / "posts" / f"{pendiente['id']}.jpg"
     tarjeta.tarjeta_novedad(pendiente["titulo"], pendiente["texto"], date.fromisoformat(pendiente["fecha"]),
-                            destino, imagen_fuente)
+                            destino, imagen_fuente, pendiente.get("etiqueta", "NOVEDAD"))
     epigrafe = _epigrafe(pendiente["titulo"], pendiente["texto"])
     _log(f"Tarjeta: {destino}\n--- epígrafe ---\n{epigrafe}\n---")
     if seco:
@@ -324,7 +324,7 @@ def resumen(web: Path | None, seco: bool, hasta: date | None = None) -> None:
     hasta = hasta or date.today()
     desde = hasta - timedelta(days=6)
     entradas = [e for e in cola["entradas"] if desde <= date.fromisoformat(e["fecha"]) <= hasta
-                and e["estado"] != "descartado"]
+                and e["estado"] != "descartado" and e.get("etiqueta", "NOVEDAD") == "NOVEDAD"]
     if not entradas:
         _log("Semana sin novedades marcadas: no hay resumen.")
         return

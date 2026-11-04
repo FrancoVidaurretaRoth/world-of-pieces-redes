@@ -149,10 +149,23 @@ def _cabecera(lienzo: Image.Image, imagen: Path | None) -> int:
     if imagen and imagen.exists():
         foto = Image.open(imagen).convert("RGB")
         ancho, alto = ANCHO - 2 * MARGEN + 40, 560
-        escala = max(ancho / foto.width, alto / foto.height)
-        foto = foto.resize((int(foto.width * escala), int(foto.height * escala)), Image.LANCZOS)
-        x0, y0 = (foto.width - ancho) // 2, (foto.height - alto) // 2
-        foto = foto.crop((x0, y0, x0 + ancho, y0 + alto))
+        if foto.width / foto.height >= 1.3:
+            # apaisada: llena el marco recortando lo que sobra
+            escala = max(ancho / foto.width, alto / foto.height)
+            foto = foto.resize((int(foto.width * escala), int(foto.height * escala)), Image.LANCZOS)
+            x0, y0 = (foto.width - ancho) // 2, (foto.height - alto) // 2
+            foto = foto.crop((x0, y0, x0 + ancho, y0 + alto))
+        else:
+            # vertical o cuadrada (retratos): entra entera, sobre un fondo difuminado de ella misma
+            escala = max(ancho / foto.width, alto / foto.height)
+            fondo = foto.resize((int(foto.width * escala), int(foto.height * escala)), Image.LANCZOS)
+            x0, y0 = (fondo.width - ancho) // 2, (fondo.height - alto) // 2
+            fondo = fondo.crop((x0, y0, x0 + ancho, y0 + alto)).filter(ImageFilter.GaussianBlur(28))
+            fondo = Image.blend(fondo, Image.new("RGB", fondo.size, (8, 20, 34)), 0.45)
+            escala = alto / foto.height
+            frente = foto.resize((int(foto.width * escala), alto), Image.LANCZOS)
+            fondo.paste(frente, ((ancho - frente.width) // 2, 0))
+            foto = fondo
         x, y = (ANCHO - ancho) // 2, 70
         d = ImageDraw.Draw(lienzo)
         d.rounded_rectangle((x - 10, y - 10, x + ancho + 10, y + alto + 10), radius=18, fill=TINTA, outline=ORO,
@@ -167,11 +180,12 @@ def _cabecera(lienzo: Image.Image, imagen: Path | None) -> int:
     return 70 + 470 + 30
 
 
-def tarjeta_novedad(titulo: str, texto: str, fecha: date, destino: Path, imagen: Path | None = None) -> Path:
+def tarjeta_novedad(titulo: str, texto: str, fecha: date, destino: Path, imagen: Path | None = None,
+                    etiqueta: str = "NOVEDAD") -> Path:
     lienzo = _fondo(zlib.crc32(titulo.encode()))
     y = _cabecera(lienzo, imagen)
     d = ImageDraw.Draw(lienzo)
-    _separador(d, y, "NOVEDAD")
+    _separador(d, y, etiqueta)
     y += 60
 
     con_foto = imagen is not None and imagen.exists()
