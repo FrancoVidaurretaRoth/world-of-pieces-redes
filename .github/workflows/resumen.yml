@@ -2,9 +2,8 @@
 # La noticia se pushea al repo de la web, y Cloudflare Pages la despliega sola (un build por semana).
 name: Resumen semanal
 
+# Lo lanza el reloj (reloj.yml); sin cron propio para que nunca salgan dos resúmenes.
 on:
-  schedule:
-    - cron: "13 23 * * 0"
   workflow_dispatch:
     inputs:
       seco:

@@ -259,8 +259,22 @@ def _epigrafe(titulo: str, texto: str) -> str:
 
 # ---------------------------------------------------------------- 2. publicar
 
+MAX_POR_DIA = 5
+MIN_ENTRE_POSTS = timedelta(minutes=90)
+
+
 def publicar(seco: bool) -> None:
     cola = _leer_cola()
+    # Freno por si dos disparadores (el reloj y los cron de GitHub) caen juntos: nunca dos posts seguidos ni más de 5
+    # en el día (UTC).
+    ahora = datetime.now(timezone.utc)
+    hechos = [datetime.fromisoformat(e["publicado"]) for e in cola["entradas"] if e.get("publicado")]
+    if any(ahora - h < MIN_ENTRE_POSTS for h in hechos):
+        _log("Hubo un post hace menos de 90 minutos: este turno no publica.")
+        return
+    if sum(1 for h in hechos if h.date() == ahora.date()) >= MAX_POR_DIA:
+        _log(f"Ya salieron {MAX_POR_DIA} posts hoy: este turno no publica.")
+        return
     pendiente = next((e for e in cola["entradas"] if e["estado"] == "pendiente"), None)
     if pendiente is None:
         _log("Nada en la cola.")
