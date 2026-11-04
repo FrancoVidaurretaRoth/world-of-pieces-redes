@@ -161,6 +161,7 @@ def sincronizar(seco: bool) -> None:
         _log(f"Primera sincronización: arranco desde {str(cola['ultimo_commit'])[:10]}")
         if not seco:
             _guardar_cola(cola)
+            _commit_y_push("Cola: punto de partida", COLA)
         return
 
     ids = {e["id"] for e in cola["entradas"]}
