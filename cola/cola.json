@@ -45,7 +45,7 @@
       "fecha": "2026-10-31",
       "titulo": "El Asesino: tres caminos en las sombras",
       "texto": "Asesinato, Combate y Espectro: 27 habilidades entre sigilo, venenos en el arma, ataques por la espalda y ejecuciones. Te enseña la maestra Nyssa, en las ruinas.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-03.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -54,7 +54,7 @@
       "fecha": "2026-11-02",
       "titulo": "Tres islas nuevas",
       "texto": "El Archipiélago de Trébol (niveles 5 a 12), la Isla de Lumen con la ciudad élfica de Nelulen en las copas de los árboles (20 a 30) y la Costa de las Tormentas (35 a 45). Y las islas de siempre dejaron de ser redondas: penínsulas, cabos, bahías e islotes que se cruzan caminando.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-04.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -73,7 +73,7 @@
       "fecha": "2026-11-02",
       "titulo": "Bestiario: 20 criaturas nuevas",
       "texto": "Arañas de corteza, fuegos fatuos, ents corrompidos, osos, murciélagos, serpientes de arena, buitres, cocodrilos, sirenas, tritones y más. Cada una con sus habilidades, su botín y su voz, repartidas por todas las islas.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-06.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -91,7 +91,7 @@
       "fecha": "2026-10-31",
       "titulo": "El Cazador y su mascota",
       "texto": "28 habilidades en tres árboles, trampas, aceite que se prende fuego y una mascota que pelea a tu lado y obedece desde su propia barra.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-08.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -127,7 +127,7 @@
       "fecha": "2026-11-03",
       "titulo": "Fragmentos de dios",
       "texto": "Hubo una guerra entre diecinueve dioses, y los derrotados se partieron en pedazos repartidos por el mundo. Son rarísimos, nadie avisa cuando aparecen y el primero que toca uno absorbe su poder. Pero ojo: solo podés llevar un dios a la vez.",
-      "imagen": "imagenes/fuente/lote1-12.jpg",
+      "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
       "etiqueta": "PRÓXIMAMENTE"
@@ -137,7 +137,7 @@
       "fecha": "2026-11-02",
       "titulo": "El druida invoca al bosque",
       "texto": "Desde el nivel 14, el druida llama a los Espíritus del Bosque: dos arbolitos que pelean a su lado y se deshacen en un estallido.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-13.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -146,7 +146,7 @@
       "fecha": "2026-11-02",
       "titulo": "Manadas y patrullas",
       "texto": "Los enemigos ya no esperan solos: andan en manadas que recorren su región detrás de un líder, y los bandidos patrullan entre la granja y su escondite en grupos con tanque, arquero y chamán.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-14.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -173,7 +173,7 @@
       "fecha": "2026-11-03",
       "titulo": "Talentos en los tres árboles",
       "texto": "Repartí tus puntos entre las tres especializaciones de tu clase como quieras: la principal es la que tiene más puntos y cambia sola, gratis y en cualquier lado. Los árboles ahora se entrelazan, con caminos que se cruzan y bonos propios de cada especialización.",
-      "imagen": "imagenes/fuente/lote1-17.jpg",
+      "imagen": null,
       "estado": "pendiente",
       "intentos": 0
     },
@@ -191,7 +191,7 @@
       "fecha": "2026-11-03",
       "titulo": "Enemigos más listos",
       "texto": "Arqueros que mantienen la distancia, chamanes, sanadores y emboscadores. Salen de las zonas de daño, van por tu sanador, te interrumpen los hechizos y, si les va mal, huyen a buscar a los suyos.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-19.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -200,7 +200,7 @@
       "fecha": "2026-11-03",
       "titulo": "Jugar en grupo",
       "texto": "Buscador de grupo: anotate con tu rol y tu destino y el juego arma el grupo. Además, un líder que invita y pasa el mando, marcas de objetivo y lista de amigos.",
-      "imagen": "imagenes/fuente/lote1-20.jpg",
+      "imagen": null,
       "estado": "pendiente",
       "intentos": 0
     },
@@ -227,7 +227,7 @@
       "fecha": "2026-11-03",
       "titulo": "Emotes",
       "texto": "Saludá, bailá y festejá con seis animaciones nuevas, desde el chat o con la rueda en la tecla Y. Y hay un logro para quien baile en las capitales.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-23.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
@@ -236,7 +236,7 @@
       "fecha": "2026-10-31",
       "titulo": "Golpes con peso",
       "texto": "Cada golpe se siente: chispas del color de la escuela de magia, un destello, la cámara que tiembla con los golpes grandes y un instante de pausa en los críticos. Y la amenaza funciona como en los MMO clásicos: el tanque tiene que ganarse el aggro.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/lote1-24.jpg",
       "estado": "pendiente",
       "intentos": 0
     },
