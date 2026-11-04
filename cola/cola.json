@@ -1,4 +1,14 @@
 {
   "ultimo_commit": "6c77de51c3c396f947c260003aa1bfd58ae50a79",
-  "entradas": []
+  "entradas": [
+    {
+      "id": "bienvenida-0",
+      "fecha": "2026-11-04",
+      "titulo": "Bienvenidos a World of Pieces",
+      "texto": "Un RPG de islas con clases, barcos, mazmorras y un mundo partido en pedazos para explorar con amigos. Acá voy a ir mostrando cada novedad del desarrollo. La alpha es gratis y se baja desde la web.",
+      "imagen": "imagenes/fuente/bienvenida-0.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    }
+  ]
 }
