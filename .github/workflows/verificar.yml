@@ -1,0 +1,23 @@
+# A mano: prueba los tokens (Instagram y GitHub) sin publicar nada.
+name: Verificar tokens
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pillow>=12,<13"
+      - name: Verificar
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+          IG_API: ${{ vars.IG_API }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python herramientas/redes.py verificar

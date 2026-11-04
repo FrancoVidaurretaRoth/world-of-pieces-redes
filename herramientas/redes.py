@@ -4,6 +4,7 @@ Comandos (los corren los workflows de .github/workflows; a mano, con --seco no p
   python herramientas/redes.py sincronizar        lee los commits nuevos del juego y encola los marcados
   python herramientas/redes.py publicar [--seco]  publica en Instagram la primera novedad de la cola (una por corrida)
   python herramientas/redes.py resumen --web DIR [--seco]   resumen de los últimos 7 días: Instagram + noticia en la web
+  python herramientas/redes.py verificar          prueba los tokens sin publicar nada
   python herramientas/redes.py renovar            renueva el token de Instagram (60 días) y lo guarda como secreto
 
 Cómo se marca un commit del juego para publicarlo (líneas al final del mensaje, junto a las demás):
@@ -360,9 +361,28 @@ def renovar() -> None:
     _log(f"Token renovado; vence en {int(nuevo.get('expires_in', 0)) // 86400} días.")
 
 
+def verificar() -> None:
+    """Prueba los dos tokens sin publicar nada."""
+    token = os.environ.get("IG_TOKEN", "")
+    usuario = _ig_user_id(token)
+    cuenta = _http(f"{IG_API}/{usuario}?fields=username,media_count&access_token={token}")
+    _log(f"Instagram OK: @{cuenta.get('username')} ({cuenta.get('media_count')} publicaciones)")
+    try:
+        limite = _http(f"{IG_API}/{usuario}/content_publishing_limit?fields=quota_usage,config"
+                       f"&access_token={token}")
+        _log(f"Cupo de publicación: {json.dumps(limite.get('data', limite), ensure_ascii=False)}")
+    except RuntimeError as e:
+        _log(f"(no se pudo leer el cupo: {e})")
+    if os.environ.get("GH_PAT"):
+        ultimo = _github(f"/repos/{JUEGO_REPO}/commits?sha={JUEGO_RAMA}&per_page=1")[0]
+        _log(f"GitHub OK: último commit del juego {ultimo['sha'][:10]} ({ultimo['commit']['committer']['date']})")
+    else:
+        _log("GH_PAT no está cargado.")
+
+
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("comando", choices=["sincronizar", "publicar", "resumen", "renovar"])
+    p.add_argument("comando", choices=["sincronizar", "publicar", "resumen", "renovar", "verificar"])
     p.add_argument("--seco", action="store_true", help="no publica ni pushea nada")
     p.add_argument("--web", type=Path, help="carpeta del repo de la web (para el resumen)")
     p.add_argument("--hasta", type=date.fromisoformat, help="último día del resumen (por defecto hoy)")
@@ -373,6 +393,8 @@ def main() -> None:
         publicar(a.seco)
     elif a.comando == "resumen":
         resumen(a.web, a.seco, a.hasta)
+    elif a.comando == "verificar":
+        verificar()
     else:
         renovar()
 
