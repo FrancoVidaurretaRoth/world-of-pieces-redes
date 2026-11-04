@@ -4,7 +4,7 @@ name: Resumen semanal
 
 on:
   schedule:
-    - cron: "0 23 * * 0"
+    - cron: "13 23 * * 0"
   workflow_dispatch:
     inputs:
       seco:

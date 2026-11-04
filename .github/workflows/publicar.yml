@@ -1,15 +1,16 @@
 # Cinco veces por día: trae los commits nuevos del juego, encola los marcados con "Publicar:" y publica UNO en
 # Instagram. Así nunca hay más de 5 posts por día y quedan repartidos; lo que sobra espera al día siguiente.
-# Horarios en UTC = Argentina + 3: 12:00, 14:30, 17:00, 19:30 y 22:00 hora argentina.
+# Horarios en UTC = Argentina + 3: 12:07, 14:37, 17:07, 19:37 y 22:07 hora argentina. Fuera de :00 y :30 a propósito:
+# GitHub demora o descarta los cron en los minutos redondos (todo el mundo los usa) y los de este repo no salían.
 name: Publicar novedad
 
 on:
   schedule:
-    - cron: "0 15 * * *"
-    - cron: "30 17 * * *"
-    - cron: "0 20 * * *"
-    - cron: "30 22 * * *"
-    - cron: "0 1 * * *"
+    - cron: "7 15 * * *"
+    - cron: "37 17 * * *"
+    - cron: "7 20 * * *"
+    - cron: "37 22 * * *"
+    - cron: "7 1 * * *"
   workflow_dispatch:
     inputs:
       seco:
