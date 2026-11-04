@@ -46,7 +46,9 @@ Por seguridad, cualquier frase que nombre a la IA se saca sola antes de publicar
 4. En este repo → Settings → *Secrets and variables* → *Actions*:
    - Secretos: `IG_TOKEN` (paso 2) y `GH_PAT` (paso 3).
    - Variable opcional: `IG_USER_ID` (si no está, se consulta sola).
-5. **Primera corrida**: Actions → *Publicar novedad* → *Run workflow* con "Solo probar" tildado. La primera vez solo
+5. **Prender los workflows** (quedaron apagados hasta tener los secretos): Actions → cada uno de los tres → *Enable
+   workflow*.
+6. **Primera corrida**: Actions → *Publicar novedad* → *Run workflow* con "Solo probar" tildado. La primera vez solo
    anota el último commit del juego (no publica la historia vieja); desde ahí, todo commit marcado entra en la cola.
 
 ## A mano
