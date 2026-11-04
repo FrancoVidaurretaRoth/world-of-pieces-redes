@@ -1,0 +1,23 @@
+# El token de Instagram dura 60 días: se renueva solo el día 1 y el 15 de cada mes.
+name: Renovar token de Instagram
+
+on:
+  schedule:
+    - cron: "0 12 1,15 * *"
+  workflow_dispatch:
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pillow>=12,<13"
+      - name: Renovar
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python herramientas/redes.py renovar

@@ -1,0 +1,49 @@
+# Cinco veces por día: trae los commits nuevos del juego, encola los marcados con "Publicar:" y publica UNO en
+# Instagram. Así nunca hay más de 5 posts por día y quedan repartidos; lo que sobra espera al día siguiente.
+# Horarios en UTC = Argentina + 3: 12:00, 14:30, 17:00, 19:30 y 22:00 hora argentina.
+name: Publicar novedad
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+    - cron: "30 17 * * *"
+    - cron: "0 20 * * *"
+    - cron: "30 22 * * *"
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      seco:
+        description: "Solo probar (no publica ni pushea)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: redes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pillow>=12,<13"
+      - name: Configurar git
+        run: |
+          git config user.name "World of Pieces"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Sincronizar commits del juego
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python herramientas/redes.py sincronizar ${{ inputs.seco && '--seco' || '' }}
+      - name: Publicar una novedad
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+        run: python herramientas/redes.py publicar ${{ inputs.seco && '--seco' || '' }}

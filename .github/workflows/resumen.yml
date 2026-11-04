@@ -1,0 +1,57 @@
+# Domingos 20:00 hora argentina (23:00 UTC): resumen de la semana en Instagram y como noticia en la web.
+# La noticia se pushea al repo de la web, y Cloudflare Pages la despliega sola (un build por semana).
+name: Resumen semanal
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+    inputs:
+      seco:
+        description: "Solo probar (no publica ni pushea)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: redes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  resumen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.WEB_REPO || 'FrancoVidaurretaRoth/world-of-pieces-web' }}
+          token: ${{ secrets.GH_PAT }}
+          path: web
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pillow>=12,<13"
+      - name: Configurar git
+        run: |
+          git config --global user.name "Tatoxz"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Traer lo último de la cola
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python herramientas/redes.py sincronizar ${{ inputs.seco && '--seco' || '' }}
+      - name: Resumen
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ vars.IG_USER_ID }}
+        run: python herramientas/redes.py resumen --web web ${{ inputs.seco && '--seco' || '' }}
+      - name: Publicar la noticia en la web
+        if: ${{ !inputs.seco }}
+        working-directory: web
+        run: |
+          git add src/content/noticias
+          if git diff --cached --quiet; then echo "Sin noticia nueva"; exit 0; fi
+          git commit -m "Noticia: resumen semanal"
+          git push
