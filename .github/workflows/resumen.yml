@@ -46,6 +46,7 @@ jobs:
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ vars.IG_USER_ID }}
+          IG_API: ${{ vars.IG_API }}
         run: python herramientas/redes.py resumen --web web ${{ inputs.seco && '--seco' || '' }}
       - name: Publicar la noticia en la web
         if: ${{ !inputs.seco }}

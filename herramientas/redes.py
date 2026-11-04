@@ -15,8 +15,9 @@ Variables de entorno:
   JUEGO_REPO   dueño/nombre del repo del juego (por defecto FrancoVidaurretaRoth/world-of-pieces-link)
   JUEGO_RAMA   rama a leer (master)
   GH_PAT       token de GitHub que puede leer el repo del juego (y escribir secretos de este repo, para `renovar`)
-  IG_TOKEN     token largo de Instagram (permisos instagram_business_basic + instagram_business_content_publish)
-  IG_USER_ID   opcional: el id de la cuenta (si falta se consulta a /me)
+  IG_TOKEN     token de la app de Meta (Unified login; permisos instagram_basic + instagram_content_publish)
+  IG_USER_ID   id de la cuenta de Instagram (si falta se busca en /me/assigned_instagram_accounts)
+  IG_API       opcional: host y versión de la API (por defecto https://graph.facebook.com/v26.0)
   REPO_PUBLICO dueño/nombre de este repo (lo pone GitHub Actions en GITHUB_REPOSITORY)
 """
 from __future__ import annotations
@@ -39,7 +40,9 @@ import tarjeta  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 COLA = RAIZ / "cola" / "cola.json"
-IG_API = os.environ.get("IG_API", "https://graph.instagram.com/v23.0")
+# Las apps nuevas de Meta (desde fines de 2026) usan "API setup with Unified login": token de usuario del sistema
+# sobre graph.facebook.com. Con una app vieja de "Instagram login", IG_API=https://graph.instagram.com/v23.0.
+IG_API = os.environ.get("IG_API") or "https://graph.facebook.com/v26.0"
 JUEGO_REPO = os.environ.get("JUEGO_REPO", "FrancoVidaurretaRoth/world-of-pieces-link")
 JUEGO_RAMA = os.environ.get("JUEGO_RAMA", "master")
 REPO_PUBLICO = os.environ.get("GITHUB_REPOSITORY", os.environ.get("REPO_PUBLICO", ""))
@@ -197,7 +200,13 @@ def sincronizar(seco: bool) -> None:
 def _ig_user_id(token: str) -> str:
     if os.environ.get("IG_USER_ID"):
         return os.environ["IG_USER_ID"]
-    return _http(f"{IG_API}/me?fields=user_id,username&access_token={token}")["user_id"]
+    if "graph.instagram.com" in IG_API:
+        return _http(f"{IG_API}/me?fields=user_id,username&access_token={token}")["user_id"]
+    # Unified login: /me es el usuario del sistema; las cuentas de Instagram se listan aparte.
+    cuentas = _http(f"{IG_API}/me/assigned_instagram_accounts?access_token={token}").get("data", [])
+    if not cuentas:
+        raise RuntimeError("el token no tiene cuentas de Instagram asignadas: cargá la variable IG_USER_ID")
+    return cuentas[0]["id"]
 
 
 def _url_publica(ruta: Path) -> str:
@@ -339,6 +348,11 @@ def resumen(web: Path | None, seco: bool, hasta: date | None = None) -> None:
 # ---------------------------------------------------------------- 4. renovar el token
 
 def renovar() -> None:
+    if "graph.instagram.com" not in IG_API:
+        # Unified login: el token es de usuario del sistema y vence cuando se eligió al crearlo ("Nunca" si se
+        # pudo). Si se eligió un vencimiento, hay que generar otro a mano en el panel de Meta.
+        _log("Token de Unified login: no se renueva por API (ver README).")
+        return
     nuevo = _http(f"https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token"
                   f"&access_token={os.environ['IG_TOKEN']}")
     subprocess.run(["gh", "secret", "set", "IG_TOKEN", "--repo", REPO_PUBLICO, "--body", nuevo["access_token"]],

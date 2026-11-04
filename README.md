@@ -30,13 +30,17 @@ Por seguridad, cualquier frase que nombre a la IA se saca sola antes de publicar
 
 1. **Cuenta profesional**: en la app de Instagram → Configuración → Tipo de cuenta y herramientas → *Cambiar a cuenta
    profesional* → **Creador** (gratis, no pide página de Facebook).
-2. **App de Meta** (puede ser la misma que use el feed de la web): [developers.facebook.com](https://developers.facebook.com)
-   → *Create app* → tipo *Business* → producto **Instagram** → *API setup with Instagram login*.
-   - En *Roles* agregá tu cuenta de Instagram como **Instagram tester** y aceptá la invitación desde la app de
-     Instagram (Configuración → Apps y sitios web). Con la app en modo desarrollo y vos como tester, no hace falta la
-     revisión de Meta.
-   - En *Generate access tokens* agregá la cuenta con los permisos `instagram_business_basic` y
-     `instagram_business_content_publish` y copiá el token (es el largo, de 60 días).
+2. **App de Meta** (con tu Facebook personal: nadie lo ve): [developers.facebook.com](https://developers.facebook.com)
+   → *Crear app* → caso de uso **Administrar mensajes y contenido en Instagram** (filtro *Administración de
+   contenido*) → *Personalizar* → **API setup with Unified login** (las apps nuevas ya no tienen "Instagram login").
+   - Pide un **portfolio comercial** (gratis, Meta Business Suite): creá `World of Pieces` y, si lo pide, sumale la
+     cuenta de Instagram como activo.
+   - *Crear nueva configuración*: vencimiento del token **Nunca** (si lo ofrece), permisos `instagram_basic` +
+     `instagram_content_publish`, URL de redirección `https://worldofpieces.pages.dev/` → *Usar esta configuración*.
+   - *Generar tokens de acceso* → *Agregar cuenta* (invita a la cuenta como tester: aceptar en instagram.com →
+     Configuración → Permisos de sitios web → Apps y sitios web → Invitaciones de tester) → **Generar token**. Se
+     muestra UNA vez: va directo al secreto `IG_TOKEN`. Con la app en modo desarrollo alcanza (no hace falta revisión).
+   - Si el token tiene vencimiento, anotá la fecha: se genera otro igual y se reemplaza el secreto.
 3. **Token de GitHub** (fine-grained, en GitHub → Settings → Developer settings → Personal access tokens), con acceso a
    tres repos:
    - `world-of-pieces-link` (el juego): *Contents* **Read**.
@@ -45,7 +49,7 @@ Por seguridad, cualquier frase que nombre a la IA se saca sola antes de publicar
    Vencimiento: el más largo que permita (y anotá cuándo vence).
 4. En este repo → Settings → *Secrets and variables* → *Actions*:
    - Secretos: `IG_TOKEN` (paso 2) y `GH_PAT` (paso 3).
-   - Variable opcional: `IG_USER_ID` (si no está, se consulta sola).
+   - Variable `IG_USER_ID`: el id de la cuenta de Instagram que muestra el panel de Meta (si falta, se busca sola).
 5. **Prender los workflows** (quedaron apagados hasta tener los secretos): Actions → cada uno de los tres → *Enable
    workflow*.
 6. **Primera corrida**: Actions → *Publicar novedad* → *Run workflow* con "Solo probar" tildado. La primera vez solo
