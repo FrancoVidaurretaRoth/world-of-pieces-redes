@@ -31,8 +31,11 @@
       "titulo": "El Kraken asoma frente al Ángel",
       "texto": "El mar ya no es seguro: tiburones, medusas, serpientes marinas y cangrejos gigantes nadan entre las islas y muerden lo que flota. Cada tanto, frente a la isla del Ángel, emerge el Kraken con sus tentáculos. Y si pescás en agua honda, a veces pica un tiburón.",
       "imagen": "imagenes/fuente/lote1-01.jpg",
-      "estado": "pendiente",
-      "intentos": 0
+      "estado": "publicado",
+      "intentos": 0,
+      "publicado": "2026-11-04T22:37:30+00:00",
+      "ig_id": "18121914071471949",
+      "enlace": "https://www.instagram.com/p/DfVi8L0jYfc/"
     },
     {
       "id": "lote1-02",
