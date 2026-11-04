@@ -19,8 +19,11 @@
       "titulo": "El escudo de World of Pieces",
       "texto": "Un mundo partido en pedazos y abrazado por un aro de oro: ese es el emblema del juego. Cada pieza es una isla por descubrir. ¿Qué te parece?",
       "imagen": null,
-      "estado": "pendiente",
-      "intentos": 0
+      "estado": "publicado",
+      "intentos": 0,
+      "publicado": "2026-11-04T19:46:46+00:00",
+      "ig_id": "18636361222065415",
+      "enlace": "https://www.instagram.com/p/DfVPZ1smzvp/"
     },
     {
       "id": "lote1-01",
