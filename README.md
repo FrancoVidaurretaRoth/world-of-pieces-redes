@@ -13,7 +13,7 @@ gratis: GitHub Actions en un repo público (minutos sin límite) + la API de Ins
    Publicar-imagen: docs/capturas/ventoria.png      (opcional: una captura que esté en el repo del juego)
    ```
    Los commits sin `Publicar:` no se publican nunca. Un commit puede traer varias novedades.
-2. **Cinco veces por día** (12:00, 14:30, 17:00, 19:30 y 22:00, hora argentina) el workflow `Publicar novedad` lee los
+2. **Cinco veces por día** (12:07, 14:37, 17:07, 19:37 y 22:07, hora argentina) el workflow `Publicar novedad` lee los
    commits nuevos que ya estén **pusheados** a `master`, encola los marcados (`cola/cola.json`) y publica **uno**. Así
    nunca pasan de 5 por día y lo que sobra sale los días siguientes, sin perderse nada.
 3. **Domingos a las 20:00**, `Resumen semanal` publica una tarjeta con todo lo de la semana y pushea una noticia a la
@@ -25,6 +25,37 @@ Las tarjetas (1080×1350) salen de `herramientas/tarjeta.py` con el emblema del 
 las baja de acá, por eso el repo es público).
 
 Por seguridad, cualquier frase que nombre a la IA se saca sola antes de publicar.
+
+**El reloj** (`.github/workflows/reloj.yml`): los cron de GitHub no se disparan en este repo, así que un workflow espera
+dormido hasta el próximo horario, lanza el que toque (publicar, resumen o token) y se vuelve a lanzar solo. Si la
+cadena se cortara: Actions → Reloj → Run workflow. La publicación nunca saca dos posts con menos de 90 minutos entre
+sí ni más de 5 por día, aunque se disparen dos cosas juntas.
+
+## Videos: el carrusel portada + juego
+
+Cada post sale como **carrusel**: la tarjeta de siempre y, deslizando, un **video corto del juego real** (~9 s, 4:5):
+la toma en movimiento, el título arriba los primeros segundos, un pedazo de "Brisa del Mundo" de fondo y un cierre
+con el emblema. Una novedad sin video sale con la portada sola.
+
+1. **Grabar la toma** (en el repo del juego, con el editor cerrado). Las tomas son las de la prueba de fotos
+   `capturas_redes.gd` (cada `_toca("nombre")`): la prueba `clips_redes.gd` las arma igual pero, donde saca la foto,
+   graba la cámara moviéndose. Para una novedad nueva, se agrega su toma en `capturas_redes.gd` y sirve para las dos.
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File herramientas\correr_headless.ps1 -Ventana -Segundos 1800 -MaxMB 3800 `
+     -Argumentos "--fixed-fps 30 escenas/main.tscn -- --prueba=clips_redes --solo=bestiario"
+   ```
+   Los cuadros quedan en `%TEMP%\wop_headless\capturas\clips\<nombre de la foto>\`.
+2. **Armar el video** (acá; la música se lee del repo del juego, que no es público):
+   ```bash
+   pip install imageio-ffmpeg pillow                 # una vez (o un ffmpeg del sistema)
+   python herramientas/clip.py lote1-06 bestiario    # id de la cola + nombre de la toma
+   ```
+   Deja `videos/<id>.mp4` y lo anota en la entrada de la cola. Para un commit nuevo, el id es el que le pone la
+   sincronización (`<sha de 10>-0`): si todavía no está en la cola, esperá a que la sincronice el próximo horario.
+3. Commit y push de `videos/` y `cola/cola.json`. Instagram baja el video por jsDelivr (lo sirve como `video/mp4`).
+
+`Verificar tokens` arma el carrusel de la próxima con video hasta dejarlo listo en Instagram, sin publicarlo: sirve
+para probar un video nuevo. Si Instagram rechaza un video dos veces, el tercer intento sale con la portada sola.
 
 ## Puesta en marcha (una sola vez)
 
