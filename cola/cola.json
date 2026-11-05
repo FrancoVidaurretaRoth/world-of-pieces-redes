@@ -157,7 +157,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "etiqueta": "PRÓXIMAMENTE"
+      "etiqueta": "PRÓXIMAMENTE",
+      "video": "videos/lote1-12.mp4"
     },
     {
       "id": "lote1-13",
@@ -205,7 +206,8 @@
       "texto": "Repartí tus puntos entre las tres especializaciones de tu clase como quieras: la principal es la que tiene más puntos y cambia sola, gratis y en cualquier lado. Los árboles ahora se entrelazan, con caminos que se cruzan y bonos propios de cada especialización.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-17.mp4"
     },
     {
       "id": "lote1-18",
@@ -234,7 +236,8 @@
       "texto": "Buscador de grupo: anotate con tu rol y tu destino y el juego arma el grupo. Además, un líder que invita y pasa el mando, marcas de objetivo y lista de amigos.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-20.mp4"
     },
     {
       "id": "lote1-21",
@@ -243,7 +246,8 @@
       "texto": "Dagas, estoques, manguales, guadañas, alabardas, ballestas, rifles, libros y escudos, entre otras. Las de las mismas manos hacen el mismo daño por segundo: elegí la que más te guste.",
       "imagen": "imagenes/fuente/lote1-21.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-21.mp4"
     },
     {
       "id": "lote1-22",
@@ -292,7 +296,8 @@
       "texto": "Una bolsa que se ordena sola, con buscador y auto-botín; mapa con capas; chat con susurros, pestañas y links de objetos; y un menú principal con Continuar y nombre al azar para tu personaje.",
       "imagen": "imagenes/fuente/lote1-26.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-26.mp4"
     },
     {
       "id": "lote1-27",
@@ -301,7 +306,8 @@
       "texto": "Ahora podés jugar el juego entero con mando, y cada acción admite dos teclas. Y World of Pieces ya está también en inglés.",
       "imagen": "imagenes/fuente/lote1-27.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-27.mp4"
     },
     {
       "id": "lote1-28",
@@ -320,7 +326,8 @@
       "texto": "Dicen que la guerra entre los dioses dejó el mundo en pedazos. Ahora sus fragmentos caen muy de vez en cuando en cualquier rincón del mundo: absorbé uno y ganás su habilidad, su pasiva... y su debilidad. Son 19 dioses, y dos no caben en un mismo cuerpo.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/c9b70d9d23-0.mp4"
     },
     {
       "id": "a065747cb0-0",
@@ -329,7 +336,8 @@
       "texto": "Más de cuarenta personajes de la historia aparecieron en las islas, cada uno donde le corresponde: Newton bajo los manzanos, Galileo mirando el cielo de noche, Barbanegra en una cala de naufragios. Charlá con ellos, ayudalos con sus misiones y llevate recompensas únicas, como el catalejo de Galileo, el espejo ardiente de Arquímedes o partituras de Mozart y Beethoven.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/a065747cb0-0.mp4"
     },
     {
       "id": "9ed5cecb04-0",
@@ -384,7 +392,8 @@
       "texto": "San Martín ahora te espera montado en su mula, y la mula que te regala tiene su propio modelo. Alejandro te da a Bucéfalo, negro con la estrella blanca. Y Fokas te deja su sillón-trono para el barco.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/9d78c6a1d3-0.mp4"
     },
     {
       "id": "17ff3d7ddb-0",

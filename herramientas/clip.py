@@ -14,6 +14,10 @@ sistema o, si no hay, el de `pip install imageio-ffmpeg`.
 
   python herramientas/clip.py lote1-06 bestiario
   python herramientas/clip.py lote1-06 bestiario --cuadros D:/otra/carpeta --sin-cola
+  python herramientas/clip.py lote1-26 ui_hud+ui_inventario+ui_mapa      (varias tomas seguidas, con corte)
+
+Las tomas de la pantalla del juego (la interfaz, apaisadas) se acomodan solas al 4:5: el centro recortado y escalado
+al ancho, con la misma imagen difuminada de fondo arriba y abajo.
 
 Deja `videos/<id>.mp4` y anota el video en la entrada de la cola (`cola/cola.json`). Después: commit y push.
 """
@@ -91,6 +95,36 @@ def _cierre(semilla: int, destino: Path) -> None:
     lienzo.convert("RGB").save(destino, quality=95)
 
 
+def _vertical(origen: Path, destino: Path) -> None:
+    """Un cuadro apaisado (la pantalla del juego) al 4:5: el centro (4:3) al ancho, sobre él mismo difuminado."""
+    img = Image.open(origen).convert("RGB")
+    w, h = img.size
+    if w <= h * 0.9:
+        img.resize((tarjeta.ANCHO, tarjeta.ALTO), Image.LANCZOS).save(destino, quality=93)
+        return
+    fondo = img.resize((int(w * tarjeta.ALTO / h), tarjeta.ALTO), Image.BILINEAR)
+    x = (fondo.width - tarjeta.ANCHO) // 2
+    fondo = fondo.crop((x, 0, x + tarjeta.ANCHO, tarjeta.ALTO)).filter(ImageFilter.GaussianBlur(28))
+    fondo = Image.blend(fondo, Image.new("RGB", fondo.size, (5, 12, 22)), 0.45)
+    ancho = min(w, int(h * 4 / 3))
+    centro = img.crop(((w - ancho) // 2, 0, (w - ancho) // 2 + ancho, h))
+    centro = centro.resize((tarjeta.ANCHO, int(h * tarjeta.ANCHO / ancho)), Image.LANCZOS)
+    fondo.paste(centro, (0, (tarjeta.ALTO - centro.height) // 2 + 60))
+    fondo.save(destino, quality=93)
+
+
+def _juntar(carpetas: list[Path], destino: Path) -> None:
+    """Los cuadros de varias tomas, uno detrás del otro, numerados de corrido y al tamaño del video."""
+    i = 0
+    for c in carpetas:
+        lista = sorted(c.glob("*.jpg"))
+        if not lista:
+            sys.exit(f"No hay cuadros en {c}: grabá la toma con la prueba clips_redes")
+        for f in lista:
+            _vertical(f, destino / f"{i:04d}.jpg")
+            i += 1
+
+
 def armar(ident: str, nombre: str, cuadros: Path, titulo: str) -> Path:
     ffmpeg = _ffmpeg()
     lista = sorted(cuadros.glob("*.jpg"))
@@ -136,6 +170,14 @@ def armar(ident: str, nombre: str, cuadros: Path, titulo: str) -> Path:
     return destino
 
 
+def _apaisado(carpeta: Path) -> bool:
+    primero = next(iter(sorted(carpeta.glob("*.jpg"))), None)
+    if primero is None:
+        return False
+    w, h = Image.open(primero).size
+    return w > h * 0.9
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("id", help="la entrada de la cola (ej. lote1-06)")
@@ -148,7 +190,13 @@ def main() -> None:
     entrada = next((e for e in cola["entradas"] if e["id"] == a.id), None)
     if entrada is None and not a.titulo:
         sys.exit(f"No hay una entrada '{a.id}' en la cola (o pasá --titulo)")
-    destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, a.titulo or entrada["titulo"])
+    titulo = a.titulo or entrada["titulo"]
+    if "+" in a.nombre or a.cuadros is None and _apaisado(CUADROS / a.nombre):
+        with tempfile.TemporaryDirectory() as tmp:
+            _juntar([(a.cuadros or CUADROS) / n for n in a.nombre.split("+")], Path(tmp))
+            destino = armar(a.id, a.nombre, Path(tmp), titulo)
+    else:
+        destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, titulo)
     if entrada is not None and not a.sin_cola:
         entrada["video"] = str(destino.relative_to(RAIZ)).replace("\\", "/")
         COLA.write_text(json.dumps(cola, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
