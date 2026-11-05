@@ -43,8 +43,11 @@
       "titulo": "Las Profundidades",
       "texto": "Mazmorras que se arman distintas cada vez, sala por sala. Hay cuatro entradas: la Grieta bajo el cementerio del Ángel, las Catacumbas Profundas de Ventoria, la Raíz Madre de Lumen y el Faro de las Tormentas. Poné tu llave en el pedestal, ganale al reloj y la llave sube de nivel.",
       "imagen": "imagenes/fuente/lote1-02.jpg",
-      "estado": "pendiente",
-      "intentos": 0
+      "estado": "publicado",
+      "intentos": 0,
+      "publicado": "2026-11-05T00:49:47+00:00",
+      "ig_id": "18034502444894293",
+      "enlace": "https://www.instagram.com/p/DfVyFKfjYUL/"
     },
     {
       "id": "lote1-03",
