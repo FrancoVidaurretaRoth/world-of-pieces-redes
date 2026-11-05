@@ -195,7 +195,8 @@
       "texto": "Una nueva facción con base en el Refugio del Faro, en la Costa de las Tormentas. La Capitana Nerea te recibe: subí de Remero a Guerrero del mar, con su propia armadura y sus misiones.",
       "imagen": "imagenes/fuente/lote1-16.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-16.mp4"
     },
     {
       "id": "lote1-17",
@@ -281,7 +282,8 @@
       "texto": "Nora te acompaña en tus primeras misiones, aparecen consejos la primera vez que pasa algo y con F1 tenés la ayuda completa. En el pueblo te espera una cadena de bienvenida para conocer a todos.",
       "imagen": "imagenes/fuente/lote1-25.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-25.mp4"
     },
     {
       "id": "lote1-26",
@@ -308,7 +310,8 @@
       "texto": "Nueva opción de carga de CPU aparte de la calidad gráfica, física nueva para que las peleas grandes no traben el juego, y lo lejano de las islas se duerme. Si tu PC es modesta, vas a notar la diferencia.",
       "imagen": "imagenes/fuente/lote1-28.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-28.mp4"
     },
     {
       "id": "c9b70d9d23-0",
@@ -335,7 +338,8 @@
       "texto": "Todas las islas crecieron: más campo, más bosque y costas llenas de cabos, calas y penínsulas, con los lugares más separados para explorar. Las ciudades siguen igual de vivas, ahora rodeadas de mucho más mundo.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/9ed5cecb04-0.mp4"
     },
     {
       "id": "3d6da0b0ff-0",
@@ -398,7 +402,8 @@
       "texto": "La isla helada ahora tiene forma de J: Forjahonda en una punta, Puerto Escarcha en la otra y la cordillera en el medio. Podés cruzar por el paso, con San Martín y un dragón esperando arriba, o en el bote de la bahía.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/09ab022767-0.mp4"
     },
     {
       "id": "35051755f0-0",
@@ -416,7 +421,8 @@
       "texto": "Al suroeste, detrás de un muro de niebla que da vuelta a cualquier barco, hay una isla que no está en los mapas: raptores en manada, pteranodones, cuellos largos y un Rey Tirano. Armá la brújula con el viejo Anselmo, encontrá a los náufragos del Campamento Naufragio y domá tu propio dinosaurio corredor.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/ead0711a71-0.mp4"
     },
     {
       "id": "285b23b4be-0",
@@ -425,7 +431,8 @@
       "texto": "Ahora el mar está lleno de vida: cardúmenes que se abren cuando nadás cerca, delfines que saltan al lado de tu barco, ballenas que soplan a lo lejos y medusas que brillan de noche. En la costa hay bosques de algas, corales, gaviotas sobre los muelles y cangrejos que se escapan de costado.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/285b23b4be-0.mp4"
     },
     {
       "id": "c694f86ec3-0",
@@ -434,7 +441,8 @@
       "texto": "Desde el puerto de Ventoria sale un barco con alas y globos que sube en espiral por una columna de viento hasta Puerto Cirro, una isla flotante a 450 metros sobre el mar. Ahí viven los Aeronautas, una ciudad de inventores en guerra fría con los gólems de nube que reclaman la isla. Puentes colgantes, corrientes de viento que te llevan de un islote a otro y, si te caés, el viento te devuelve al muelle.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/c694f86ec3-0.mp4"
     },
     {
       "id": "06842320c9-0",
@@ -443,7 +451,8 @@
       "texto": "En el cráter de las Ascuas se abrió una grieta que baja en espiral hasta un lago de magma. Abajo viven los Ceniceños, de piel de ceniza y pelo de llama: ganate a su Consejo y vas a poder crear personajes de su raza.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/06842320c9-0.mp4"
     },
     {
       "id": "0511e6de49-0",
@@ -461,7 +470,8 @@
       "texto": "Lo lejano ahora se pierde en una bruma gris, y por las puertas abiertas se ve lo que hay adentro. En Ventoria ya no desaparece el palacio al mirarlo por las puertas de la muralla.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/5a4dfca000-0.mp4"
     },
     {
       "id": "3d5cac1f03-0",
@@ -470,7 +480,8 @@
       "texto": "En un islote perdido entre Trébol y Sahrim, el viejo Caronte cuida una campana de buceo que baja despacio, durante un minuto entero, hasta Nácara: una ciudad de nácar y coral bajo cúpulas de aire, donde los descendientes de una flota hundida esperan que su rey elija heredero. Afuera de las burbujas se nada entre kelp, morenas y un pez enorme que caza con su propia luz.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/3d5cac1f03-0.mp4"
     },
     {
       "id": "9b7a13ed98-0",
@@ -479,7 +490,8 @@
       "texto": "Al norte de todo hay una isla blanca. Albacumbre, la ciudad de humanos y enanos, está tallada adentro de una montaña, con mil columnas y una forja que nunca se apaga. Afuera esperan mamuts, trolls de escarcha y un dragón de hielo.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/9b7a13ed98-0.mp4"
     },
     {
       "id": "c483a08a03-0",
@@ -497,7 +509,8 @@
       "texto": "En la arena de Ventoria encendé el brasero y aguantá oleada tras oleada de gladiadores, legionarios y aventureros rivales. Cada cinco oleadas entra un campeón, y tu mejor marca queda en tus logros.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/08aff6c108-0.mp4"
     },
     {
       "id": "6dcf076e4f-0",
@@ -506,7 +519,8 @@
       "texto": "Cruzás la Gran Puerta, caminás entre las estatuas de los reyes y de golpe se abre la montaña: una ciudad entera bajo columnas de piedra, un lago que brilla y un rayo de luz que cae desde la cima. El Confín Helado es la isla más grande del mundo.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/6dcf076e4f-0.mp4"
     },
     {
       "id": "b81dd21764-0",
