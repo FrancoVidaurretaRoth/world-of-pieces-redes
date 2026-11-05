@@ -79,9 +79,12 @@
       "titulo": "Los Ecos: leyendas que vuelven",
       "texto": "Se vienen los Ecos: figuras de la historia que aparecen en el mundo, cada una con su lugar, su misión y su recompensa. Los primeros son bien patriotas: el General San Martín, Jorge Luis Borges y dos leyendas del fútbol que te van a desafiar a los jueguitos.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "etiqueta": "PRÓXIMAMENTE"
+      "etiqueta": "PRÓXIMAMENTE",
+      "publicado": "2026-11-05T15:07:36+00:00",
+      "ig_id": "17914061355559197",
+      "enlace": "https://www.instagram.com/p/DfXUPwGGMzB/"
     },
     {
       "id": "lote1-06",
