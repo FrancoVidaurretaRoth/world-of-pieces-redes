@@ -311,7 +311,13 @@ def publicar(seco: bool) -> None:
     tarjeta.tarjeta_novedad(pendiente["titulo"], pendiente["texto"], date.fromisoformat(pendiente["fecha"]),
                             destino, imagen_fuente, pendiente.get("etiqueta", "NOVEDAD"))
     epigrafe = _epigrafe(pendiente["titulo"], pendiente["texto"])
-    _log(f"Tarjeta: {destino}\n--- epígrafe ---\n{epigrafe}\n---")
+    # El video (la segunda lámina del carrusel) lo arma `clip.py` en la PC y queda anotado en la entrada. Si
+    # Instagram lo rechazó dos veces, el tercer intento sale con la portada sola.
+    video = RAIZ / pendiente["video"] if pendiente.get("video") and not pendiente.get("sin_video") else None
+    if video is not None and not video.exists():
+        _log(f"  falta el video {pendiente['video']}: sale con la portada sola")
+        video = None
+    _log(f"Tarjeta: {destino}\nVideo: {video or '(no tiene)'}\n--- epígrafe ---\n{epigrafe}\n---")
     if seco:
         return
     _commit_y_push(f"Post: {pendiente['titulo']}", destino)

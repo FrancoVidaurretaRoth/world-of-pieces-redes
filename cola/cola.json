@@ -103,7 +103,8 @@
       "texto": "La gente duerme de noche y sale de día, las puertas se abren cuando te acercás y los guardias hacen su ronda. Hay humo en las chimeneas, perros, chicos jugando, gatos en las plazas, talleres que suenan y charla en la posada.",
       "imagen": "imagenes/fuente/lote1-07.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-07.mp4"
     },
     {
       "id": "lote1-08",
@@ -122,7 +123,8 @@
       "texto": "Miradores que destapan el mapa, 153 Piezas del Mundo para encontrar, 38 cofres escondidos y el Códice, con 31 páginas de historia del mundo. El mapa empieza en niebla y se descubre a medida que lo recorrés.",
       "imagen": "imagenes/fuente/lote1-09.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-09.mp4"
     },
     {
       "id": "lote1-10",
@@ -131,7 +133,8 @@
       "texto": "Nieve en las montañas, tormentas de arena en el desierto, ceniza en el volcán y tormentas en el mar, con olas que crecen. Y cuando escampa, a veces sale el arcoíris.",
       "imagen": "imagenes/fuente/lote1-10.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-10.mp4"
     },
     {
       "id": "lote1-11",
@@ -140,7 +143,8 @@
       "texto": "Una bestia de las nieves con cuatro habilidades y un anillo propio en su botín. Mejor juntá un grupo antes de ir a buscarlo.",
       "imagen": "imagenes/fuente/lote1-11.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-11.mp4"
     },
     {
       "id": "lote1-12",
@@ -159,7 +163,8 @@
       "texto": "Desde el nivel 14, el druida llama a los Espíritus del Bosque: dos arbolitos que pelean a su lado y se deshacen en un estallido.",
       "imagen": "imagenes/fuente/lote1-13.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-13.mp4"
     },
     {
       "id": "lote1-14",
@@ -168,7 +173,8 @@
       "texto": "Los enemigos ya no esperan solos: andan en manadas que recorren su región detrás de un líder, y los bandidos patrullan entre la granja y su escondite en grupos con tanque, arquero y chamán.",
       "imagen": "imagenes/fuente/lote1-14.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-14.mp4"
     },
     {
       "id": "lote1-15",
@@ -204,7 +210,8 @@
       "texto": "Casas más grandes y amuebladas, calles nuevas y la Plaza de los Oficios con sus siete puestos, cada uno con su dueño.",
       "imagen": "imagenes/fuente/lote1-18.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-18.mp4"
     },
     {
       "id": "lote1-19",
@@ -213,7 +220,8 @@
       "texto": "Arqueros que mantienen la distancia, chamanes, sanadores y emboscadores. Salen de las zonas de daño, van por tu sanador, te interrumpen los hechizos y, si les va mal, huyen a buscar a los suyos.",
       "imagen": "imagenes/fuente/lote1-19.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-19.mp4"
     },
     {
       "id": "lote1-20",
@@ -240,7 +248,8 @@
       "texto": "Veinte eventos que pasan sin aviso por el mundo, con premio para quien esté ahí. También aparecen raros nuevos como el Cangrejo Emperador, el Toro de Ventoria y la Sirena de las Tormentas, y las mazmorras tienen botín propio.",
       "imagen": "imagenes/fuente/lote1-22.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-22.mp4"
     },
     {
       "id": "lote1-23",
@@ -249,7 +258,8 @@
       "texto": "Saludá, bailá y festejá con seis animaciones nuevas, desde el chat o con la rueda en la tecla Y. Y hay un logro para quien baile en las capitales.",
       "imagen": "imagenes/fuente/lote1-23.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-23.mp4"
     },
     {
       "id": "lote1-24",
@@ -258,7 +268,8 @@
       "texto": "Cada golpe se siente: chispas del color de la escuela de magia, un destello, la cámara que tiembla con los golpes grandes y un instante de pausa en los críticos. Y la amenaza funciona como en los MMO clásicos: el tanque tiene que ganarse el aggro.",
       "imagen": "imagenes/fuente/lote1-24.jpg",
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "video": "videos/lote1-24.mp4"
     },
     {
       "id": "lote1-25",
