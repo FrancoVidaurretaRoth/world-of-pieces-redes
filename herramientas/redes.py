@@ -228,20 +228,47 @@ def _esperar_url(url: str) -> None:
     raise RuntimeError(f"la imagen no quedó pública: {url}")
 
 
-def publicar_en_instagram(imagen: Path, texto: str) -> dict:
+def _url_video(ruta: Path) -> str:
+    """Los videos salen por jsDelivr (CDN de los repos públicos de GitHub): lo sirve como video/mp4, que es lo que
+    Instagram pide; raw.githubusercontent lo da como archivo genérico. Fijado al commit, así nunca hay caché vieja."""
+    rel = str(ruta.relative_to(RAIZ)).replace("\\", "/")
+    sha = _git("rev-parse", "HEAD").strip()
+    return f"https://cdn.jsdelivr.net/gh/{REPO_PUBLICO}@{sha}/{rel}"
+
+
+def _contenedor(usuario: str, token: str, datos: dict, espera: int = 30) -> str:
+    """Crea un contenedor de Instagram y espera a que termine de procesarlo (un video tarda más)."""
+    ident = _http(f"{IG_API}/{usuario}/media", "POST", {**datos, "access_token": token})["id"]
+    for _ in range(espera):
+        estado = _http(f"{IG_API}/{ident}?fields=status_code,status&access_token={token}")
+        if estado.get("status_code") == "FINISHED":
+            return ident
+        if estado.get("status_code") in ("ERROR", "EXPIRED"):
+            raise RuntimeError(f"Instagram rechazó el contenido ({estado.get('status_code')}: {estado.get('status')})")
+        time.sleep(5)
+    raise RuntimeError("Instagram no terminó de procesar el contenido a tiempo")
+
+
+def preparar_en_instagram(imagen: Path, texto: str, video: Path | None = None) -> tuple[str, str, str]:
+    """Arma el contenedor listo para publicar: la imagen sola o, con video, el carrusel portada + video.
+    Devuelve (usuario, token, contenedor). No publica nada."""
     token = os.environ["IG_TOKEN"]
     usuario = _ig_user_id(token)
     url = _url_publica(imagen)
     _esperar_url(url)
-    contenedor = _http(f"{IG_API}/{usuario}/media", "POST",
-                       {"image_url": url, "caption": texto, "access_token": token})["id"]
-    for _ in range(30):
-        estado = _http(f"{IG_API}/{contenedor}?fields=status_code&access_token={token}").get("status_code")
-        if estado == "FINISHED":
-            break
-        if estado in ("ERROR", "EXPIRED"):
-            raise RuntimeError(f"Instagram rechazó la imagen ({estado})")
-        time.sleep(4)
+    if video is None:
+        return usuario, token, _contenedor(usuario, token, {"image_url": url, "caption": texto})
+    url_video = _url_video(video)
+    _esperar_url(url_video)
+    portada = _contenedor(usuario, token, {"image_url": url, "is_carousel_item": "true"})
+    clip = _contenedor(usuario, token, {"media_type": "VIDEO", "video_url": url_video, "is_carousel_item": "true"},
+                       espera=60)
+    return usuario, token, _contenedor(usuario, token, {"media_type": "CAROUSEL", "children": f"{portada},{clip}",
+                                                        "caption": texto})
+
+
+def publicar_en_instagram(imagen: Path, texto: str, video: Path | None = None) -> dict:
+    usuario, token, contenedor = preparar_en_instagram(imagen, texto, video)
     media = _http(f"{IG_API}/{usuario}/media_publish", "POST",
                   {"creation_id": contenedor, "access_token": token})["id"]
     enlace = _http(f"{IG_API}/{media}?fields=permalink&access_token={token}").get("permalink", "")
@@ -289,9 +316,11 @@ def publicar(seco: bool) -> None:
         return
     _commit_y_push(f"Post: {pendiente['titulo']}", destino)
     try:
-        resultado = publicar_en_instagram(destino, epigrafe)
+        resultado = publicar_en_instagram(destino, epigrafe, video)
     except Exception as e:  # noqa: BLE001
         pendiente["intentos"] = pendiente.get("intentos", 0) + 1
+        if video is not None and pendiente["intentos"] >= MAX_INTENTOS - 1:
+            pendiente["sin_video"] = True
         if pendiente["intentos"] >= MAX_INTENTOS:
             pendiente["estado"] = "error"
         pendiente["ultimo_error"] = str(e)[:300]
@@ -388,6 +417,15 @@ def verificar() -> None:
         _log(f"Cupo de publicación: {json.dumps(limite.get('data', limite), ensure_ascii=False)}")
     except RuntimeError as e:
         _log(f"(no se pudo leer el cupo: {e})")
+    cola = _leer_cola()
+    con_video = next((e for e in cola["entradas"] if e["estado"] == "pendiente" and e.get("video")), None)
+    if con_video is not None:
+        # Arma el carrusel de la próxima con video hasta dejarlo listo, sin publicarlo (el contenedor vence solo).
+        portada = RAIZ / "imagenes" / "posts" / f"{con_video['id']}.jpg"
+        if not portada.exists():
+            portada = RAIZ / "imagenes" / "posts" / "bienvenida-0.jpg"
+        _, _, contenedor = preparar_en_instagram(portada, "prueba", RAIZ / con_video["video"])
+        _log(f"Carrusel con video OK ({con_video['id']}): contenedor {contenedor} listo, no se publicó")
     if os.environ.get("GH_PAT"):
         ultimo = _github(f"/repos/{JUEGO_REPO}/commits?sha={JUEGO_RAMA}&per_page=1")[0]
         _log(f"GitHub OK: último commit del juego {ultimo['sha'][:10]} ({ultimo['commit']['committer']['date']})")

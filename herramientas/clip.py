@@ -1,0 +1,159 @@
+"""Arma el video de un post (la segunda lámina del carrusel) con los cuadros que graba el juego.
+
+El juego graba la toma cuadro por cuadro con la prueba `clips_redes` (repo del juego, `herramientas/pruebas/`), a
+1080x1350 y 30 cuadros por segundo. Este script la junta en un MP4 listo para Instagram:
+
+  - el título de la novedad arriba, que aparece y se va en los primeros segundos;
+  - de fondo, un pedazo de "Brisa del Mundo" (la música del juego; el pedazo depende del post, así no suenan todos
+    igual), con fundido al entrar y al salir;
+  - al final, un cierre de 2 s con el emblema y la web, que entra con un fundido;
+  - H.264 + AAC, 30 fps, faststart (lo que pide la API de Instagram para un video de carrusel).
+
+Corre en la PC, no en GitHub: la música queda solo en el repo del juego (este repo es público). Usa el ffmpeg del
+sistema o, si no hay, el de `pip install imageio-ffmpeg`.
+
+  python herramientas/clip.py lote1-06 bestiario
+  python herramientas/clip.py lote1-06 bestiario --cuadros D:/otra/carpeta --sin-cola
+
+Deja `videos/<id>.mp4` y anota el video en la entrada de la cola (`cola/cola.json`). Después: commit y push.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFilter
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import tarjeta  # noqa: E402
+
+RAIZ = Path(__file__).resolve().parent.parent
+COLA = RAIZ / "cola" / "cola.json"
+FPS = 30
+CIERRE = 2.0          # segundos del cierre con el emblema
+FUNDIDO = 0.5         # cruce entre la toma y el cierre
+TITULO_HASTA = 3.2    # el título se va a los ~3 s
+MUSICA = Path(os.environ.get("WOP_MUSICA", RAIZ.parent / "world-of-pieces-githud" / "sonidos" / "musica"
+                             / "brisa_del_mundo.mp3"))
+CUADROS = Path(os.environ.get("TEMP", tempfile.gettempdir())) / "wop_headless" / "capturas" / "clips"
+
+
+def _ffmpeg() -> str:
+    if shutil.which("ffmpeg"):
+        return "ffmpeg"
+    try:
+        import imageio_ffmpeg
+    except ImportError:
+        sys.exit("Falta ffmpeg: instalalo o corré  pip install imageio-ffmpeg")
+    return imageio_ffmpeg.get_ffmpeg_exe()
+
+
+def _duracion(ffmpeg: str, archivo: Path) -> float:
+    salida = subprocess.run([ffmpeg, "-hide_banner", "-i", str(archivo)], capture_output=True, text=True).stderr
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", salida)
+    return int(m[1]) * 3600 + int(m[2]) * 60 + float(m[3]) if m else 0.0
+
+
+def _titulo(texto: str, destino: Path) -> None:
+    """El título en dorado sobre una franja oscura difuminada arriba (PNG transparente del tamaño del video)."""
+    lienzo = Image.new("RGBA", (tarjeta.ANCHO, tarjeta.ALTO), (0, 0, 0, 0))
+    franja = Image.new("RGBA", (tarjeta.ANCHO, tarjeta.ALTO), (0, 0, 0, 0))
+    ImageDraw.Draw(franja).rectangle((0, 0, tarjeta.ANCHO, 250), fill=(5, 12, 22, 170))
+    lienzo.alpha_composite(franja.filter(ImageFilter.GaussianBlur(40)))
+    fuente, lineas = tarjeta._titulo_que_entre(texto, tarjeta.ANCHO - 2 * tarjeta.MARGEN, 2)
+    y = 70
+    for linea in lineas:
+        tarjeta._texto_oro(lienzo, (tarjeta.ANCHO // 2, y), linea, fuente, borde=4)
+        y += int(fuente.size * 1.1)
+    lienzo.save(destino)
+
+
+def _cierre(semilla: int, destino: Path) -> None:
+    """El cierre: fondo de la tarjeta, el emblema y la web."""
+    lienzo = tarjeta._fondo(semilla)
+    emblema = Image.open(tarjeta.RECURSOS / "emblema.png").convert("RGBA").resize((560, 560), Image.LANCZOS)
+    halo = Image.new("RGBA", lienzo.size, (0, 0, 0, 0))
+    ImageDraw.Draw(halo).ellipse((tarjeta.ANCHO // 2 - 340, 230, tarjeta.ANCHO // 2 + 340, 910),
+                                 fill=tarjeta.ORO + (45,))
+    lienzo.alpha_composite(halo.filter(ImageFilter.GaussianBlur(70)))
+    lienzo.alpha_composite(emblema, ((tarjeta.ANCHO - 560) // 2, 290))
+    tarjeta._texto_oro(lienzo, (tarjeta.ANCHO // 2, 940), "WORLD OF PIECES", tarjeta._fuente("Cinzel-Black.ttf", 70))
+    ImageDraw.Draw(lienzo).text((tarjeta.ANCHO // 2, 1060), tarjeta.WEB, font=tarjeta._fuente("AlegreyaSans-Medium.ttf", 40),
+                                fill=tarjeta.ORO, anchor="ma")
+    lienzo.convert("RGB").save(destino, quality=95)
+
+
+def armar(ident: str, nombre: str, cuadros: Path, titulo: str) -> Path:
+    ffmpeg = _ffmpeg()
+    lista = sorted(cuadros.glob("*.jpg"))
+    if len(lista) < FPS * 3:
+        sys.exit(f"Muy pocos cuadros en {cuadros} ({len(lista)}): grabá la toma con la prueba clips_redes")
+    toma = len(lista) / FPS
+    total = toma + CIERRE - FUNDIDO
+    semilla = int(hashlib.sha1(ident.encode()).hexdigest()[:8], 16)
+    largo_musica = _duracion(ffmpeg, MUSICA)
+    if largo_musica <= 0:
+        sys.exit(f"No encuentro la música: {MUSICA}")
+    # Un pedazo distinto por post, siempre empezando en un segundo redondo y con lugar para todo el video.
+    desde = (semilla % max(1, int(largo_musica - total - 1))) if largo_musica > total + 1 else 0
+    destino = RAIZ / "videos" / f"{ident}.mp4"
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        png_titulo, jpg_cierre = Path(tmp) / "titulo.png", Path(tmp) / "cierre.jpg"
+        _titulo(titulo, png_titulo)
+        _cierre(semilla, jpg_cierre)
+        filtro = (
+            f"[1:v]format=rgba,fade=t=in:st=0.3:d=0.5:alpha=1,fade=t=out:st={TITULO_HASTA - 0.6}:d=0.6:alpha=1[t];"
+            f"[0:v][t]overlay=0:0:shortest=1,format=yuv420p,setsar=1[v0];"
+            f"[2:v]format=yuv420p,setsar=1,fps={FPS}[v1];"
+            f"[v0][v1]xfade=transition=fade:duration={FUNDIDO}:offset={toma - FUNDIDO:.3f},scale=out_range=tv,format=yuv420p[v];"
+            f"[3:a]afade=t=in:st=0:d=0.6,afade=t=out:st={total - 1.4:.3f}:d=1.4[a]"
+        )
+        cmd = [
+            ffmpeg, "-hide_banner", "-loglevel", "error", "-y",
+            "-framerate", str(FPS), "-i", str(cuadros / "%04d.jpg"),
+            "-loop", "1", "-framerate", str(FPS), "-t", f"{toma:.3f}", "-i", str(png_titulo),
+            "-loop", "1", "-framerate", str(FPS), "-t", f"{CIERRE:.3f}", "-i", str(jpg_cierre),
+            "-ss", str(desde), "-t", f"{total:.3f}", "-i", str(MUSICA),
+            "-filter_complex", filtro, "-map", "[v]", "-map", "[a]",
+            "-c:v", "libx264", "-preset", "slow", "-crf", "23", "-profile:v", "high", "-pix_fmt", "yuv420p", "-color_range", "tv",
+            "-r", str(FPS), "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-ac", "2",
+            "-movflags", "+faststart", "-t", f"{total:.3f}", str(destino),
+        ]
+        subprocess.run(cmd, check=True)
+    mb = destino.stat().st_size / 1e6
+    print(f"{destino.relative_to(RAIZ)}: {total:.1f} s, {mb:.1f} MB (toma '{nombre}', música desde {desde} s)")
+    if mb > 15:
+        print("  ojo: pesa mucho para un post; acortá la toma")
+    return destino
+
+
+def main() -> None:
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("id", help="la entrada de la cola (ej. lote1-06)")
+    p.add_argument("nombre", help="el nombre de la toma en clips_redes (ej. bestiario)")
+    p.add_argument("--cuadros", type=Path, help="carpeta de los cuadros (por defecto la de clips_redes)")
+    p.add_argument("--titulo", help="título sobre el video (por defecto el de la entrada de la cola)")
+    p.add_argument("--sin-cola", action="store_true", help="no anotar el video en la cola")
+    a = p.parse_args()
+    cola = json.loads(COLA.read_text(encoding="utf-8"))
+    entrada = next((e for e in cola["entradas"] if e["id"] == a.id), None)
+    if entrada is None and not a.titulo:
+        sys.exit(f"No hay una entrada '{a.id}' en la cola (o pasá --titulo)")
+    destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, a.titulo or entrada["titulo"])
+    if entrada is not None and not a.sin_cola:
+        entrada["video"] = str(destino.relative_to(RAIZ)).replace("\\", "/")
+        COLA.write_text(json.dumps(cola, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"  anotado en la cola: {a.id}")
+
+
+if __name__ == "__main__":
+    main()
