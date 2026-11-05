@@ -55,8 +55,11 @@
       "titulo": "El Asesino: tres caminos en las sombras",
       "texto": "Asesinato, Combate y Espectro: 27 habilidades entre sigilo, venenos en el arma, ataques por la espalda y ejecuciones. Te enseña la maestra Nyssa, en las ruinas.",
       "imagen": "imagenes/fuente/lote1-03.jpg",
-      "estado": "pendiente",
-      "intentos": 0
+      "estado": "publicado",
+      "intentos": 0,
+      "publicado": "2026-11-05T02:45:17+00:00",
+      "ig_id": "17915112675558274",
+      "enlace": "https://www.instagram.com/p/DfV_TC5F-NL/"
     },
     {
       "id": "lote1-04",
