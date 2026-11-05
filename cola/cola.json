@@ -67,8 +67,11 @@
       "titulo": "Tres islas nuevas",
       "texto": "El Archipiélago de Trébol (niveles 5 a 12), la Isla de Lumen con la ciudad élfica de Nelulen en las copas de los árboles (20 a 30) y la Costa de las Tormentas (35 a 45). Y las islas de siempre dejaron de ser redondas: penínsulas, cabos, bahías e islotes que se cruzan caminando.",
       "imagen": "imagenes/fuente/lote1-04.jpg",
-      "estado": "pendiente",
-      "intentos": 0
+      "estado": "publicado",
+      "intentos": 0,
+      "publicado": "2026-11-05T07:52:46+00:00",
+      "ig_id": "18150521014563426",
+      "enlace": "https://www.instagram.com/p/DfWifv8jJTs/"
     },
     {
       "id": "lote1-05",
