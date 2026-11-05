@@ -1,5 +1,5 @@
 {
-  "ultimo_commit": "7c3366ea0dff9bd118c0b82578080bde3b5ffab0",
+  "ultimo_commit": "abb5ef0ab19d5bde624b2ab34daa5b25e0ec7296",
   "entradas": [
     {
       "id": "bienvenida-0",
@@ -293,6 +293,213 @@
       "titulo": "Más fluido en PCs modestas",
       "texto": "Nueva opción de carga de CPU aparte de la calidad gráfica, física nueva para que las peleas grandes no traben el juego, y lo lejano de las islas se duerme. Si tu PC es modesta, vas a notar la diferencia.",
       "imagen": "imagenes/fuente/lote1-28.jpg",
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "c9b70d9d23-0",
+      "fecha": "2026-11-04",
+      "titulo": "Fragmentos de dios",
+      "texto": "Dicen que la guerra entre los dioses dejó el mundo en pedazos. Ahora sus fragmentos caen muy de vez en cuando en cualquier rincón del mundo: absorbé uno y ganás su habilidad, su pasiva... y su debilidad. Son 19 dioses, y dos no caben en un mismo cuerpo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "a065747cb0-0",
+      "fecha": "2026-11-04",
+      "titulo": "Llegaron los Ecos: Newton, Galileo, Maradona, Barbanegra y muchos más",
+      "texto": "Más de cuarenta personajes de la historia aparecieron en las islas, cada uno donde le corresponde: Newton bajo los manzanos, Galileo mirando el cielo de noche, Barbanegra en una cala de naufragios. Charlá con ellos, ayudalos con sus misiones y llevate recompensas únicas, como el catalejo de Galileo, el espejo ardiente de Arquímedes o partituras de Mozart y Beethoven.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "9ed5cecb04-0",
+      "fecha": "2026-11-04",
+      "titulo": "Las islas ahora son el doble de grandes",
+      "texto": "Todas las islas crecieron: más campo, más bosque y costas llenas de cabos, calas y penínsulas, con los lugares más separados para explorar. Las ciudades siguen igual de vivas, ahora rodeadas de mucho más mundo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "3d6da0b0ff-0",
+      "fecha": "2026-11-04",
+      "titulo": "Dioses rivales que se huelen de lejos",
+      "texto": "Si un portador de un dios rival anda cerca, tu fragmento despierta: tu habilidad y tu pasiva pegan un 25 % más y te envuelve un aura del color de tu dios. Y cuando otro fragmento de tu dios anda cerca, vas a sentir su presencia.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "8dda236273-0",
+      "fecha": "2026-11-04",
+      "titulo": "Jueguitos en cualquier lado",
+      "texto": "Con la pelota que te da Maradona podés hacer jueguitos donde quieras. Es un oficio secreto: subís de nivel, a los 50 usás la rodilla, a los 100 la cabeza, y a los mil aprendés la vuelta al mundo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "1341c2477c-0",
+      "fecha": "2026-11-04",
+      "titulo": "La noche estrellada en tu barco",
+      "texto": "Van Gogh te regala su cuadro para colgar en tu barco, Gardel te enseña a bailar el tango y Ebay se anima a bajar con vos a las Catacumbas, peleando a tu lado.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "285340f883-0",
+      "fecha": "2026-11-04",
+      "titulo": "Velas de la Santa María y botines dorados",
+      "texto": "Colón te regala las velas de la Santa María, Barbanegra su mascarón para tu proa, Messi sus botines dorados y Frida una corona de flores. Y Musashi te deja sus dos espadas.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "9d78c6a1d3-0",
+      "fecha": "2026-11-04",
+      "titulo": "La mula de San Martín y Bucéfalo",
+      "texto": "San Martín ahora te espera montado en su mula, y la mula que te regala tiene su propio modelo. Alejandro te da a Bucéfalo, negro con la estrella blanca. Y Fokas te deja su sillón-trono para el barco.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "17ff3d7ddb-0",
+      "fecha": "2026-11-04",
+      "titulo": "Especias de la ruta de la seda",
+      "texto": "Marco Polo trae pimienta, canela, clavo, nuez moscada y azafrán, con nuevas comidas que te dan mejores bufos. Y ahora cualquier clase puede invocar su cría de mascota por cinco minutos, como el pinzón que te regala Darwin.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "09ab022767-0",
+      "fecha": "2026-11-04",
+      "titulo": "El Yunque se partió en J",
+      "texto": "La isla helada ahora tiene forma de J: Forjahonda en una punta, Puerto Escarcha en la otra y la cordillera en el medio. Podés cruzar por el paso, con San Martín y un dragón esperando arriba, o en el bote de la bahía.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "35051755f0-0",
+      "fecha": "2026-11-04",
+      "titulo": "Tu cuenta de World of Pieces",
+      "texto": "Ahora podés crear tu cuenta del juego con email y contraseña (o entrar directo con Steam) y tus personajes quedan guardados en la nube. ¿Preferís no registrarte? También se puede jugar sin cuenta.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "ead0711a71-0",
+      "fecha": "2026-11-04",
+      "titulo": "La Isla Perdida de los dinosaurios",
+      "texto": "Al suroeste, detrás de un muro de niebla que da vuelta a cualquier barco, hay una isla que no está en los mapas: raptores en manada, pteranodones, cuellos largos y un Rey Tirano. Armá la brújula con el viejo Anselmo, encontrá a los náufragos del Campamento Naufragio y domá tu propio dinosaurio corredor.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "285b23b4be-0",
+      "fecha": "2026-11-04",
+      "titulo": "El mar cobró vida",
+      "texto": "Ahora el mar está lleno de vida: cardúmenes que se abren cuando nadás cerca, delfines que saltan al lado de tu barco, ballenas que soplan a lo lejos y medusas que brillan de noche. En la costa hay bosques de algas, corales, gaviotas sobre los muelles y cangrejos que se escapan de costado.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "c694f86ec3-0",
+      "fecha": "2026-11-04",
+      "titulo": "Una isla en las nubes",
+      "texto": "Desde el puerto de Ventoria sale un barco con alas y globos que sube en espiral por una columna de viento hasta Puerto Cirro, una isla flotante a 450 metros sobre el mar. Ahí viven los Aeronautas, una ciudad de inventores en guerra fría con los gólems de nube que reclaman la isla. Puentes colgantes, corrientes de viento que te llevan de un islote a otro y, si te caés, el viento te devuelve al muelle.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "06842320c9-0",
+      "fecha": "2026-11-04",
+      "titulo": "Hondabrasa, la ciudad bajo el volcán",
+      "texto": "En el cráter de las Ascuas se abrió una grieta que baja en espiral hasta un lago de magma. Abajo viven los Ceniceños, de piel de ceniza y pelo de llama: ganate a su Consejo y vas a poder crear personajes de su raza.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "0511e6de49-0",
+      "fecha": "2026-11-05",
+      "titulo": "Tus personajes en cualquier computadora",
+      "texto": "Entrá con tu cuenta desde otra PC y ahí están tus personajes, con su clan, su correo y sus subastas. Si compartís la computadora, cada cuenta ve solo los suyos.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "5a4dfca000-0",
+      "fecha": "2026-11-05",
+      "titulo": "Una bruma que envuelve el horizonte",
+      "texto": "Lo lejano ahora se pierde en una bruma gris, y por las puertas abiertas se ve lo que hay adentro. En Ventoria ya no desaparece el palacio al mirarlo por las puertas de la muralla.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "3d5cac1f03-0",
+      "fecha": "2026-11-05",
+      "titulo": "Nácara, la ciudad bajo el mar",
+      "texto": "En un islote perdido entre Trébol y Sahrim, el viejo Caronte cuida una campana de buceo que baja despacio, durante un minuto entero, hasta Nácara: una ciudad de nácar y coral bajo cúpulas de aire, donde los descendientes de una flota hundida esperan que su rey elija heredero. Afuera de las burbujas se nada entre kelp, morenas y un pez enorme que caza con su propia luz.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "9b7a13ed98-0",
+      "fecha": "2026-11-05",
+      "titulo": "El Confín Helado, la isla de nieve",
+      "texto": "Al norte de todo hay una isla blanca. Albacumbre, la ciudad de humanos y enanos, está tallada adentro de una montaña, con mil columnas y una forja que nunca se apaga. Afuera esperan mamuts, trolls de escarcha y un dragón de hielo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "c483a08a03-0",
+      "fecha": "2026-11-05",
+      "titulo": "Ciudades más vivas a la distancia",
+      "texto": "La gente de los pueblos ahora se ve desde mucho más lejos, y en alta mar el horizonte se abre: las islas aparecen entre la bruma antes de llegar.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "08aff6c108-0",
+      "fecha": "2026-11-05",
+      "titulo": "El Desafío del Coliseo",
+      "texto": "En la arena de Ventoria encendé el brasero y aguantá oleada tras oleada de gladiadores, legionarios y aventureros rivales. Cada cinco oleadas entra un campeón, y tu mejor marca queda en tus logros.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "6dcf076e4f-0",
+      "fecha": "2026-11-05",
+      "titulo": "Albacumbre, la ciudad bajo la montaña",
+      "texto": "Cruzás la Gran Puerta, caminás entre las estatuas de los reyes y de golpe se abre la montaña: una ciudad entera bajo columnas de piedra, un lago que brilla y un rayo de luz que cae desde la cima. El Confín Helado es la isla más grande del mundo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "b81dd21764-0",
+      "fecha": "2026-11-05",
+      "titulo": "Una posada de tres pisos en el Pueblo del Ángel",
+      "texto": "Las casas, el banco y la posada del Pueblo del Ángel ahora son mucho más grandes. La posada suma un piso de arriba con habitaciones y una bodega llena de toneles, y el posadero te atiende detrás de la barra.",
+      "imagen": null,
       "estado": "pendiente",
       "intentos": 0
     }
