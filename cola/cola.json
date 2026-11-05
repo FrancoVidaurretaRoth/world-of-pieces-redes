@@ -92,9 +92,12 @@
       "titulo": "Bestiario: 20 criaturas nuevas",
       "texto": "Arañas de corteza, fuegos fatuos, ents corrompidos, osos, murciélagos, serpientes de arena, buitres, cocodrilos, sirenas, tritones y más. Cada una con sus habilidades, su botín y su voz, repartidas por todas las islas.",
       "imagen": "imagenes/fuente/lote1-06.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "video": "videos/lote1-06.mp4"
+      "video": "videos/lote1-06.mp4",
+      "publicado": "2026-11-05T17:45:34+00:00",
+      "ig_id": "18415795045080133",
+      "enlace": "https://www.instagram.com/p/DfXmVQQHETE/"
     },
     {
       "id": "lote1-07",
