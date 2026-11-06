@@ -105,9 +105,12 @@
       "titulo": "Ciudades con vida",
       "texto": "La gente duerme de noche y sale de día, las puertas se abren cuando te acercás y los guardias hacen su ronda. Hay humo en las chimeneas, perros, chicos jugando, gatos en las plazas, talleres que suenan y charla en la posada.",
       "imagen": "imagenes/fuente/lote1-07.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "video": "videos/lote1-07.mp4"
+      "video": "videos/lote1-07.mp4",
+      "publicado": "2026-11-06T00:57:09+00:00",
+      "ig_id": "18152866411558721",
+      "enlace": "https://www.instagram.com/p/DfYXuWVDxJE/"
     },
     {
       "id": "lote1-08",
