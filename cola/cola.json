@@ -118,9 +118,12 @@
       "titulo": "El Cazador y su mascota",
       "texto": "28 habilidades en tres árboles, trampas, aceite que se prende fuego y una mascota que pelea a tu lado y obedece desde su propia barra.",
       "imagen": "imagenes/fuente/lote1-08.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "video": "videos/lote1-08.mp4"
+      "video": "videos/lote1-08.mp4",
+      "publicado": "2026-11-06T02:49:00+00:00",
+      "ig_id": "18646247785006825",
+      "enlace": "https://www.instagram.com/p/DfYkhsDIOC3/"
     },
     {
       "id": "lote1-09",
