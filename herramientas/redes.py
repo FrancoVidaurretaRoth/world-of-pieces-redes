@@ -238,6 +238,10 @@ def sincronizar(seco: bool) -> None:
             entrada = {"id": ident, "fecha": fecha, "titulo": n["titulo"], "texto": n["texto"],
                        "imagen": imagen, "estado": "pendiente", "intentos": 0}
             entrada["categoria"] = categoria_de({**entrada, "categoria": n.get("categoria")})
+            # El video se puede armar antes de que llegue el commit (`clip.py <id> <toma> --titulo … --sin-cola`):
+            # si ya está, queda anotado.
+            if (RAIZ / "videos" / f"{ident}.mp4").exists():
+                entrada["video"] = f"videos/{ident}.mp4"
             cola["entradas"].append(entrada)
             _log(f"  + {ident}: {n['titulo']}")
     if commits:

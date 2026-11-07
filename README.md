@@ -30,6 +30,10 @@ barcos, objetos, oficios, dioses, eventos, interfaz, multijugador, cuenta, rendi
 deducirla están en `CATEGORIAS` y `PISTAS_CATEGORIA` de `redes.py`) va como un sello arriba a la izquierda de la
 tarjeta y como una línea del epígrafe ("Categoría: Islas"). Queda anotada en la entrada de la cola (`categoria`).
 
+**Video antes que el post**: si el commit todavía no está pusheado (no hay entrada en la cola), el video se arma igual
+con el id que va a tener (`<sha de 10>-0`): `python herramientas/clip.py 4e3b0eb75c-0 puntinazo --titulo "…" --sin-cola`.
+Al sincronizar, la entrada nueva lo toma sola.
+
 **Ningún post sale sin su video**: el que todavía no lo tiene espera en la cola y sale el siguiente que sí (el log
 del workflow los nombra: "Esperando su video"). La única excepción: si Instagram rechazó el video dos veces, el tercer
 intento sale con la portada sola.
