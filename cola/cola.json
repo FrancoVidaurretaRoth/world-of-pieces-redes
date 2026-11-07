@@ -184,9 +184,12 @@
       "titulo": "El druida invoca al bosque",
       "texto": "Desde el nivel 14, el druida llama a los Espíritus del Bosque: dos arbolitos que pelean a su lado y se deshacen en un estallido.",
       "imagen": "imagenes/fuente/lote1-13.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "video": "videos/lote1-13.mp4"
+      "video": "videos/lote1-13.mp4",
+      "publicado": "2026-11-07T02:23:46+00:00",
+      "ig_id": "18134439670684172",
+      "enlace": "https://www.instagram.com/p/DfbGbG8jYmy/"
     },
     {
       "id": "lote1-14",
