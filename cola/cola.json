@@ -210,8 +210,11 @@
       "titulo": "Diálogos con opciones",
       "texto": "Hablar con los personajes ahora tiene respuestas para elegir, y cada misión se cuenta con la voz de quien te la da. Además, una columna de luz te marca el objetivo y podés compartir misiones con tu grupo.",
       "imagen": "imagenes/fuente/lote1-15.jpg",
-      "estado": "pendiente",
-      "intentos": 0
+      "estado": "publicado",
+      "intentos": 0,
+      "publicado": "2026-11-07T15:07:35+00:00",
+      "ig_id": "17865897123692390",
+      "enlace": "https://www.instagram.com/p/Dfcd1NGIJGm/"
     },
     {
       "id": "lote1-16",
