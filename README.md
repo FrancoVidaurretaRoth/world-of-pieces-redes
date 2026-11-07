@@ -11,6 +11,7 @@ gratis: GitHub Actions en un repo público (minutos sin límite) + la API de Ins
    Publicar: Ventoria se llena de vida
    Publicar-texto: Los ciudadanos de la capital ahora tienen rutina: abren sus tiendas, charlan en la plaza y vuelven a casa al anochecer.
    Publicar-imagen: docs/capturas/ventoria.png      (opcional: una captura que esté en el repo del juego)
+   Publicar-categoria: ciudades                     (opcional: si falta, se deduce del título y el texto)
    ```
    Los commits sin `Publicar:` no se publican nunca. Un commit puede traer varias novedades.
 2. **Cinco veces por día** (12:07, 14:37, 17:07, 19:37 y 22:07, hora argentina) el workflow `Publicar novedad` lee los
@@ -23,6 +24,15 @@ gratis: GitHub Actions en un repo público (minutos sin límite) + la API de Ins
 Las tarjetas (1080×1350) salen de `herramientas/tarjeta.py` con el emblema del logo, Cinzel y el oro del juego. Con
 `Publicar-imagen` la captura va arriba, enmarcada. Las imágenes publicadas quedan en `imagenes/posts/` (Instagram
 las baja de acá, por eso el repo es público).
+
+**La categoría** (mapa, islas, ciudades, terreno, npcs, misiones, enemigos, combate, clases, personajes, monturas,
+barcos, objetos, oficios, dioses, eventos, interfaz, multijugador, cuenta, rendimiento; la lista y las pistas para
+deducirla están en `CATEGORIAS` y `PISTAS_CATEGORIA` de `redes.py`) va como un sello arriba a la izquierda de la
+tarjeta y como una línea del epígrafe ("Categoría: Islas"). Queda anotada en la entrada de la cola (`categoria`).
+
+**Ningún post sale sin su video**: el que todavía no lo tiene espera en la cola y sale el siguiente que sí (el log
+del workflow los nombra: "Esperando su video"). La única excepción: si Instagram rechazó el video dos veces, el tercer
+intento sale con la portada sola.
 
 Por seguridad, cualquier frase que nombre a la IA se saca sola antes de publicar.
 

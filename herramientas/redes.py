@@ -50,6 +50,51 @@ REPO_PUBLICO = os.environ.get("GITHUB_REPOSITORY", os.environ.get("REPO_PUBLICO"
 RAMA_PUBLICA = os.environ.get("GITHUB_REF_NAME", "main")
 MAX_INTENTOS = 3
 HASHTAGS = "#worldofpieces #indiegame #indiedev #gamedev #rpg #mmorpg #godotengine #fantasy"
+# La categoría de cada post (el sello de la portada y una línea del epígrafe). Un commit la elige con
+# `Publicar-categoria: <clave>`; si no, se deduce del título y el texto con estas palabras (la primera que aparezca,
+# en este orden). Si nada coincide: "novedades".
+CATEGORIAS = {
+    "mapa": "Mapa", "islas": "Islas", "ciudades": "Ciudades", "terreno": "Terreno", "npcs": "NPCs",
+    "misiones": "Misiones", "enemigos": "Enemigos", "combate": "Combate", "clases": "Clases",
+    "personajes": "Personajes", "monturas": "Monturas", "barcos": "Barcos", "objetos": "Objetos",
+    "oficios": "Oficios", "dioses": "Dioses", "eventos": "Eventos", "interfaz": "Interfaz",
+    "multijugador": "Multijugador", "cuenta": "Cuenta", "rendimiento": "Rendimiento", "novedades": "Novedades",
+}
+PISTAS_CATEGORIA = [
+    ("monturas", r"montura|caballo|galop|bucéfalo|mula"),
+    ("barcos", r"barco|velas?\b|astillero|navega|proa"),
+    ("dioses", r"fragmento|\bdios"),
+    ("mapa", r"\bmapa\b|brújula"),
+    ("ciudades", r"ciudad|pueblo|posada|capital"),
+    ("islas", r"\bislas?\b"),
+    ("terreno", r"terreno|bruma|clima|nieve|lluvia|bosque|costa|montaña"),
+    ("npcs", r"\bnpcs?\b|ecos?\b|ciudadanos|posadero|mercader"),
+    ("misiones", r"misi[oó]n|misiones|quest|diálogo"),
+    ("enemigos", r"enemigo|jefe|bestia|monstruo|raptor|yeti|kraken|manada"),
+    ("clases", r"clase|talento|druida|cazador|asesino|mago|guerrero|habilidad"),
+    ("combate", r"combate|golpe|daño|pvp|duelo|coliseo|arena"),
+    ("objetos", r"\barmas?\b|objeto|botín|item|espada|poción|especias"),
+    ("oficios", r"oficio|forja|cocina|jueguitos|pesca|recolec"),
+    ("personajes", r"emote|gesto|raza|apariencia|personaje"),
+    ("multijugador", r"grupo|multijugador|amigos|clan|steam"),
+    ("cuenta", r"cuenta|sesión|nube"),
+    ("interfaz", r"interfaz|ventana|\bhud\b|menú|mando|inglés|idioma"),
+    ("rendimiento", r"fluido|rendimiento|\bfps\b"),
+    ("eventos", r"evento"),
+]
+
+
+def categoria_de(entrada: dict) -> str:
+    """La clave de la categoría de una entrada de la cola (la que trae, o la deducida)."""
+    if entrada.get("categoria") in CATEGORIAS:
+        return entrada["categoria"]
+    for texto in (entrada.get("titulo", ""), entrada.get("texto", "")):   # (el título manda)
+        for clave, patron in PISTAS_CATEGORIA:
+            if re.search(patron, texto.lower()):
+                return clave
+    return "novedades"
+
+
 # Lo que nunca puede salir publicado aunque alguien lo escriba en un commit.
 PROHIBIDO = re.compile(r"\b(claude|anthropic|chatgpt|openai|\bIA\b|inteligencia artificial)\b", re.IGNORECASE)
 
@@ -124,7 +169,7 @@ def extraer_marcas(mensaje: str) -> list[dict]:
     """Saca las novedades marcadas de un mensaje de commit. Puede haber más de una por commit."""
     novedades: list[dict] = []
     for linea in mensaje.splitlines():
-        m = re.match(r"^\s*Publicar(-texto|-imagen)?\s*:\s*(.+?)\s*$", linea, re.IGNORECASE)
+        m = re.match(r"^\s*Publicar(-texto|-imagen|-categoria|-categoría)?\s*:\s*(.+?)\s*$", linea, re.IGNORECASE)
         if not m:
             continue
         clave, valor = (m.group(1) or "").lower(), m.group(2)
@@ -134,6 +179,10 @@ def extraer_marcas(mensaje: str) -> list[dict]:
             novedades[-1]["texto"] = (novedades[-1]["texto"] + " " + _limpio(valor)).strip()
         elif novedades and clave == "-imagen":
             novedades[-1]["imagen_juego"] = valor
+        elif novedades and clave.startswith("-categor"):
+            c = valor.strip().lower().replace("npc", "npcs").replace("npcss", "npcs")
+            if c in CATEGORIAS:
+                novedades[-1]["categoria"] = c
     return [n for n in novedades if n["titulo"]]
 
 
@@ -186,8 +235,10 @@ def sincronizar(seco: bool) -> None:
                     imagen = str(destino.relative_to(RAIZ)).replace("\\", "/")
                 except RuntimeError as e:
                     _log(f"  sin imagen para {ident}: {e}")
-            cola["entradas"].append({"id": ident, "fecha": fecha, "titulo": n["titulo"], "texto": n["texto"],
-                                     "imagen": imagen, "estado": "pendiente", "intentos": 0})
+            entrada = {"id": ident, "fecha": fecha, "titulo": n["titulo"], "texto": n["texto"],
+                       "imagen": imagen, "estado": "pendiente", "intentos": 0}
+            entrada["categoria"] = categoria_de({**entrada, "categoria": n.get("categoria")})
+            cola["entradas"].append(entrada)
             _log(f"  + {ident}: {n['titulo']}")
     if commits:
         cola["ultimo_commit"] = commits[0]["sha"]
@@ -275,8 +326,10 @@ def publicar_en_instagram(imagen: Path, texto: str, video: Path | None = None) -
     return {"ig_id": media, "enlace": enlace}
 
 
-def _epigrafe(titulo: str, texto: str) -> str:
+def _epigrafe(titulo: str, texto: str, categoria: str = "") -> str:
     partes = [titulo]
+    if categoria:
+        partes.append(f"Categoría: {CATEGORIAS.get(categoria, categoria)}")
     if texto:
         partes.append(texto)
     partes.append("Todas las novedades en worldofpieces.pages.dev (link en la bio).")
@@ -302,15 +355,24 @@ def publicar(seco: bool) -> None:
     if sum(1 for h in hechos if h.date() == ahora.date()) >= MAX_POR_DIA:
         _log(f"Ya salieron {MAX_POR_DIA} posts hoy: este turno no publica.")
         return
-    pendiente = next((e for e in cola["entradas"] if e["estado"] == "pendiente"), None)
+    # Cada post sale con su video (la segunda lámina del carrusel, `clip.py`): los que todavía no lo tienen esperan su
+    # turno y sale el siguiente que sí (el que lo perdió porque Instagram lo rechazó dos veces sale con la portada sola).
+    def _listo(e: dict) -> bool:
+        return e.get("sin_video") or (bool(e.get("video")) and (RAIZ / e["video"]).exists())
+    pendientes = [e for e in cola["entradas"] if e["estado"] == "pendiente"]
+    sin_video = [e["id"] for e in pendientes if not _listo(e)]
+    if sin_video:
+        _log(f"Esperando su video: {', '.join(sin_video)}")
+    pendiente = next((e for e in pendientes if _listo(e)), None)
     if pendiente is None:
-        _log("Nada en la cola.")
+        _log("Nada listo en la cola.")
         return
     imagen_fuente = RAIZ / pendiente["imagen"] if pendiente.get("imagen") else None
     destino = RAIZ / "imagenes" / "posts" / f"{pendiente['id']}.jpg"
     tarjeta.tarjeta_novedad(pendiente["titulo"], pendiente["texto"], date.fromisoformat(pendiente["fecha"]),
-                            destino, imagen_fuente, pendiente.get("etiqueta", "NOVEDAD"))
-    epigrafe = _epigrafe(pendiente["titulo"], pendiente["texto"])
+                            destino, imagen_fuente, pendiente.get("etiqueta", "NOVEDAD"),
+                            CATEGORIAS[categoria_de(pendiente)])
+    epigrafe = _epigrafe(pendiente["titulo"], pendiente["texto"], categoria_de(pendiente))
     # El video (la segunda lámina del carrusel) lo arma `clip.py` en la PC y queda anotado en la entrada. Si
     # Instagram lo rechazó dos veces, el tercer intento sale con la portada sola.
     video = RAIZ / pendiente["video"] if pendiente.get("video") and not pendiente.get("sin_video") else None

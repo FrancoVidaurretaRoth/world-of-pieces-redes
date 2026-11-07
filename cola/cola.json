@@ -237,7 +237,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-17.mp4"
+      "video": "videos/lote1-17.mp4",
+      "categoria": "clases"
     },
     {
       "id": "lote1-18",
@@ -247,7 +248,8 @@
       "imagen": "imagenes/fuente/lote1-18.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-18.mp4"
+      "video": "videos/lote1-18.mp4",
+      "categoria": "ciudades"
     },
     {
       "id": "lote1-19",
@@ -257,7 +259,8 @@
       "imagen": "imagenes/fuente/lote1-19.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-19.mp4"
+      "video": "videos/lote1-19.mp4",
+      "categoria": "enemigos"
     },
     {
       "id": "lote1-20",
@@ -267,7 +270,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-20.mp4"
+      "video": "videos/lote1-20.mp4",
+      "categoria": "multijugador"
     },
     {
       "id": "lote1-21",
@@ -277,7 +281,8 @@
       "imagen": "imagenes/fuente/lote1-21.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-21.mp4"
+      "video": "videos/lote1-21.mp4",
+      "categoria": "objetos"
     },
     {
       "id": "lote1-22",
@@ -287,7 +292,8 @@
       "imagen": "imagenes/fuente/lote1-22.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-22.mp4"
+      "video": "videos/lote1-22.mp4",
+      "categoria": "eventos"
     },
     {
       "id": "lote1-23",
@@ -297,7 +303,8 @@
       "imagen": "imagenes/fuente/lote1-23.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-23.mp4"
+      "video": "videos/lote1-23.mp4",
+      "categoria": "personajes"
     },
     {
       "id": "lote1-24",
@@ -307,7 +314,8 @@
       "imagen": "imagenes/fuente/lote1-24.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-24.mp4"
+      "video": "videos/lote1-24.mp4",
+      "categoria": "combate"
     },
     {
       "id": "lote1-25",
@@ -317,7 +325,8 @@
       "imagen": "imagenes/fuente/lote1-25.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-25.mp4"
+      "video": "videos/lote1-25.mp4",
+      "categoria": "islas"
     },
     {
       "id": "lote1-26",
@@ -327,7 +336,8 @@
       "imagen": "imagenes/fuente/lote1-26.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-26.mp4"
+      "video": "videos/lote1-26.mp4",
+      "categoria": "interfaz"
     },
     {
       "id": "lote1-27",
@@ -337,7 +347,8 @@
       "imagen": "imagenes/fuente/lote1-27.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-27.mp4"
+      "video": "videos/lote1-27.mp4",
+      "categoria": "interfaz"
     },
     {
       "id": "lote1-28",
@@ -347,7 +358,8 @@
       "imagen": "imagenes/fuente/lote1-28.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/lote1-28.mp4"
+      "video": "videos/lote1-28.mp4",
+      "categoria": "rendimiento"
     },
     {
       "id": "c9b70d9d23-0",
@@ -357,7 +369,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/c9b70d9d23-0.mp4"
+      "video": "videos/c9b70d9d23-0.mp4",
+      "categoria": "dioses"
     },
     {
       "id": "a065747cb0-0",
@@ -367,7 +380,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/a065747cb0-0.mp4"
+      "video": "videos/a065747cb0-0.mp4",
+      "categoria": "npcs"
     },
     {
       "id": "9ed5cecb04-0",
@@ -377,7 +391,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/9ed5cecb04-0.mp4"
+      "video": "videos/9ed5cecb04-0.mp4",
+      "categoria": "islas"
     },
     {
       "id": "3d6da0b0ff-0",
@@ -386,7 +401,9 @@
       "texto": "Si un portador de un dios rival anda cerca, tu fragmento despierta: tu habilidad y tu pasiva pegan un 25 % más y te envuelve un aura del color de tu dios. Y cuando otro fragmento de tu dios anda cerca, vas a sentir su presencia.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "dioses",
+      "video": "videos/3d6da0b0ff-0.mp4"
     },
     {
       "id": "8dda236273-0",
@@ -395,7 +412,9 @@
       "texto": "Con la pelota que te da Maradona podés hacer jueguitos donde quieras. Es un oficio secreto: subís de nivel, a los 50 usás la rodilla, a los 100 la cabeza, y a los mil aprendés la vuelta al mundo.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "oficios",
+      "video": "videos/8dda236273-0.mp4"
     },
     {
       "id": "1341c2477c-0",
@@ -404,7 +423,9 @@
       "texto": "Van Gogh te regala su cuadro para colgar en tu barco, Gardel te enseña a bailar el tango y Ebay se anima a bajar con vos a las Catacumbas, peleando a tu lado.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "npcs",
+      "video": "videos/1341c2477c-0.mp4"
     },
     {
       "id": "285340f883-0",
@@ -413,7 +434,9 @@
       "texto": "Colón te regala las velas de la Santa María, Barbanegra su mascarón para tu proa, Messi sus botines dorados y Frida una corona de flores. Y Musashi te deja sus dos espadas.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "objetos",
+      "video": "videos/285340f883-0.mp4"
     },
     {
       "id": "9d78c6a1d3-0",
@@ -423,7 +446,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/9d78c6a1d3-0.mp4"
+      "video": "videos/9d78c6a1d3-0.mp4",
+      "categoria": "monturas"
     },
     {
       "id": "17ff3d7ddb-0",
@@ -432,7 +456,9 @@
       "texto": "Marco Polo trae pimienta, canela, clavo, nuez moscada y azafrán, con nuevas comidas que te dan mejores bufos. Y ahora cualquier clase puede invocar su cría de mascota por cinco minutos, como el pinzón que te regala Darwin.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "objetos",
+      "video": "videos/17ff3d7ddb-0.mp4"
     },
     {
       "id": "09ab022767-0",
@@ -442,7 +468,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/09ab022767-0.mp4"
+      "video": "videos/09ab022767-0.mp4",
+      "categoria": "islas"
     },
     {
       "id": "35051755f0-0",
@@ -451,7 +478,9 @@
       "texto": "Ahora podés crear tu cuenta del juego con email y contraseña (o entrar directo con Steam) y tus personajes quedan guardados en la nube. ¿Preferís no registrarte? También se puede jugar sin cuenta.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "cuenta",
+      "video": "videos/35051755f0-0.mp4"
     },
     {
       "id": "ead0711a71-0",
@@ -461,7 +490,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/ead0711a71-0.mp4"
+      "video": "videos/ead0711a71-0.mp4",
+      "categoria": "islas"
     },
     {
       "id": "285b23b4be-0",
@@ -471,7 +501,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/285b23b4be-0.mp4"
+      "video": "videos/285b23b4be-0.mp4",
+      "categoria": "terreno"
     },
     {
       "id": "c694f86ec3-0",
@@ -481,7 +512,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/c694f86ec3-0.mp4"
+      "video": "videos/c694f86ec3-0.mp4",
+      "categoria": "islas"
     },
     {
       "id": "06842320c9-0",
@@ -491,7 +523,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/06842320c9-0.mp4"
+      "video": "videos/06842320c9-0.mp4",
+      "categoria": "ciudades"
     },
     {
       "id": "0511e6de49-0",
@@ -500,7 +533,9 @@
       "texto": "Entrá con tu cuenta desde otra PC y ahí están tus personajes, con su clan, su correo y sus subastas. Si compartís la computadora, cada cuenta ve solo los suyos.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "cuenta",
+      "video": "videos/0511e6de49-0.mp4"
     },
     {
       "id": "5a4dfca000-0",
@@ -510,7 +545,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/5a4dfca000-0.mp4"
+      "video": "videos/5a4dfca000-0.mp4",
+      "categoria": "terreno"
     },
     {
       "id": "3d5cac1f03-0",
@@ -520,7 +556,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/3d5cac1f03-0.mp4"
+      "video": "videos/3d5cac1f03-0.mp4",
+      "categoria": "ciudades"
     },
     {
       "id": "9b7a13ed98-0",
@@ -530,7 +567,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/9b7a13ed98-0.mp4"
+      "video": "videos/9b7a13ed98-0.mp4",
+      "categoria": "islas"
     },
     {
       "id": "c483a08a03-0",
@@ -539,7 +577,9 @@
       "texto": "La gente de los pueblos ahora se ve desde mucho más lejos, y en alta mar el horizonte se abre: las islas aparecen entre la bruma antes de llegar.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "ciudades",
+      "video": "videos/c483a08a03-0.mp4"
     },
     {
       "id": "08aff6c108-0",
@@ -549,7 +589,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/08aff6c108-0.mp4"
+      "video": "videos/08aff6c108-0.mp4",
+      "categoria": "combate"
     },
     {
       "id": "6dcf076e4f-0",
@@ -559,7 +600,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "video": "videos/6dcf076e4f-0.mp4"
+      "video": "videos/6dcf076e4f-0.mp4",
+      "categoria": "ciudades"
     },
     {
       "id": "b81dd21764-0",
@@ -568,7 +610,9 @@
       "texto": "Las casas, el banco y la posada del Pueblo del Ángel ahora son mucho más grandes. La posada suma un piso de arriba con habitaciones y una bodega llena de toneles, y el posadero te atiende detrás de la barra.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "ciudades",
+      "video": "videos/b81dd21764-0.mp4"
     },
     {
       "id": "cae721f5f5-0",
@@ -577,7 +621,9 @@
       "texto": "Ya podés hacer el six-seven en World of Pieces: abrí la rueda de gestos con la Y o escribí /67 en el chat. Y de paso, ahora los personajes guardan el arma para bailar y saludar.",
       "imagen": null,
       "estado": "pendiente",
-      "intentos": 0
+      "intentos": 0,
+      "categoria": "personajes",
+      "video": "videos/cae721f5f5-0.mp4"
     }
   ]
 }

@@ -144,6 +144,20 @@ def _pie(d: ImageDraw.ImageDraw, izquierda: str) -> None:
     d.text((ANCHO - MARGEN, y), WEB, font=f, fill=ORO, anchor="rm")
 
 
+def _sello(lienzo: Image.Image, texto: str, x: int, y: int) -> None:
+    """El sello de la categoría: una placa oscura con borde dorado y el nombre en mayúsculas (arriba a la izquierda)."""
+    f = _fuente("Cinzel-Bold.ttf", 34)
+    texto = texto.upper()
+    ancho = int(f.getlength(texto)) + 56
+    alto = 62
+    sombra = Image.new("RGBA", lienzo.size, (0, 0, 0, 0))
+    ImageDraw.Draw(sombra).rounded_rectangle((x + 4, y + 6, x + ancho + 4, y + alto + 6), radius=14, fill=(0, 0, 0, 120))
+    lienzo.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(6)))
+    d = ImageDraw.Draw(lienzo)
+    d.rounded_rectangle((x, y, x + ancho, y + alto), radius=14, fill=TINTA + (235,), outline=ORO, width=4)
+    d.text((x + ancho // 2, y + alto // 2 + 1), texto, font=f, fill=ORO_CLARO, anchor="mm")
+
+
 def _cabecera(lienzo: Image.Image, imagen: Path | None) -> int:
     """Pone arriba la captura (enmarcada) o el emblema. Devuelve la y donde termina."""
     if imagen and imagen.exists():
@@ -181,9 +195,11 @@ def _cabecera(lienzo: Image.Image, imagen: Path | None) -> int:
 
 
 def tarjeta_novedad(titulo: str, texto: str, fecha: date, destino: Path, imagen: Path | None = None,
-                    etiqueta: str = "NOVEDAD") -> Path:
+                    etiqueta: str = "NOVEDAD", categoria: str = "") -> Path:
     lienzo = _fondo(zlib.crc32(titulo.encode()))
     y = _cabecera(lienzo, imagen)
+    if categoria:
+        _sello(lienzo, categoria, MARGEN - 4, 46)
     d = ImageDraw.Draw(lienzo)
     _separador(d, y, etiqueta)
     y += 60
