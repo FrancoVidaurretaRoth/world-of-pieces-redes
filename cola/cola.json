@@ -197,9 +197,12 @@
       "titulo": "Manadas y patrullas",
       "texto": "Los enemigos ya no esperan solos: andan en manadas que recorren su región detrás de un líder, y los bandidos patrullan entre la granja y su escondite en grupos con tanque, arquero y chamán.",
       "imagen": "imagenes/fuente/lote1-14.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "video": "videos/lote1-14.mp4"
+      "video": "videos/lote1-14.mp4",
+      "publicado": "2026-11-07T07:03:17+00:00",
+      "ig_id": "18089158187705826",
+      "enlace": "https://www.instagram.com/p/Dfbma68FNKB/"
     },
     {
       "id": "lote1-15",
