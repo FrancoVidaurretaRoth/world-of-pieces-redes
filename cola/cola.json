@@ -170,10 +170,13 @@
       "titulo": "Fragmentos de dios",
       "texto": "Hubo una guerra entre diecinueve dioses, y los derrotados se partieron en pedazos repartidos por el mundo. Son rarísimos, nadie avisa cuando aparecen y el primero que toca uno absorbe su poder. Pero ojo: solo podés llevar un dios a la vez.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "etiqueta": "PRÓXIMAMENTE",
-      "video": "videos/lote1-12.mp4"
+      "video": "videos/lote1-12.mp4",
+      "publicado": "2026-11-07T00:03:26+00:00",
+      "ig_id": "18137190019662481",
+      "enlace": "https://www.instagram.com/p/Dfa2XJxCsBI/"
     },
     {
       "id": "lote1-13",
