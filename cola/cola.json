@@ -222,9 +222,12 @@
       "titulo": "Guerreros del mar",
       "texto": "Una nueva facción con base en el Refugio del Faro, en la Costa de las Tormentas. La Capitana Nerea te recibe: subí de Remero a Guerrero del mar, con su propia armadura y sus misiones.",
       "imagen": "imagenes/fuente/lote1-16.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
-      "video": "videos/lote1-16.mp4"
+      "video": "videos/lote1-16.mp4",
+      "publicado": "2026-11-07T17:38:26+00:00",
+      "ig_id": "18156027937492489",
+      "enlace": "https://www.instagram.com/p/DfcvGGdFf6f/"
     },
     {
       "id": "lote1-17",
