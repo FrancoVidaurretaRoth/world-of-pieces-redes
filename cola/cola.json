@@ -1,5 +1,5 @@
 {
-  "ultimo_commit": "abb5ef0ab19d5bde624b2ab34daa5b25e0ec7296",
+  "ultimo_commit": "f140db08168701d0cbed46c03c467893007c2fc6",
   "entradas": [
     {
       "id": "bienvenida-0",
@@ -557,6 +557,15 @@
       "fecha": "2026-11-05",
       "titulo": "Una posada de tres pisos en el Pueblo del Ángel",
       "texto": "Las casas, el banco y la posada del Pueblo del Ángel ahora son mucho más grandes. La posada suma un piso de arriba con habitaciones y una bodega llena de toneles, y el posadero te atiende detrás de la barra.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0
+    },
+    {
+      "id": "cae721f5f5-0",
+      "fecha": "2026-11-05",
+      "titulo": "Llegó el six-seven",
+      "texto": "Ya podés hacer el six-seven en World of Pieces: abrí la rueda de gestos con la Y o escribí /67 en el chat. Y de paso, ahora los personajes guardan el arma para bailar y saludar.",
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0
