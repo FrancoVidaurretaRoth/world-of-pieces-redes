@@ -235,10 +235,13 @@
       "titulo": "Talentos en los tres árboles",
       "texto": "Repartí tus puntos entre las tres especializaciones de tu clase como quieras: la principal es la que tiene más puntos y cambia sola, gratis y en cualquier lado. Los árboles ahora se entrelazan, con caminos que se cruzan y bonos propios de cada especialización.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-17.mp4",
-      "categoria": "clases"
+      "categoria": "clases",
+      "publicado": "2026-11-08T01:08:19+00:00",
+      "ig_id": "18121575727950744",
+      "enlace": "https://www.instagram.com/p/DfdilMwCON8/"
     },
     {
       "id": "lote1-18",
