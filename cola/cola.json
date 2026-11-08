@@ -263,10 +263,13 @@
       "titulo": "Enemigos más listos",
       "texto": "Arqueros que mantienen la distancia, chamanes, sanadores y emboscadores. Salen de las zonas de daño, van por tu sanador, te interrumpen los hechizos y, si les va mal, huyen a buscar a los suyos.",
       "imagen": "imagenes/fuente/lote1-19.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-19.mp4",
-      "categoria": "enemigos"
+      "categoria": "enemigos",
+      "publicado": "2026-11-08T15:09:09+00:00",
+      "ig_id": "18027162317742172",
+      "enlace": "https://www.instagram.com/p/DffCz-knFDM/"
     },
     {
       "id": "lote1-20",
