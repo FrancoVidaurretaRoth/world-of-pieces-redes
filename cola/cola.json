@@ -277,10 +277,13 @@
       "titulo": "Jugar en grupo",
       "texto": "Buscador de grupo: anotate con tu rol y tu destino y el juego arma el grupo. Además, un líder que invita y pasa el mando, marcas de objetivo y lista de amigos.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-20.mp4",
-      "categoria": "multijugador"
+      "categoria": "multijugador",
+      "publicado": "2026-11-08T17:38:56+00:00",
+      "ig_id": "18014554370997590",
+      "enlace": "https://www.instagram.com/p/DffT8sED4Zr/"
     },
     {
       "id": "lote1-21",
