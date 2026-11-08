@@ -249,10 +249,13 @@
       "titulo": "El Pueblo del Ángel crece",
       "texto": "Casas más grandes y amuebladas, calles nuevas y la Plaza de los Oficios con sus siete puestos, cada uno con su dueño.",
       "imagen": "imagenes/fuente/lote1-18.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-18.mp4",
-      "categoria": "ciudades"
+      "categoria": "ciudades",
+      "publicado": "2026-11-08T07:14:34+00:00",
+      "ig_id": "18125900615289107",
+      "enlace": "https://www.instagram.com/p/DfeMfx7gGUf/"
     },
     {
       "id": "lote1-19",
