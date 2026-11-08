@@ -291,10 +291,13 @@
       "titulo": "27 tipos de armas",
       "texto": "Dagas, estoques, manguales, guadañas, alabardas, ballestas, rifles, libros y escudos, entre otras. Las de las mismas manos hacen el mismo daño por segundo: elegí la que más te guste.",
       "imagen": "imagenes/fuente/lote1-21.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-21.mp4",
-      "categoria": "objetos"
+      "categoria": "objetos",
+      "publicado": "2026-11-08T19:32:42+00:00",
+      "ig_id": "18129070358482366",
+      "enlace": "https://www.instagram.com/p/Dffg-SRinc7/"
     },
     {
       "id": "lote1-22",
