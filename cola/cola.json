@@ -1,5 +1,5 @@
 {
-  "ultimo_commit": "d6486ee3dc464024b3a1a786b0a4cec6dcc9e183",
+  "ultimo_commit": "0333e3156342f107bc82033bd16c4a0ca807b476",
   "entradas": [
     {
       "id": "bienvenida-0",
@@ -633,6 +633,57 @@
       "intentos": 0,
       "categoria": "personajes",
       "video": "videos/cae721f5f5-0.mp4"
+    },
+    {
+      "id": "4e3b0eb75c-0",
+      "fecha": "2026-11-07",
+      "titulo": "Maradona te enseña el Puntinazo",
+      "texto": "Los jueguitos ahora son el oficio de Fútbol, y sube al terminar cada tanda. Si sos mago de fuego y llegás a 100, Maradona te enseña dos habilidades: la Pelota de Fuego, para hacer jueguitos con una pelota en llamas, y el Puntinazo: mantené la tecla para cargarlo haciendo jueguitos y soltala para patearle la pelota de fuego al enemigo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "clases",
+      "video": "videos/4e3b0eb75c-0.mp4"
+    },
+    {
+      "id": "a4507c1fa8-0",
+      "fecha": "2026-11-07",
+      "titulo": "Los caminos ahora te llevan más rápido",
+      "texto": "Si vas a pie por los caminos entre pueblos, caminás más rápido. Pero ojo: el pantano, la nieve profunda y el agua te frenan, aunque vayas a caballo. Y los blinks pegaron un estirón.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "terreno"
+    },
+    {
+      "id": "54a7ea6eb3-0",
+      "fecha": "2026-11-07",
+      "titulo": "La nieve profunda te traga hasta la cadera",
+      "texto": "En el Confín Helado y en las cumbres del Yunque hay ventisqueros: te hundís hasta la cadera y avanzás más lento. Mejor buscar el camino.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "terreno"
+    },
+    {
+      "id": "a803c31cde-0",
+      "fecha": "2026-11-07",
+      "titulo": "Huellas en la arena y en la nieve",
+      "texto": "Ahora cada paso se nota: dejás huellas en la playa y en la nieve, levantás polvo en los caminos y salpicás en el agua. Y en las cumbres del Yunque, la lluvia de abajo es nieve arriba.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "terreno"
+    },
+    {
+      "id": "0333e31563-0",
+      "fecha": "2026-11-08",
+      "titulo": "La Isla Mística: solo los muertos ven la puerta",
+      "texto": "Al sur de la Isla Perdida, una islita vacía envuelta en niebla esconde un portal que solo ven los espíritus. Del otro lado te espera Velaluz, la ciudad amurallada de los blinks, y algo en el fondo del Pozo del Olvido que se come sus recuerdos.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "islas"
     }
   ]
 }
