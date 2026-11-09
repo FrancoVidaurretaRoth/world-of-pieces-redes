@@ -305,10 +305,13 @@
       "titulo": "Eventos de zona y raros nuevos",
       "texto": "Veinte eventos que pasan sin aviso por el mundo, con premio para quien esté ahí. También aparecen raros nuevos como el Cangrejo Emperador, el Toro de Ventoria y la Sirena de las Tormentas, y las mazmorras tienen botín propio.",
       "imagen": "imagenes/fuente/lote1-22.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-22.mp4",
-      "categoria": "eventos"
+      "categoria": "eventos",
+      "publicado": "2026-11-09T01:08:53+00:00",
+      "ig_id": "18390093703228382",
+      "enlace": "https://www.instagram.com/p/DfgHcynCaPf/"
     },
     {
       "id": "lote1-23",
