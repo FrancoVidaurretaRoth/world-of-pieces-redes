@@ -171,11 +171,12 @@ def armar(ident: str, nombre: str, cuadros: Path, titulo: str) -> Path:
 
 
 def _apaisado(carpeta: Path) -> bool:
+    """Si los cuadros no vienen ya a 1080×1350 (la pantalla apaisada o la ventana vertical de la interfaz, 864×1080),
+    hay que pasarlos por `_vertical`."""
     primero = next(iter(sorted(carpeta.glob("*.jpg"))), None)
     if primero is None:
         return False
-    w, h = Image.open(primero).size
-    return w > h * 0.9
+    return Image.open(primero).size != (tarjeta.ANCHO, tarjeta.ALTO)
 
 
 def main() -> None:
