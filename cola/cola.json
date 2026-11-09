@@ -333,10 +333,13 @@
       "titulo": "Golpes con peso",
       "texto": "Cada golpe se siente: chispas del color de la escuela de magia, un destello, la cámara que tiembla con los golpes grandes y un instante de pausa en los críticos. Y la amenaza funciona como en los MMO clásicos: el tanque tiene que ganarse el aggro.",
       "imagen": "imagenes/fuente/lote1-24.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-24.mp4",
-      "categoria": "combate"
+      "categoria": "combate",
+      "publicado": "2026-11-09T15:09:22+00:00",
+      "ig_id": "17975279397174125",
+      "enlace": "https://www.instagram.com/p/DfhnojxDu-0/"
     },
     {
       "id": "lote1-25",
