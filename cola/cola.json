@@ -319,10 +319,13 @@
       "titulo": "Emotes",
       "texto": "Saludá, bailá y festejá con seis animaciones nuevas, desde el chat o con la rueda en la tecla Y. Y hay un logro para quien baile en las capitales.",
       "imagen": "imagenes/fuente/lote1-23.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-23.mp4",
-      "categoria": "personajes"
+      "categoria": "personajes",
+      "publicado": "2026-11-09T07:53:54+00:00",
+      "ig_id": "18172692319462834",
+      "enlace": "https://www.instagram.com/p/Dfg1zSFjK9r/"
     },
     {
       "id": "lote1-24",
