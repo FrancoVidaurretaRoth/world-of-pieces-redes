@@ -347,10 +347,13 @@
       "titulo": "Primeros pasos en el Ángel",
       "texto": "Nora te acompaña en tus primeras misiones, aparecen consejos la primera vez que pasa algo y con F1 tenés la ayuda completa. En el pueblo te espera una cadena de bienvenida para conocer a todos.",
       "imagen": "imagenes/fuente/lote1-25.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-25.mp4",
-      "categoria": "islas"
+      "categoria": "islas",
+      "publicado": "2026-11-09T17:38:33+00:00",
+      "ig_id": "18098172194390917",
+      "enlace": "https://www.instagram.com/p/Dfh4tMgG5QU/"
     },
     {
       "id": "lote1-26",
