@@ -1,5 +1,5 @@
 {
-  "ultimo_commit": "0333e3156342f107bc82033bd16c4a0ca807b476",
+  "ultimo_commit": "2ce45c43d7c32b06a67cff86fcc35a0c2015a34c",
   "entradas": [
     {
       "id": "bienvenida-0",
@@ -705,6 +705,28 @@
       "intentos": 0,
       "categoria": "novedades",
       "video": "videos/corregidos-0.mp4"
+    },
+    {
+      "id": "0894c7f03c-0",
+      "fecha": "2026-11-08",
+      "titulo": "Los axolos toman la Playa de las Branquias",
+      "texto": "En la playa del oeste de Ventoria viven los axolos, un pueblo anfibio de piel rosada y branquias en flecos que sonríe mientras te roba las redes. El mareomante, turquesa, llama al agua.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "enemigos",
+      "video": "videos/0894c7f03c-0.mp4"
+    },
+    {
+      "id": "9505fdd000-0",
+      "fecha": "2026-11-09",
+      "titulo": "El portal de Oniria no tiene un solo lado",
+      "texto": "La puerta al mundo de los muertos ahora rodea todo Oniria. Entrás al portal por el norte y aparecés en el norte del bosque; caminás hacia afuera por cualquier lado del reino y despertás vivo, de ese mismo lado de la Isla Mística.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "islas",
+      "video": "videos/9505fdd000-0.mp4"
     }
   ]
 }
