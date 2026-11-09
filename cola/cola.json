@@ -361,10 +361,13 @@
       "titulo": "Interfaz renovada",
       "texto": "Una bolsa que se ordena sola, con buscador y auto-botín; mapa con capas; chat con susurros, pestañas y links de objetos; y un menú principal con Continuar y nombre al azar para tu personaje.",
       "imagen": "imagenes/fuente/lote1-26.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-26.mp4",
-      "categoria": "interfaz"
+      "categoria": "interfaz",
+      "publicado": "2026-11-09T20:09:18+00:00",
+      "ig_id": "18112248236225658",
+      "enlace": "https://www.instagram.com/p/DfiJ9jZDZoG/"
     },
     {
       "id": "lote1-27",
