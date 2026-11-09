@@ -692,7 +692,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "categoria": "islas"
+      "categoria": "islas",
+      "video": "videos/0333e31563-0.mp4"
     }
   ]
 }
