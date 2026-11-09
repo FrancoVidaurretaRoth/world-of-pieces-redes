@@ -665,7 +665,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "categoria": "terreno"
+      "categoria": "terreno",
+      "video": "videos/a4507c1fa8-0.mp4"
     },
     {
       "id": "54a7ea6eb3-0",
@@ -675,7 +676,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "categoria": "terreno"
+      "categoria": "terreno",
+      "video": "videos/54a7ea6eb3-0.mp4"
     },
     {
       "id": "a803c31cde-0",
@@ -685,7 +687,8 @@
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,
-      "categoria": "terreno"
+      "categoria": "terreno",
+      "video": "videos/a803c31cde-0.mp4"
     },
     {
       "id": "0333e31563-0",
@@ -702,7 +705,7 @@
       "id": "corregidos-0",
       "fecha": "2026-11-09",
       "titulo": "Así se ve de verdad",
-      "texto": "Algunos videos que subimos antes salieron con errores de grabación: el piso del pueblo en blanco, criaturas quietas y la cámara en mal lugar. Acá van como se ven hoy en el juego: el Pueblo del Ángel, el bestiario, el cazador con su lobo y el druida con su bosque.",
+      "texto": "Algunos videos que subimos antes salieron con errores de grabación: el piso del pueblo en blanco, criaturas quietas y la cámara en mal lugar. Acá van como se ven hoy en el juego: el Pueblo del Ángel, el bestiario, el cazador con su lobo, el druida con su bosque, las armas en acción y el Cangrejo Emperador.",
       "imagen": null,
       "estado": "pendiente",
       "intentos": 0,

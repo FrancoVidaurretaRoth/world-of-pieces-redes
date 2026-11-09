@@ -7,7 +7,7 @@ El juego graba la toma cuadro por cuadro con la prueba `clips_redes` (repo del j
   - de fondo, un pedazo de "Brisa del Mundo" (la música del juego; el pedazo depende del post, así no suenan todos
     igual), con fundido al entrar y al salir;
   - al final, un cierre de 2 s con el emblema y la web, que entra con un fundido;
-  - H.264 + AAC, 30 fps, faststart (lo que pide la API de Instagram para un video de carrusel).
+  - H.264 + AAC, a los fps de la toma (su fps.txt: 60 desde el 09/11/2026; las viejas, 30), faststart (lo que pide la API de Instagram para un video de carrusel).
 
 Corre en la PC, no en GitHub: la música queda solo en el repo del juego (este repo es público). Usa el ffmpeg del
 sistema o, si no hay, el de `pip install imageio-ffmpeg`.
@@ -125,7 +125,8 @@ def _juntar(carpetas: list[Path], destino: Path) -> None:
             i += 1
 
 
-def armar(ident: str, nombre: str, cuadros: Path, titulo: str) -> Path:
+def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS) -> Path:
+    FPS = fps  # noqa: N806 (los cuadros por segundo de esta toma)
     ffmpeg = _ffmpeg()
     lista = sorted(cuadros.glob("*.jpg"))
     if len(lista) < FPS * 3:
@@ -170,6 +171,12 @@ def armar(ident: str, nombre: str, cuadros: Path, titulo: str) -> Path:
     return destino
 
 
+def _fps_de(carpeta: Path) -> int:
+    """Los cuadros por segundo con que se grabó la toma (`fps.txt` de clips_redes; sin el archivo, 30)."""
+    f = carpeta / "fps.txt"
+    return int(f.read_text().strip()) if f.exists() else 30
+
+
 def _apaisado(carpeta: Path) -> bool:
     """Si los cuadros no vienen ya a 1080×1350 (la pantalla apaisada o la ventana vertical de la interfaz, 864×1080),
     hay que pasarlos por `_vertical`."""
@@ -192,12 +199,17 @@ def main() -> None:
     if entrada is None and not a.titulo:
         sys.exit(f"No hay una entrada '{a.id}' en la cola (o pasá --titulo)")
     titulo = a.titulo or entrada["titulo"]
+    carpetas = [(a.cuadros or CUADROS) / n for n in a.nombre.split("+")]
+    fps_tomas = {_fps_de(c) for c in carpetas}
+    if len(fps_tomas) > 1:
+        sys.exit(f"Las tomas tienen distintos cuadros por segundo ({sorted(fps_tomas)}): regrabalas al mismo")
+    fps = fps_tomas.pop()
     if "+" in a.nombre or a.cuadros is None and _apaisado(CUADROS / a.nombre):
         with tempfile.TemporaryDirectory() as tmp:
             _juntar([(a.cuadros or CUADROS) / n for n in a.nombre.split("+")], Path(tmp))
-            destino = armar(a.id, a.nombre, Path(tmp), titulo)
+            destino = armar(a.id, a.nombre, Path(tmp), titulo, fps)
     else:
-        destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, titulo)
+        destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, titulo, fps)
     if entrada is not None and not a.sin_cola:
         entrada["video"] = str(destino.relative_to(RAIZ)).replace("\\", "/")
         COLA.write_text(json.dumps(cola, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
