@@ -417,10 +417,13 @@
       "titulo": "Llegaron los Ecos: Newton, Galileo, Maradona, Barbanegra y muchos más",
       "texto": "Más de cuarenta personajes de la historia aparecieron en las islas, cada uno donde le corresponde: Newton bajo los manzanos, Galileo mirando el cielo de noche, Barbanegra en una cala de naufragios. Charlá con ellos, ayudalos con sus misiones y llevate recompensas únicas, como el catalejo de Galileo, el espejo ardiente de Arquímedes o partituras de Mozart y Beethoven.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/a065747cb0-0.mp4",
-      "categoria": "npcs"
+      "categoria": "npcs",
+      "publicado": "2026-11-10T08:22:04+00:00",
+      "ig_id": "18136404778706269",
+      "enlace": "https://www.instagram.com/p/Dfjdz4imSpx/"
     },
     {
       "id": "9ed5cecb04-0",
