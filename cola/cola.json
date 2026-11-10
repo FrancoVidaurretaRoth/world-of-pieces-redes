@@ -389,10 +389,13 @@
       "titulo": "Más fluido en PCs modestas",
       "texto": "Nueva opción de carga de CPU aparte de la calidad gráfica, física nueva para que las peleas grandes no traben el juego, y lo lejano de las islas se duerme. Si tu PC es modesta, vas a notar la diferencia.",
       "imagen": "imagenes/fuente/lote1-28.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-28.mp4",
-      "categoria": "rendimiento"
+      "categoria": "rendimiento",
+      "publicado": "2026-11-10T02:38:53+00:00",
+      "ig_id": "18120197972469746",
+      "enlace": "https://www.instagram.com/p/Dfi2izRjZ8D/"
     },
     {
       "id": "c9b70d9d23-0",
