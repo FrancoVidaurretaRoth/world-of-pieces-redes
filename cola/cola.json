@@ -375,10 +375,13 @@
       "titulo": "Con mando y en inglés",
       "texto": "Ahora podés jugar el juego entero con mando, y cada acción admite dos teclas. Y World of Pieces ya está también en inglés.",
       "imagen": "imagenes/fuente/lote1-27.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/lote1-27.mp4",
-      "categoria": "interfaz"
+      "categoria": "interfaz",
+      "publicado": "2026-11-10T00:52:19+00:00",
+      "ig_id": "18020121788960689",
+      "enlace": "https://www.instagram.com/p/DfiqWF0HIqk/"
     },
     {
       "id": "lote1-28",
