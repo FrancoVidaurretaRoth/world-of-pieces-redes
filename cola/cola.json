@@ -403,10 +403,13 @@
       "titulo": "Fragmentos de dios",
       "texto": "Dicen que la guerra entre los dioses dejó el mundo en pedazos. Ahora sus fragmentos caen muy de vez en cuando en cualquier rincón del mundo: absorbé uno y ganás su habilidad, su pasiva... y su debilidad. Son 19 dioses, y dos no caben en un mismo cuerpo.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/c9b70d9d23-0.mp4",
-      "categoria": "dioses"
+      "categoria": "dioses",
+      "publicado": "2026-11-10T04:19:35+00:00",
+      "ig_id": "18141468022534651",
+      "enlace": "https://www.instagram.com/p/DfjCEjTCZV8/"
     },
     {
       "id": "a065747cb0-0",
