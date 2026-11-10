@@ -48,6 +48,45 @@ TITULO_HASTA = 3.2    # el título se va a los ~3 s
 MUSICA = Path(os.environ.get("WOP_MUSICA", RAIZ.parent / "world-of-pieces-githud" / "sonidos" / "musica"
                              / "brisa_del_mundo.mp3"))
 CUADROS = Path(os.environ.get("TEMP", tempfile.gettempdir())) / "wop_headless" / "capturas" / "clips"
+# 🎵 (09/11/2026, pedido del usuario: que no suenen todos igual) Los temas del juego (`sonidos/musica/temas/`): cada post
+# usa el de lo que muestra (la ciudad, el mar, el combate…) y, si nada encaja, uno de todos según el post.
+TEMAS = MUSICA.parent / "temas"
+TEMA_POR_PALABRA = [
+    (r"ventoria|coliseo|palacio", "ventoria"),
+    (r"n[aá]cara|bajo el mar|sumergid", "nacara"),
+    (r"hondabrasa|volc[aá]n|ascuas|magma", "hondabrasa"),
+    (r"umbrafuego|elfos? oscuro", "umbrafuego"),
+    (r"nelulen", "nelulen"),
+    (r"zahra|desierto|sahrim|especias|seda", "zahra"),
+    (r"cirro|nubes|cielo", "puerto_cirro"),
+    (r"tr[eé]bol|blink", "puerto_trebol"),
+    (r"contrabando|piratas?|barbanegra", "puerto_escondido"),
+    (r"forjahonda|yunque|albacumbre|conf[ií]n|nieve|helad", "forjahonda"),
+    (r"dinosaurio|isla perdida|naufragio|raptor|pantano", "campamento_naufragio"),
+    (r"faro|bruma|horizonte", "refugio_faro"),
+    (r"\bmar\b|barco|velas|santa mar[ií]a|guerreros del mar|kraken", "mar"),
+    (r"profundidades|mazmorra|\bcuevas?\b|\bminas?\b", "mazmorra"),
+    (r"golpes|armas|combate|jefe|yeti|coloso|desaf[ií]o|puntinazo|raros|eventos", "jefe"),
+    (r"pueblo del [aá]ngel|posada|primeros pasos|[aá]ngel", "pueblo_angel"),
+]
+
+
+def tema_para(ident: str, texto: str, largo: float) -> Path:
+    """El tema de un post: el de lo que muestra (por palabras del título y el texto) o, si nada encaja, uno de todos
+    elegido por el post (siempre el mismo para el mismo post). Que dure lo que el video; si no, otro."""
+    import re
+    todos = sorted(t for t in TEMAS.glob("*") if t.suffix in (".mp3", ".wav", ".ogg")) + [MUSICA]
+    ffmpeg = _ffmpeg()
+    alcanza = [t for t in todos if _duracion(ffmpeg, t) > largo + 1]
+    # (primero el título, la primera línea: el texto nombra a veces otros lugares de paso)
+    for t in [p.lower() for p in (texto or "").split("\n", 1)]:
+        for patron, nombre in TEMA_POR_PALABRA:
+            if re.search(patron, t):
+                for c in alcanza:
+                    if c.stem == nombre:
+                        return c
+    semilla = int(hashlib.sha1(ident.encode()).hexdigest()[:8], 16)
+    return alcanza[semilla % len(alcanza)] if alcanza else MUSICA
 
 
 def _ffmpeg() -> str:
@@ -125,7 +164,8 @@ def _juntar(carpetas: list[Path], destino: Path) -> None:
             i += 1
 
 
-def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS) -> Path:
+def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS, texto: str = "",
+          musica: Path | None = None) -> Path:
     FPS = fps  # noqa: N806 (los cuadros por segundo de esta toma)
     ffmpeg = _ffmpeg()
     lista = sorted(cuadros.glob("*.jpg"))
@@ -134,6 +174,7 @@ def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS) -
     toma = len(lista) / FPS
     total = toma + CIERRE - FUNDIDO
     semilla = int(hashlib.sha1(ident.encode()).hexdigest()[:8], 16)
+    MUSICA = musica or tema_para(ident, f"{titulo}\n{texto}", total)  # noqa: N806
     largo_musica = _duracion(ffmpeg, MUSICA)
     if largo_musica <= 0:
         sys.exit(f"No encuentro la música: {MUSICA}")
@@ -165,7 +206,7 @@ def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS) -
         ]
         subprocess.run(cmd, check=True)
     mb = destino.stat().st_size / 1e6
-    print(f"{destino.relative_to(RAIZ)}: {total:.1f} s, {mb:.1f} MB (toma '{nombre}', música desde {desde} s)")
+    print(f"{destino.relative_to(RAIZ)}: {total:.1f} s, {mb:.1f} MB (toma '{nombre}', {MUSICA.stem} desde {desde} s)")
     if mb > 15:
         print("  ojo: pesa mucho para un post; acortá la toma")
     return destino
@@ -193,12 +234,19 @@ def main() -> None:
     p.add_argument("--cuadros", type=Path, help="carpeta de los cuadros (por defecto la de clips_redes)")
     p.add_argument("--titulo", help="título sobre el video (por defecto el de la entrada de la cola)")
     p.add_argument("--sin-cola", action="store_true", help="no anotar el video en la cola")
+    p.add_argument("--musica", help="el tema a usar (nombre de sonidos/musica/temas, sin extensión; por defecto, elegido)")
     a = p.parse_args()
     cola = json.loads(COLA.read_text(encoding="utf-8"))
     entrada = next((e for e in cola["entradas"] if e["id"] == a.id), None)
     if entrada is None and not a.titulo:
         sys.exit(f"No hay una entrada '{a.id}' en la cola (o pasá --titulo)")
     titulo = a.titulo or entrada["titulo"]
+    texto = (entrada or {}).get("texto", "")
+    musica = None
+    if a.musica:
+        musica = next((t for t in TEMAS.glob(a.musica + ".*") if t.suffix in (".mp3", ".wav", ".ogg")), None)
+        if musica is None:
+            sys.exit(f"No hay un tema '{a.musica}' en {TEMAS}")
     carpetas = [(a.cuadros or CUADROS) / n for n in a.nombre.split("+")]
     fps_tomas = {_fps_de(c) for c in carpetas}
     if len(fps_tomas) > 1:
@@ -207,9 +255,9 @@ def main() -> None:
     if "+" in a.nombre or a.cuadros is None and _apaisado(CUADROS / a.nombre):
         with tempfile.TemporaryDirectory() as tmp:
             _juntar([(a.cuadros or CUADROS) / n for n in a.nombre.split("+")], Path(tmp))
-            destino = armar(a.id, a.nombre, Path(tmp), titulo, fps)
+            destino = armar(a.id, a.nombre, Path(tmp), titulo, fps, texto, musica)
     else:
-        destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, titulo, fps)
+        destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, titulo, fps, texto, musica)
     if entrada is not None and not a.sin_cola:
         entrada["video"] = str(destino.relative_to(RAIZ)).replace("\\", "/")
         COLA.write_text(json.dumps(cola, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

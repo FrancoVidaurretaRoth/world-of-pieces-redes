@@ -47,9 +47,12 @@ sí ni más de 5 por día, aunque se disparen dos cosas juntas.
 
 ## Videos: el carrusel portada + juego
 
-Cada post sale como **carrusel**: la tarjeta de siempre y, deslizando, un **video corto del juego real** (~9 s, 4:5):
-la toma en movimiento, el título arriba los primeros segundos, un pedazo de "Brisa del Mundo" de fondo y un cierre
-con el emblema. Una novedad sin video sale con la portada sola.
+Cada post sale como **carrusel**: la tarjeta de siempre y, deslizando, un **video corto del juego real** (9-20 s, 4:5,
+60 fps): la toma en movimiento, el título arriba los primeros segundos, música del juego de fondo y un cierre con el
+emblema. La música es el tema de lo que muestra el post (Ventoria, Nácara, el mar, el desierto, el combate…: las
+palabras del título y después del texto, `TEMA_POR_PALABRA` en `clip.py`); si nada encaja, uno de todos elegido por
+el post. `--musica <tema>` lo fuerza. Cada video se revisa con `herramientas/hoja.py` (cuadros) y
+`herramientas/fluidez.py` (tirones) antes de usarlo.
 
 1. **Grabar la toma** (en el repo del juego, con el editor cerrado). Las tomas son las de la prueba de fotos
    `capturas_redes.gd` (cada `_toca("nombre")`): la prueba `clips_redes.gd` las arma igual pero, donde saca la foto,

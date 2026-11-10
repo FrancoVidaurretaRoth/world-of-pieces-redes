@@ -10,6 +10,14 @@ on:
         description: "Solo probar (no publica ni pushea)"
         type: boolean
         default: false
+      hasta:
+        description: "Último día de la semana (AAAA-MM-DD; vacío = hoy). Para sacar un resumen que no salió."
+        type: string
+        default: ""
+      videos:
+        description: "Ids de la cola cuyos videos van en el carrusel, separados por comas (vacío = los de la semana)"
+        type: string
+        default: ""
 
 concurrency:
   group: redes
@@ -21,7 +29,7 @@ permissions:
 jobs:
   resumen:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30   # (el carrusel con varios videos: Instagram procesa cada uno)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -46,7 +54,7 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ vars.IG_USER_ID }}
           IG_API: ${{ vars.IG_API }}
-        run: python herramientas/redes.py resumen --web web ${{ inputs.seco && '--seco' || '' }}
+        run: python herramientas/redes.py resumen --web web ${{ inputs.seco && '--seco' || '' }} ${{ inputs.hasta && format('--hasta {0}', inputs.hasta) || '' }} ${{ inputs.videos && format('--videos {0}', inputs.videos) || '' }}
       - name: Publicar la noticia en la web
         if: ${{ !inputs.seco }}
         working-directory: web

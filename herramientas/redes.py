@@ -144,7 +144,9 @@ def _git(*args: str) -> str:
 
 def _commit_y_push(mensaje: str, *rutas: Path) -> None:
     _git("add", *[str(r.relative_to(RAIZ)) for r in rutas])
-    if not _git("status", "--porcelain"):
+    # (solo lo agregado: en el resumen semanal el repo de la web está clonado adentro (`web/`), y con `status` parecía
+    # haber cambios aunque no hubiera nada que commitear; el commit vacío fallaba y el resumen del 08/11 no salió)
+    if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=RAIZ).returncode == 0:
         return
     _git("commit", "-m", mensaje)
     for intento in range(3):
@@ -304,25 +306,27 @@ def _contenedor(usuario: str, token: str, datos: dict, espera: int = 30) -> str:
     raise RuntimeError("Instagram no terminó de procesar el contenido a tiempo")
 
 
-def preparar_en_instagram(imagen: Path, texto: str, video: Path | None = None) -> tuple[str, str, str]:
-    """Arma el contenedor listo para publicar: la imagen sola o, con video, el carrusel portada + video.
-    Devuelve (usuario, token, contenedor). No publica nada."""
+def preparar_en_instagram(imagen: Path, texto: str, video: Path | list[Path] | None = None) -> tuple[str, str, str]:
+    """Arma el contenedor listo para publicar: la imagen sola o, con video (o varios: el resumen semanal), el carrusel
+    portada + videos (Instagram acepta hasta 10 en un carrusel). Devuelve (usuario, token, contenedor). No publica nada."""
     token = os.environ["IG_TOKEN"]
     usuario = _ig_user_id(token)
     url = _url_publica(imagen)
     _esperar_url(url)
-    if video is None:
+    videos = [video] if isinstance(video, Path) else list(video or [])[:9]
+    if not videos:
         return usuario, token, _contenedor(usuario, token, {"image_url": url, "caption": texto})
-    url_video = _url_video(video)
-    _esperar_url(url_video)
-    portada = _contenedor(usuario, token, {"image_url": url, "is_carousel_item": "true"})
-    clip = _contenedor(usuario, token, {"media_type": "VIDEO", "video_url": url_video, "is_carousel_item": "true"},
-                       espera=60)
-    return usuario, token, _contenedor(usuario, token, {"media_type": "CAROUSEL", "children": f"{portada},{clip}",
+    hijos = [_contenedor(usuario, token, {"image_url": url, "is_carousel_item": "true"})]
+    for v in videos:
+        url_video = _url_video(v)
+        _esperar_url(url_video)
+        hijos.append(_contenedor(usuario, token, {"media_type": "VIDEO", "video_url": url_video,
+                                                  "is_carousel_item": "true"}, espera=60))
+    return usuario, token, _contenedor(usuario, token, {"media_type": "CAROUSEL", "children": ",".join(hijos),
                                                         "caption": texto})
 
 
-def publicar_en_instagram(imagen: Path, texto: str, video: Path | None = None) -> dict:
+def publicar_en_instagram(imagen: Path, texto: str, video: Path | list[Path] | None = None) -> dict:
     usuario, token, contenedor = preparar_en_instagram(imagen, texto, video)
     media = _http(f"{IG_API}/{usuario}/media_publish", "POST",
                   {"creation_id": contenedor, "access_token": token})["id"]
@@ -434,25 +438,45 @@ def _noticia_web(entradas: list[dict], desde: date, hasta: date, enlace_ig: str)
     return clave, "\n".join(lineas)
 
 
-def resumen(web: Path | None, seco: bool, hasta: date | None = None) -> None:
+def resumen(web: Path | None, seco: bool, hasta: date | None = None, ids_videos: list[str] | None = None) -> None:
     cola = _leer_cola()
     hasta = hasta or date.today()
     desde = hasta - timedelta(days=6)
-    entradas = [e for e in cola["entradas"] if desde <= date.fromisoformat(e["fecha"]) <= hasta
+
+    # (09/11/2026) Lo que SALIÓ esa semana (la fecha en que se publicó, en hora argentina), no la fecha del commit: la
+    # cola tiene novedades de días anteriores que todavía esperan su turno y el resumen las adelantaba.
+    def _salio(e: dict) -> date | None:
+        p = e.get("publicado")
+        if not p:
+            return None
+        return (datetime.fromisoformat(p) - timedelta(hours=3)).date()
+
+    entradas = [e for e in cola["entradas"] if _salio(e) is not None and desde <= _salio(e) <= hasta
                 and e["estado"] != "descartado" and e.get("etiqueta", "NOVEDAD") == "NOVEDAD"]
     if not entradas:
         _log("Semana sin novedades marcadas: no hay resumen.")
         return
     destino = RAIZ / "imagenes" / "posts" / f"semana-{hasta.isoformat()}.jpg"
     tarjeta.tarjeta_resumen([e["titulo"] for e in entradas], desde, hasta, destino)
+    # 🎬 (09/11/2026, pedido del usuario) El resumen es un carrusel: la tarjeta y los videos de la semana (los que hay,
+    # hasta 5, repartidos entre las novedades: cada uno ya es la versión actual del repo).
+    con_video = [e for e in entradas if e.get("video") and (RAIZ / e["video"]).exists()]
+    paso = max(1, len(con_video) // 5)
+    videos = [RAIZ / e["video"] for e in con_video[::paso][:5]]
+    if ids_videos:   # (a mano: p. ej. los videos rehechos de una semana que salió con los viejos)
+        por_id = {e["id"]: e for e in cola["entradas"]}
+        videos = [RAIZ / por_id[i]["video"] for i in ids_videos
+                  if i in por_id and por_id[i].get("video") and (RAIZ / por_id[i]["video"]).exists()][:9]
     epigrafe = "\n".join([f"Esta semana en World of Pieces ({desde.day}/{desde.month} al {hasta.day}/{hasta.month}):",
                           "", *[f"◆ {e['titulo']}" for e in entradas], "",
+                          *(["Deslizá para ver algunas en el juego."] if videos else []),
                           "El detalle de cada cambio, en worldofpieces.pages.dev (link en la bio).", "", HASHTAGS])
+    _log("Videos: " + ", ".join(v.name for v in videos))
     _log(f"Tarjeta: {destino}\n--- epígrafe ---\n{epigrafe}\n---")
     enlace = ""
     if not seco:
         _commit_y_push(f"Resumen semanal {hasta.isoformat()}", destino)
-        enlace = publicar_en_instagram(destino, epigrafe)["enlace"]
+        enlace = publicar_en_instagram(destino, epigrafe, videos or None)["enlace"]
         _log(f"Publicado: {enlace}")
     if web is not None:
         clave, md = _noticia_web(entradas, desde, hasta, enlace)
@@ -511,13 +535,14 @@ def main() -> None:
     p.add_argument("--seco", action="store_true", help="no publica ni pushea nada")
     p.add_argument("--web", type=Path, help="carpeta del repo de la web (para el resumen)")
     p.add_argument("--hasta", type=date.fromisoformat, help="último día del resumen (por defecto hoy)")
+    p.add_argument("--videos", default="", help="ids de la cola cuyos videos van en el resumen, separados por comas")
     a = p.parse_args()
     if a.comando == "sincronizar":
         sincronizar(a.seco)
     elif a.comando == "publicar":
         publicar(a.seco)
     elif a.comando == "resumen":
-        resumen(a.web, a.seco, a.hasta)
+        resumen(a.web, a.seco, a.hasta, [v.strip() for v in a.videos.split(",") if v.strip()])
     elif a.comando == "verificar":
         verificar()
     else:
