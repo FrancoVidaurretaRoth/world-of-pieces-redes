@@ -431,10 +431,13 @@
       "titulo": "Las islas ahora son el doble de grandes",
       "texto": "Todas las islas crecieron: más campo, más bosque y costas llenas de cabos, calas y penínsulas, con los lugares más separados para explorar. Las ciudades siguen igual de vivas, ahora rodeadas de mucho más mundo.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/9ed5cecb04-0.mp4",
-      "categoria": "islas"
+      "categoria": "islas",
+      "publicado": "2026-11-10T15:08:59+00:00",
+      "ig_id": "17963971830000396",
+      "enlace": "https://www.instagram.com/p/DfkMY41lEMB/"
     },
     {
       "id": "3d6da0b0ff-0",
