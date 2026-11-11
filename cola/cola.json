@@ -1,5 +1,5 @@
 {
-  "ultimo_commit": "c06f773c19c2fced68c621784d6a8a2b7143ad47",
+  "ultimo_commit": "008ab20f73541e8f70ce12e4b6342f36ff4dcc37",
   "entradas": [
     {
       "id": "bienvenida-0",
@@ -757,6 +757,16 @@
       "intentos": 0,
       "categoria": "islas",
       "video": "videos/9505fdd000-0.mp4"
+    },
+    {
+      "id": "c807200cf7-0",
+      "fecha": "2026-11-11",
+      "titulo": "Acá no se insulta: se elogia",
+      "texto": "Si alguien intenta insultar en el chat, su mensaje se transforma solo en algo como \"¡Qué gran juego!\" o \"¡Sos una persona increíble!\". Cincuenta frases para que las islas sigan siendo un lugar lindo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "multijugador"
     }
   ]
 }
