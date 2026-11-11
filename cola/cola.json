@@ -501,10 +501,13 @@
       "titulo": "La mula de San Martín y Bucéfalo",
       "texto": "San Martín ahora te espera montado en su mula, y la mula que te regala tiene su propio modelo. Alejandro te da a Bucéfalo, negro con la estrella blanca. Y Fokas te deja su sillón-trono para el barco.",
       "imagen": "imagenes/fuente/9d78c6a1d3-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/9d78c6a1d3-0.mp4",
-      "categoria": "monturas"
+      "categoria": "monturas",
+      "publicado": "2026-11-11T20:09:40+00:00",
+      "ig_id": "18102962711366624",
+      "enlace": "https://www.instagram.com/p/DfnTk5wghtq/"
     },
     {
       "id": "17ff3d7ddb-0",
