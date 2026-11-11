@@ -487,10 +487,13 @@
       "titulo": "Velas de la Santa María y botines dorados",
       "texto": "Colón te regala las velas de la Santa María, Barbanegra su mascarón para tu proa, Messi sus botines dorados y Frida una corona de flores. Y Musashi te deja sus dos espadas.",
       "imagen": "imagenes/fuente/285340f883-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "objetos",
-      "video": "videos/285340f883-0.mp4"
+      "video": "videos/285340f883-0.mp4",
+      "publicado": "2026-11-11T17:38:42+00:00",
+      "ig_id": "18132173083693906",
+      "enlace": "https://www.instagram.com/p/DfnCTwTnG-U/"
     },
     {
       "id": "9d78c6a1d3-0",
