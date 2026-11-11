@@ -459,10 +459,13 @@
       "titulo": "Jueguitos en cualquier lado",
       "texto": "Con la pelota que te da Maradona podés hacer jueguitos donde quieras. Es un oficio secreto: subís de nivel, a los 50 usás la rodilla, a los 100 la cabeza, y a los mil aprendés la vuelta al mundo.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "oficios",
-      "video": "videos/8dda236273-0.mp4"
+      "video": "videos/8dda236273-0.mp4",
+      "publicado": "2026-11-11T02:15:34+00:00",
+      "ig_id": "18120242893989207",
+      "enlace": "https://www.instagram.com/p/DflYrCuGMkq/"
     },
     {
       "id": "1341c2477c-0",
