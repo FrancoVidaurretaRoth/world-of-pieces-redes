@@ -349,18 +349,36 @@ def _epigrafe(titulo: str, texto: str, categoria: str = "") -> str:
 
 MAX_POR_DIA = 5
 MIN_ENTRE_POSTS = timedelta(minutes=90)
+# Los horarios (hora argentina, UTC-3) y cuánto después de cada uno todavía se puede publicar (el reloj a veces arranca
+# unos minutos tarde; un disparo de horas después ya no publica).
+HORARIOS_AR = [(12, 7), (14, 37), (17, 7), (19, 37), (22, 7)]
+TOLERANCIA = timedelta(minutes=45)
+AR = timezone(timedelta(hours=-3))
 
 
-def publicar(seco: bool) -> None:
+def _en_horario(ahora: datetime) -> bool:
+    local = ahora.astimezone(AR)
+    for h, m in HORARIOS_AR:
+        slot = local.replace(hour=h, minute=m, second=0, microsecond=0)
+        if timedelta(minutes=-5) <= local - slot <= TOLERANCIA:
+            return True
+    return False
+
+
+def publicar(seco: bool, fuera_de_horario: bool = False) -> None:
     cola = _leer_cola()
-    # Freno por si dos disparadores (el reloj y los cron de GitHub) caen juntos: nunca dos posts seguidos ni más de 5
-    # en el día (UTC).
+    # Frenos (10/11/2026: los cron de GitHub llegaban con horas de atraso y publicaban a la madrugada): solo cerca de
+    # un horario, nunca dos posts seguidos y no más de 5 por día (día argentino).
     ahora = datetime.now(timezone.utc)
+    if not fuera_de_horario and not _en_horario(ahora):
+        _log(f"Fuera de horario ({ahora.astimezone(AR):%H:%M} hora argentina): este turno no publica.")
+        return
     hechos = [datetime.fromisoformat(e["publicado"]) for e in cola["entradas"] if e.get("publicado")]
     if any(ahora - h < MIN_ENTRE_POSTS for h in hechos):
         _log("Hubo un post hace menos de 90 minutos: este turno no publica.")
         return
-    if sum(1 for h in hechos if h.date() == ahora.date()) >= MAX_POR_DIA:
+    hoy = ahora.astimezone(AR).date()
+    if sum(1 for h in hechos if h.astimezone(AR).date() == hoy) >= MAX_POR_DIA:
         _log(f"Ya salieron {MAX_POR_DIA} posts hoy: este turno no publica.")
         return
     # Cada post sale con su video (la segunda lámina del carrusel, `clip.py`): los que todavía no lo tienen esperan su
@@ -535,12 +553,13 @@ def main() -> None:
     p.add_argument("--seco", action="store_true", help="no publica ni pushea nada")
     p.add_argument("--web", type=Path, help="carpeta del repo de la web (para el resumen)")
     p.add_argument("--hasta", type=date.fromisoformat, help="último día del resumen (por defecto hoy)")
+    p.add_argument("--fuera-de-horario", action="store_true", help="publicar aunque no sea uno de los horarios")
     p.add_argument("--videos", default="", help="ids de la cola cuyos videos van en el resumen, separados por comas")
     a = p.parse_args()
     if a.comando == "sincronizar":
         sincronizar(a.seco)
     elif a.comando == "publicar":
-        publicar(a.seco)
+        publicar(a.seco, a.fuera_de_horario)
     elif a.comando == "resumen":
         resumen(a.web, a.seco, a.hasta, [v.strip() for v in a.videos.split(",") if v.strip()])
     elif a.comando == "verificar":

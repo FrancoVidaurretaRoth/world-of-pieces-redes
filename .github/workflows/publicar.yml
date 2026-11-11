@@ -4,13 +4,9 @@
 # GitHub demora o descarta los cron en los minutos redondos (todo el mundo los usa) y los de este repo no salían.
 name: Publicar novedad
 
+# (10/11/2026) Sin cron propio: lo lanza el reloj (reloj.yml) a horario. Los cron de GitHub empezaron a dispararse
+# con horas de atraso y publicaban a la madrugada; además `redes.py publicar` solo publica cerca de un horario.
 on:
-  schedule:
-    - cron: "7 15 * * *"
-    - cron: "37 17 * * *"
-    - cron: "7 20 * * *"
-    - cron: "37 22 * * *"
-    - cron: "7 1 * * *"
   workflow_dispatch:
     inputs:
       seco:
