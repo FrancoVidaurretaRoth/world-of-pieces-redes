@@ -237,7 +237,7 @@ def sincronizar(seco: bool) -> None:
                     imagen = str(destino.relative_to(RAIZ)).replace("\\", "/")
                 except RuntimeError as e:
                     _log(f"  sin imagen para {ident}: {e}")
-            entrada = {"id": ident, "fecha": fecha, "titulo": n["titulo"], "texto": n["texto"],
+            entrada = {"id": ident, "imagen_propia": imagen is not None, "fecha": fecha, "titulo": n["titulo"], "texto": n["texto"],
                        "imagen": imagen, "estado": "pendiente", "intentos": 0}
             entrada["categoria"] = categoria_de({**entrada, "categoria": n.get("categoria")})
             # El video se puede armar antes de que llegue el commit (`clip.py <id> <toma> --titulo … --sin-cola`):

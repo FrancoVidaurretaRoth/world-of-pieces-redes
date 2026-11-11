@@ -163,11 +163,14 @@ def _cabecera(lienzo: Image.Image, imagen: Path | None) -> int:
     if imagen and imagen.exists():
         foto = Image.open(imagen).convert("RGB")
         ancho, alto = ANCHO - 2 * MARGEN + 40, 560
-        if foto.width / foto.height >= 1.3:
-            # apaisada: llena el marco recortando lo que sobra
+        cuadro_video = foto.size in ((1080, 1350), (864, 1080))   # (un cuadro de la toma del video: la portada)
+        if foto.width / foto.height >= 1.3 or cuadro_video:
+            # apaisada (o un cuadro del video): llena el marco recortando lo que sobra; del video, la franja del medio
+            # un poco hacia arriba (donde suelen estar el personaje y lo nuevo)
             escala = max(ancho / foto.width, alto / foto.height)
             foto = foto.resize((int(foto.width * escala), int(foto.height * escala)), Image.LANCZOS)
-            x0, y0 = (foto.width - ancho) // 2, (foto.height - alto) // 2
+            x0 = (foto.width - ancho) // 2
+            y0 = int((foto.height - alto) * (0.42 if cuadro_video else 0.5))
             foto = foto.crop((x0, y0, x0 + ancho, y0 + alto))
         else:
             # vertical o cuadrada (retratos): entra entera, sobre un fondo difuminado de ella misma

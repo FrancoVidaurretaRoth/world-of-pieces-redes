@@ -171,6 +171,11 @@ def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS, t
     lista = sorted(cuadros.glob("*.jpg"))
     if len(lista) < FPS * 3:
         sys.exit(f"Muy pocos cuadros en {cuadros} ({len(lista)}): grabá la toma con la prueba clips_redes")
+    # 🖼️ (10/11/2026, pedido del usuario: la portada salía siempre con el emblema) La portada del post: un cuadro de la
+    # toma (sin el título encima), a mitad de camino.
+    portada = RAIZ / "imagenes" / "fuente" / f"{ident}.jpg"
+    portada.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(lista[int(len(lista) * 0.55)], portada)
     toma = len(lista) / FPS
     total = toma + CIERRE - FUNDIDO
     semilla = int(hashlib.sha1(ident.encode()).hexdigest()[:8], 16)
@@ -260,6 +265,8 @@ def main() -> None:
         destino = armar(a.id, a.nombre, a.cuadros or CUADROS / a.nombre, titulo, fps, texto, musica)
     if entrada is not None and not a.sin_cola:
         entrada["video"] = str(destino.relative_to(RAIZ)).replace("\\", "/")
+        if not entrada.get("imagen_propia"):   # (una captura elegida a mano, `Publicar-imagen:`, no se pisa)
+            entrada["imagen"] = f"imagenes/fuente/{a.id}.jpg"
         COLA.write_text(json.dumps(cola, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"  anotado en la cola: {a.id}")
 
