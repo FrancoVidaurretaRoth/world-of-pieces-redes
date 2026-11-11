@@ -515,10 +515,13 @@
       "titulo": "Especias de la ruta de la seda",
       "texto": "Marco Polo trae pimienta, canela, clavo, nuez moscada y azafrán, con nuevas comidas que te dan mejores bufos. Y ahora cualquier clase puede invocar su cría de mascota por cinco minutos, como el pinzón que te regala Darwin.",
       "imagen": "imagenes/fuente/17ff3d7ddb-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "objetos",
-      "video": "videos/17ff3d7ddb-0.mp4"
+      "video": "videos/17ff3d7ddb-0.mp4",
+      "publicado": "2026-11-11T22:38:32+00:00",
+      "ig_id": "18130927078883331",
+      "enlace": "https://www.instagram.com/p/Dfnknu-CI0s/"
     },
     {
       "id": "09ab022767-0",
