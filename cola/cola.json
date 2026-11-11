@@ -473,10 +473,13 @@
       "titulo": "La noche estrellada en tu barco",
       "texto": "Van Gogh te regala su cuadro para colgar en tu barco, Gardel te enseña a bailar el tango y Ebay se anima a bajar con vos a las Catacumbas, peleando a tu lado.",
       "imagen": "imagenes/fuente/1341c2477c-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "npcs",
-      "video": "videos/1341c2477c-0.mp4"
+      "video": "videos/1341c2477c-0.mp4",
+      "publicado": "2026-11-11T15:08:49+00:00",
+      "ig_id": "18119037748817376",
+      "enlace": "https://www.instagram.com/p/DfmxJsbHBFh/"
     },
     {
       "id": "285340f883-0",
