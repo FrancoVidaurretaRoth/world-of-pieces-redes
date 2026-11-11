@@ -445,10 +445,13 @@
       "titulo": "Dioses rivales que se huelen de lejos",
       "texto": "Si un portador de un dios rival anda cerca, tu fragmento despierta: tu habilidad y tu pasiva pegan un 25 % más y te envuelve un aura del color de tu dios. Y cuando otro fragmento de tu dios anda cerca, vas a sentir su presencia.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "dioses",
-      "video": "videos/3d6da0b0ff-0.mp4"
+      "video": "videos/3d6da0b0ff-0.mp4",
+      "publicado": "2026-11-11T00:32:57+00:00",
+      "ig_id": "18418078822085751",
+      "enlace": "https://www.instagram.com/p/DflM7GTmdOJ/"
     },
     {
       "id": "8dda236273-0",
