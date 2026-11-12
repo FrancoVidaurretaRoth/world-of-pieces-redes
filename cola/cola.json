@@ -543,10 +543,13 @@
       "titulo": "Tu cuenta de World of Pieces",
       "texto": "Ahora podés crear tu cuenta del juego con email y contraseña (o entrar directo con Steam) y tus personajes quedan guardados en la nube. ¿Preferís no registrarte? También se puede jugar sin cuenta.",
       "imagen": "imagenes/fuente/35051755f0-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "cuenta",
-      "video": "videos/35051755f0-0.mp4"
+      "video": "videos/35051755f0-0.mp4",
+      "publicado": "2026-11-12T15:09:16+00:00",
+      "ig_id": "18131143693856352",
+      "enlace": "https://www.instagram.com/p/DfpWATHlmis/"
     },
     {
       "id": "ead0711a71-0",
