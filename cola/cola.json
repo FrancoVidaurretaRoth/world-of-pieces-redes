@@ -558,9 +558,10 @@
       "texto": "Al suroeste, detrás de un muro de niebla que da vuelta a cualquier barco, hay una isla que no está en los mapas: raptores en manada, pteranodones, cuellos largos y un Rey Tirano. Armá la brújula con el viejo Anselmo, encontrá a los náufragos del Campamento Naufragio y domá tu propio dinosaurio corredor.",
       "imagen": "imagenes/fuente/ead0711a71-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "video": "videos/ead0711a71-0.mp4",
-      "categoria": "islas"
+      "categoria": "islas",
+      "ultimo_error": "Instagram rechazó el contenido (ERROR: Error: Media upload has failed with error code 2207077)"
     },
     {
       "id": "285b23b4be-0",
