@@ -557,11 +557,14 @@
       "titulo": "La Isla Perdida de los dinosaurios",
       "texto": "Al suroeste, detrás de un muro de niebla que da vuelta a cualquier barco, hay una isla que no está en los mapas: raptores en manada, pteranodones, cuellos largos y un Rey Tirano. Armá la brújula con el viejo Anselmo, encontrá a los náufragos del Campamento Naufragio y domá tu propio dinosaurio corredor.",
       "imagen": "imagenes/fuente/ead0711a71-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 1,
       "video": "videos/ead0711a71-0.mp4",
       "categoria": "islas",
-      "ultimo_error": "Instagram rechazó el contenido (ERROR: Error: Media upload has failed with error code 2207077)"
+      "ultimo_error": "Instagram rechazó el contenido (ERROR: Error: Media upload has failed with error code 2207077)",
+      "publicado": "2026-11-12T20:08:47+00:00",
+      "ig_id": "18223732462346215",
+      "enlace": "https://www.instagram.com/p/Dfp4RxhGedM/"
     },
     {
       "id": "285b23b4be-0",
