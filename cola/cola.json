@@ -529,10 +529,13 @@
       "titulo": "El Yunque se partió en J",
       "texto": "La isla helada ahora tiene forma de J: Forjahonda en una punta, Puerto Escarcha en la otra y la cordillera en el medio. Podés cruzar por el paso, con San Martín y un dragón esperando arriba, o en el bote de la bahía.",
       "imagen": "imagenes/fuente/09ab022767-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/09ab022767-0.mp4",
-      "categoria": "islas"
+      "categoria": "islas",
+      "publicado": "2026-11-12T01:08:33+00:00",
+      "ig_id": "18172166311463175",
+      "enlace": "https://www.instagram.com/p/Dfn1yzICvpb/"
     },
     {
       "id": "35051755f0-0",
