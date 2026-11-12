@@ -572,10 +572,13 @@
       "titulo": "El mar cobró vida",
       "texto": "Ahora el mar está lleno de vida: cardúmenes que se abren cuando nadás cerca, delfines que saltan al lado de tu barco, ballenas que soplan a lo lejos y medusas que brillan de noche. En la costa hay bosques de algas, corales, gaviotas sobre los muelles y cangrejos que se escapan de costado.",
       "imagen": "imagenes/fuente/285b23b4be-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/285b23b4be-0.mp4",
-      "categoria": "terreno"
+      "categoria": "terreno",
+      "publicado": "2026-11-12T22:39:16+00:00",
+      "ig_id": "18014650784768561",
+      "enlace": "https://www.instagram.com/p/DfqJgUNlb-V/"
     },
     {
       "id": "c694f86ec3-0",
