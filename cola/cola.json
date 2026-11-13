@@ -586,10 +586,13 @@
       "titulo": "Una isla en las nubes",
       "texto": "Desde el puerto de Ventoria sale un barco con alas y globos que sube en espiral por una columna de viento hasta Puerto Cirro, una isla flotante a 450 metros sobre el mar. Ahí viven los Aeronautas, una ciudad de inventores en guerra fría con los gólems de nube que reclaman la isla. Puentes colgantes, corrientes de viento que te llevan de un islote a otro y, si te caés, el viento te devuelve al muelle.",
       "imagen": "imagenes/fuente/c694f86ec3-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/c694f86ec3-0.mp4",
-      "categoria": "islas"
+      "categoria": "islas",
+      "publicado": "2026-11-13T01:09:11+00:00",
+      "ig_id": "18139037671639414",
+      "enlace": "https://www.instagram.com/p/DfqaqFVEwMl/"
     },
     {
       "id": "06842320c9-0",
