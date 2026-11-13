@@ -600,10 +600,13 @@
       "titulo": "Hondabrasa, la ciudad bajo el volcán",
       "texto": "En el cráter de las Ascuas se abrió una grieta que baja en espiral hasta un lago de magma. Abajo viven los Ceniceños, de piel de ceniza y pelo de llama: ganate a su Consejo y vas a poder crear personajes de su raza.",
       "imagen": "imagenes/fuente/06842320c9-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/06842320c9-0.mp4",
-      "categoria": "ciudades"
+      "categoria": "ciudades",
+      "publicado": "2026-11-13T15:08:30+00:00",
+      "ig_id": "18093227954496409",
+      "enlace": "https://www.instagram.com/p/Dfr6tddgajp/"
     },
     {
       "id": "0511e6de49-0",
