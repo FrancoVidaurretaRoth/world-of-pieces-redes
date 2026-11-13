@@ -642,10 +642,13 @@
       "titulo": "Nácara, la ciudad bajo el mar",
       "texto": "En un islote perdido entre Trébol y Sahrim, el viejo Caronte cuida una campana de buceo que baja despacio, durante un minuto entero, hasta Nácara: una ciudad de nácar y coral bajo cúpulas de aire, donde los descendientes de una flota hundida esperan que su rey elija heredero. Afuera de las burbujas se nada entre kelp, morenas y un pez enorme que caza con su propia luz.",
       "imagen": "imagenes/fuente/3d5cac1f03-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/3d5cac1f03-0.mp4",
-      "categoria": "ciudades"
+      "categoria": "ciudades",
+      "publicado": "2026-11-13T22:38:55+00:00",
+      "ig_id": "18118849120826892",
+      "enlace": "https://www.instagram.com/p/DfsuQpmEbhq/"
     },
     {
       "id": "9b7a13ed98-0",
