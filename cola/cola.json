@@ -685,10 +685,13 @@
       "titulo": "El Desafío del Coliseo",
       "texto": "En la arena de Ventoria encendé el brasero y aguantá oleada tras oleada de gladiadores, legionarios y aventureros rivales. Cada cinco oleadas entra un campeón, y tu mejor marca queda en tus logros.",
       "imagen": "imagenes/fuente/08aff6c108-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/08aff6c108-0.mp4",
-      "categoria": "combate"
+      "categoria": "combate",
+      "publicado": "2026-11-14T20:09:45+00:00",
+      "ig_id": "17954193567054550",
+      "enlace": "https://www.instagram.com/p/DfvB-7VipA9/"
     },
     {
       "id": "6dcf076e4f-0",
