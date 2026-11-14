@@ -670,11 +670,14 @@
       "titulo": "Ciudades más vivas a la distancia",
       "texto": "La gente de los pueblos ahora se ve desde mucho más lejos, y en alta mar el horizonte se abre: las islas aparecen entre la bruma antes de llegar.",
       "imagen": "imagenes/fuente/c483a08a03-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 1,
       "categoria": "ciudades",
       "video": "videos/c483a08a03-0.mp4",
-      "ultimo_error": "Instagram rechazó el contenido (ERROR: Error: Media upload has failed with error code 2207077)"
+      "ultimo_error": "Instagram rechazó el contenido (ERROR: Error: Media upload has failed with error code 2207077)",
+      "publicado": "2026-11-14T17:38:44+00:00",
+      "ig_id": "18112137143524480",
+      "enlace": "https://www.instagram.com/p/Dfuws7eE-f6/"
     },
     {
       "id": "08aff6c108-0",
