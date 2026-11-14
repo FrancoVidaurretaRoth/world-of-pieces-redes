@@ -656,10 +656,13 @@
       "titulo": "El Confín Helado, la isla de nieve",
       "texto": "Al norte de todo hay una isla blanca. Albacumbre, la ciudad de humanos y enanos, está tallada adentro de una montaña, con mil columnas y una forja que nunca se apaga. Afuera esperan mamuts, trolls de escarcha y un dragón de hielo.",
       "imagen": "imagenes/fuente/9b7a13ed98-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/9b7a13ed98-0.mp4",
-      "categoria": "islas"
+      "categoria": "islas",
+      "publicado": "2026-11-14T01:09:39+00:00",
+      "ig_id": "18109586242976332",
+      "enlace": "https://www.instagram.com/p/Dfs_gVvDPeu/"
     },
     {
       "id": "c483a08a03-0",
