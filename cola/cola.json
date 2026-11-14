@@ -671,9 +671,10 @@
       "texto": "La gente de los pueblos ahora se ve desde mucho más lejos, y en alta mar el horizonte se abre: las islas aparecen entre la bruma antes de llegar.",
       "imagen": "imagenes/fuente/c483a08a03-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "ciudades",
-      "video": "videos/c483a08a03-0.mp4"
+      "video": "videos/c483a08a03-0.mp4",
+      "ultimo_error": "Instagram rechazó el contenido (ERROR: Error: Media upload has failed with error code 2207077)"
     },
     {
       "id": "08aff6c108-0",
