@@ -699,10 +699,13 @@
       "titulo": "Albacumbre, la ciudad bajo la montaña",
       "texto": "Cruzás la Gran Puerta, caminás entre las estatuas de los reyes y de golpe se abre la montaña: una ciudad entera bajo columnas de piedra, un lago que brilla y un rayo de luz que cae desde la cima. El Confín Helado es la isla más grande del mundo.",
       "imagen": "imagenes/fuente/6dcf076e4f-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "video": "videos/6dcf076e4f-0.mp4",
-      "categoria": "ciudades"
+      "categoria": "ciudades",
+      "publicado": "2026-11-14T22:38:57+00:00",
+      "ig_id": "17998051739840656",
+      "enlace": "https://www.instagram.com/p/DfvTEDXkrD9/"
     },
     {
       "id": "b81dd21764-0",
