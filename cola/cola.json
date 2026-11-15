@@ -727,10 +727,13 @@
       "titulo": "Llegó el six-seven",
       "texto": "Ya podés hacer el six-seven en World of Pieces: abrí la rueda de gestos con la Y o escribí /67 en el chat. Y de paso, ahora los personajes guardan el arma para bailar y saludar.",
       "imagen": "imagenes/fuente/cae721f5f5-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "personajes",
-      "video": "videos/cae721f5f5-0.mp4"
+      "video": "videos/cae721f5f5-0.mp4",
+      "publicado": "2026-11-15T15:10:16+00:00",
+      "ig_id": "17887896051511555",
+      "enlace": "https://www.instagram.com/p/DfxEgRXDupc/"
     },
     {
       "id": "4e3b0eb75c-0",
