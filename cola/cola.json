@@ -741,10 +741,13 @@
       "titulo": "Maradona te enseña el Puntinazo",
       "texto": "Los jueguitos ahora son el oficio de Fútbol, y sube al terminar cada tanda. Si sos mago de fuego y llegás a 100, Maradona te enseña dos habilidades: la Pelota de Fuego, para hacer jueguitos con una pelota en llamas, y el Puntinazo: mantené la tecla para cargarlo haciendo jueguitos y soltala para patearle la pelota de fuego al enemigo.",
       "imagen": "imagenes/fuente/4e3b0eb75c-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "clases",
-      "video": "videos/4e3b0eb75c-0.mp4"
+      "video": "videos/4e3b0eb75c-0.mp4",
+      "publicado": "2026-11-15T17:39:17+00:00",
+      "ig_id": "18116883235844489",
+      "enlace": "https://www.instagram.com/p/DfxVkAJjrYE/"
     },
     {
       "id": "a4507c1fa8-0",
