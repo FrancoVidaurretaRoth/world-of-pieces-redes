@@ -47,8 +47,10 @@ sí ni más de 5 por día, aunque se disparen dos cosas juntas.
 
 ## Videos: el carrusel portada + juego
 
-Cada post sale como **carrusel**: la tarjeta de siempre y, deslizando, un **video corto del juego real** (9-20 s, 4:5,
-60 fps): la toma en movimiento, el título arriba los primeros segundos, música del juego de fondo y un cierre con el
+Cada post sale como **carrusel**: la tarjeta de siempre y, deslizando, un **video del juego real** (hasta 30 s, 4:5,
+60 fps) hecho de **varios planos**, uno por cada cosa que el post nombra (`clip.py <id> plano1+plano2+…`; las
+reglas, en `wiki/general/guion_de_videos.md` del repo del juego; `clip.py` no arma un video de un solo plano sin
+`--un-plano "motivo"`, ni uno muy oscuro o quemado): los planos en movimiento, el título arriba los primeros segundos, música del juego de fondo y un cierre con el
 emblema. La música es el tema de lo que muestra el post (Ventoria, Nácara, el mar, el desierto, el combate…: las
 palabras del título y después del texto, `TEMA_POR_PALABRA` en `clip.py`); si nada encaja, uno de todos elegido por
 el post. `--musica <tema>` lo fuerza. Cada video se revisa con `herramientas/hoja.py` (cuadros) y

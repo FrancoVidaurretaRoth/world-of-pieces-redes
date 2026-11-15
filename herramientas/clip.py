@@ -14,7 +14,11 @@ sistema o, si no hay, el de `pip install imageio-ffmpeg`.
 
   python herramientas/clip.py lote1-06 bestiario
   python herramientas/clip.py lote1-06 bestiario --cuadros D:/otra/carpeta --sin-cola
-  python herramientas/clip.py lote1-26 ui_hud+ui_inventario+ui_mapa      (varias tomas seguidas, con corte)
+  python herramientas/clip.py lote1-26 ui_hud+ui_inventario+ui_mapa      (varios planos seguidos, con corte: lo normal)
+  python herramientas/clip.py lote1-06 bestiario --un-plano "muestra una sola cosa: el libro abierto"
+
+No arma el video si tiene un solo plano sin `--un-plano`, si pasa de 30 s de juego, si un plano dura menos de 3 s o si
+alguno sale muy oscuro o quemado (`--luz-ok "motivo"` para una toma de noche o de interfaz).
 
 Las tomas de la pantalla del juego (la interfaz, apaisadas) se acomodan solas al 4:5: el centro recortado y escalado
 al ancho, con la misma imagen difuminada de fondo arriba y abajo.
@@ -45,6 +49,14 @@ FPS = 30
 CIERRE = 2.0          # segundos del cierre con el emblema
 FUNDIDO = 0.5         # cruce entre la toma y el cierre
 TITULO_HASTA = 3.2    # el título se va a los ~3 s
+# 🎬 (15/11/2026, pedido del usuario: "solo se hace un plano cuando deberían hacerse varios", videos muy oscuros o
+# quemados) Lo que un video tiene que cumplir para armarse. Las reglas enteras: `wiki/general/guion_de_videos.md` del
+# repo del juego.
+TOMA_MAX = 30.0       # segundos de juego por video (sin el cierre)
+PLANO_MIN = 3.0       # un plano más corto no se llega a leer
+LUZ_MIN, LUZ_MAX = 42.0, 200.0   # brillo medio de un plano (0-255): fuera de esto se ve negro o lavado
+QUEMADO_MAX = 0.22    # parte del cuadro en blanco puro
+NEGRO_MAX = 0.55      # parte del cuadro en negro puro
 MUSICA = Path(os.environ.get("WOP_MUSICA", RAIZ.parent / "world-of-pieces-githud" / "sonidos" / "musica"
                              / "brisa_del_mundo.mp3"))
 CUADROS = Path(os.environ.get("TEMP", tempfile.gettempdir())) / "wop_headless" / "capturas" / "clips"
@@ -164,6 +176,51 @@ def _juntar(carpetas: list[Path], destino: Path) -> None:
             i += 1
 
 
+def _luz(carpeta: Path) -> tuple[float, float, float]:
+    """El brillo de un plano, en seis cuadros parejos: (medio 0-255, parte quemada, parte en negro)."""
+    lista = sorted(carpeta.glob("*.jpg"))
+    medios: list[float] = []
+    quemado: list[float] = []
+    negro: list[float] = []
+    for k in range(6):
+        h = Image.open(lista[int((k + 0.5) * len(lista) / 6)]).convert("L").resize((108, 135)).histogram()
+        n = float(sum(h))
+        medios.append(sum(i * v for i, v in enumerate(h)) / n)
+        quemado.append(sum(h[250:]) / n)
+        negro.append(sum(h[:14]) / n)
+    return sum(medios) / 6, max(quemado), max(negro)
+
+
+def exigir(carpetas: list[Path], fps: int, un_plano: str | None, luz_ok: str | None) -> None:
+    """Corta si el video no cumple lo mínimo: varios planos (o el motivo de que sea uno), hasta 30 s, ningún plano
+    de menos de 3 s, nada muy oscuro ni quemado. Junta todas las fallas y las dice de una."""
+    fallas: list[str] = []
+    total = 0.0
+    for c in carpetas:
+        n = len(list(c.glob("*.jpg")))
+        if n == 0:
+            sys.exit(f"No hay cuadros en {c}: grabá la toma")
+        seg = n / fps
+        total += seg
+        if seg < PLANO_MIN and len(carpetas) > 1:
+            fallas.append(f"el plano '{c.name}' dura {seg:.1f} s (mínimo {PLANO_MIN:.0f})")
+        if luz_ok is None:
+            medio, quemado, negro = _luz(c)
+            if medio < LUZ_MIN or negro > NEGRO_MAX:
+                fallas.append(f"el plano '{c.name}' está muy oscuro (brillo {medio:.0f}, {negro:.0%} en negro): "
+                              "otra hora del día o más luz, y regrabar")
+            elif medio > LUZ_MAX or quemado > QUEMADO_MAX:
+                fallas.append(f"el plano '{c.name}' está muy brillante (brillo {medio:.0f}, {quemado:.0%} quemado): "
+                              "otra hora del día o menos exposición, y regrabar")
+    if len(carpetas) == 1 and not un_plano:
+        fallas.append("un solo plano: un video lleva un plano por cada cosa que el post nombra (toma1+toma2+…). "
+                      "Si de verdad muestra UNA sola cosa: --un-plano \"por qué\"")
+    if total > TOMA_MAX + 0.5:
+        fallas.append(f"dura {total:.1f} s de juego (máximo {TOMA_MAX:.0f}): acortar planos")
+    if fallas:
+        sys.exit("El video no se arma:\n  - " + "\n  - ".join(fallas))
+
+
 def armar(ident: str, nombre: str, cuadros: Path, titulo: str, fps: int = FPS, texto: str = "",
           musica: Path | None = None) -> Path:
     FPS = fps  # noqa: N806 (los cuadros por segundo de esta toma)
@@ -239,6 +296,8 @@ def main() -> None:
     p.add_argument("--cuadros", type=Path, help="carpeta de los cuadros (por defecto la de clips_redes)")
     p.add_argument("--titulo", help="título sobre el video (por defecto el de la entrada de la cola)")
     p.add_argument("--sin-cola", action="store_true", help="no anotar el video en la cola")
+    p.add_argument("--un-plano", metavar="MOTIVO", help="el video tiene un solo plano a propósito: por qué alcanza")
+    p.add_argument("--luz-ok", metavar="MOTIVO", help="no medir el brillo (una toma de noche o de interfaz): por qué")
     p.add_argument("--musica", help="el tema a usar (nombre de sonidos/musica/temas, sin extensión; por defecto, elegido)")
     a = p.parse_args()
     cola = json.loads(COLA.read_text(encoding="utf-8"))
@@ -252,11 +311,15 @@ def main() -> None:
         musica = next((t for t in TEMAS.glob(a.musica + ".*") if t.suffix in (".mp3", ".wav", ".ogg")), None)
         if musica is None:
             sys.exit(f"No hay un tema '{a.musica}' en {TEMAS}")
-    carpetas = [(a.cuadros or CUADROS) / n for n in a.nombre.split("+")]
+    if a.cuadros is not None and "+" not in a.nombre:
+        carpetas = [a.cuadros]
+    else:
+        carpetas = [(a.cuadros or CUADROS) / n for n in a.nombre.split("+")]
     fps_tomas = {_fps_de(c) for c in carpetas}
     if len(fps_tomas) > 1:
         sys.exit(f"Las tomas tienen distintos cuadros por segundo ({sorted(fps_tomas)}): regrabalas al mismo")
     fps = fps_tomas.pop()
+    exigir(carpetas, fps, a.un_plano, a.luz_ok)
     if "+" in a.nombre or a.cuadros is None and _apaisado(CUADROS / a.nombre):
         with tempfile.TemporaryDirectory() as tmp:
             _juntar([(a.cuadros or CUADROS) / n for n in a.nombre.split("+")], Path(tmp))
