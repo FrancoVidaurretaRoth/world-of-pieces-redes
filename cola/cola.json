@@ -713,10 +713,13 @@
       "titulo": "Una posada de tres pisos en el Pueblo del Ángel",
       "texto": "Las casas, el banco y la posada del Pueblo del Ángel ahora son mucho más grandes. La posada suma un piso de arriba con habitaciones y una bodega llena de toneles, y el posadero te atiende detrás de la barra.",
       "imagen": "imagenes/fuente/b81dd21764-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "ciudades",
-      "video": "videos/b81dd21764-0.mp4"
+      "video": "videos/b81dd21764-0.mp4",
+      "publicado": "2026-11-15T01:09:12+00:00",
+      "ig_id": "18644086933051004",
+      "enlace": "https://www.instagram.com/p/DfvkQHPgOf6/"
     },
     {
       "id": "cae721f5f5-0",
