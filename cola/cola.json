@@ -1,5 +1,5 @@
 {
-  "ultimo_commit": "c4a048382027d10c87bda908068b4b6bb344520a",
+  "ultimo_commit": "647287018710f8c4c759d65f7052c06be5c05f36",
   "entradas": [
     {
       "id": "bienvenida-0",
@@ -832,6 +832,369 @@
       "estado": "pendiente",
       "intentos": 0,
       "categoria": "multijugador"
+    },
+    {
+      "id": "61fb0aaaa8-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Cada instrumento se toca a su manera",
+      "texto": "La guitarra se rasguea, la flauta se sopla, los bombos piden las dos manos y la pandereta se sacude. Hay más de sesenta canciones para aprender, con Para Elisa y la Marcha turca enteras, y cada ciudad estrena su propia música.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "oficios"
+    },
+    {
+      "id": "3f3e24f78f-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "El mar cobra vida",
+      "texto": "Los barcos ahora dejan estela y levantan espuma en la proa, las olas siguen al viento y crecen con la tormenta, y bajo el agua se ve el fondo con la luz que baja quebrada. Cuando nieva, la nieve se junta sobre los techos y sobre tu personaje.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "barcos"
+    },
+    {
+      "id": "48cfdecce5-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Calidad gráfica Muy baja",
+      "texto": "Sumamos una calidad gráfica Muy baja para que World of Pieces ande en las computadoras más humildes: menos resolución, menos pasto y la vista más corta, apuntando a 30 cuadros por segundo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "rendimiento"
+    },
+    {
+      "id": "9d4cb7c088-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Puerto Ballena, el pueblo nórdico del Confín Helado",
+      "texto": "Cabañas de troncos con techos cargados de nieve, un salón largo con fogón para entrar en calor y el esqueleto de una ballena en la plaza. Y en Albacumbre, el Rey Haldor y la Thane Ingrid ya tienen su propia figura.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "ciudades"
+    },
+    {
+      "id": "3fab7024df-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Velas pintadas y doce diseños nuevos",
+      "texto": "Las velas de tu barco ahora tienen tela de verdad: costuras, remiendos y emblemas. Sumamos doce diseños nuevos, de la bandera pirata al kraken, y tu dibujo va encima de la tela con el doble de detalle.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "barcos"
+    },
+    {
+      "id": "2325052d3d-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Íconos nuevos para todos los objetos",
+      "texto": "Renovamos los íconos de todo el inventario: armas, armaduras, materiales, comida y objetos de misión ahora comparten un mismo estilo, con un fondo de color según de qué está hecho cada cosa. La bolsa se lee de un vistazo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "interfaz"
+    },
+    {
+      "id": "b3ad17bcf3-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Los NPC ahora tienen personalidad",
+      "texto": "Cada habitante del mundo habla a su manera, se acuerda de vos y te saluda distinto cuando volvés. Y toda la charla queda en una sola ventana, con lo que te dijeron y lo que contestaste.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "npcs"
+    },
+    {
+      "id": "0c6277152e-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Faroles y antorchas para la noche",
+      "texto": "Ahora podés llevar una antorcha o un farol en la mano izquierda. De noche y en las mazmorras te alumbran el camino, y te dejan ver de más lejos a los que andan escondidos.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "objetos"
+    },
+    {
+      "id": "7bf0b95835-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "El mouse te dice qué podés hacer",
+      "texto": "Pasá el mouse por un árbol y aparece el hacha; por una piedra, el pico; por una silla, para sentarte. Si te falta la herramienta, el ícono sale con una cruz roja. Y las puertas ahora se abren con un clic.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "interfaz"
+    },
+    {
+      "id": "a548719732-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Un dios celoso",
+      "texto": "Si absorbés el fragmento de otro dios, el tuyo te abandona y se lleva sus mejoras y su bendición: te quedás solo con el nuevo, desde su primer fragmento. Antes de canalizar, el juego te avisa a quién vas a perder.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "dioses"
+    },
+    {
+      "id": "a548719732-1",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Personajes más vivos",
+      "texto": "Quietos ya no son estatuas: se estiran, cambian de postura y se acomodan el arma. Cada golpe fuerte los hace tambalear, y al morir caen de distintas maneras hasta desplomarse de verdad.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "personajes"
+    },
+    {
+      "id": "a548719732-2",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Veintitrés mochilas nuevas",
+      "texto": "Llegan mochilas para cada oficio, con bolsillos que solo guardan lo tuyo: minerales para el minero, madera para el leñador, pescado para el pescador. Se fabrican en sastrería, de Aprendiz a Maestro.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "objetos"
+    },
+    {
+      "id": "a548719732-3",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Opciones nuevas y modo foto",
+      "texto": "Las opciones se rediseñaron: todo ordenado por secciones, con explicación al pasar el mouse y un buscador de teclas. Suman modos para daltónicos, tamaño de texto y un modo foto para sacar las mejores capturas de tus aventuras.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "interfaz"
+    },
+    {
+      "id": "a548719732-4",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Tormentas que arrastran",
+      "texto": "Con tormenta, el viento gira en remolino alrededor de la isla: a favor te empuja, en contra te frena, y las ráfagas arrastran tu barco. El timón te avisa cuando entrás en una.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "barcos"
+    },
+    {
+      "id": "be77faf4d9-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Ahora los golpes se sienten (y las caídas también)",
+      "texto": "Los personajes ya no se quedan duros: si te quedás quieto miran alrededor y se estiran, cada golpe fuerte te tira el cuerpo para atrás y al morir caés de distintas formas, con el cuerpo que se desploma de verdad. Las bestias también se mueven más: giran la cabeza y rugen antes de sus ataques especiales.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "combate"
+    },
+    {
+      "id": "9802b94b9c-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Tu arma, con la pinta que quieras",
+      "texto": "Ahora podés elegir cómo se ve tu arma sin cambiar la que usás: guardá la que pega fuerte y lucí la que más te gusta. Tus compañeros la ven igual.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "objetos"
+    },
+    {
+      "id": "deb547428c-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-12",
+      "titulo": "Los íconos ahora muestran el objeto real",
+      "texto": "Las armas, armaduras, herramientas, muebles y monturas del inventario ahora tienen como ícono una imagen del mismo modelo que ves en el juego. Lo que tenés en la bolsa es exactamente lo que vas a llevar puesto.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "interfaz"
+    },
+    {
+      "id": "7efee35351-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Iluminación avanzada",
+      "texto": "En Opciones → Gráficos ya podés pasar a Vulkan: luz que rebota en las paredes, sombras de contacto y niebla con volumen. Si tu placa no lo soporta, el juego sigue como siempre.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "rendimiento"
+    },
+    {
+      "id": "06b81ba904-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Secretos sobre las nubes",
+      "texto": "Las Islas de Cirro ahora esconden miradores, cofres y cinco páginas perdidas del Códice. Juntalas todas y ganate el título de Cronista de Cirro.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "islas"
+    },
+    {
+      "id": "a06075ba8f-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Un mapa más limpio",
+      "texto": "El mapa ahora muestra los nombres según cuánto te acercás: de lejos las islas, más cerca los pueblos y de cerca cada rincón. Las zonas de enemigos solo aparecen cuando una misión te manda ahí, y el minimapa te dice dónde estás arriba del anillo.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "interfaz"
+    },
+    {
+      "id": "8df85b6b25-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Barbería, colgantes y baratijas",
+      "texto": "Cada ciudad tiene su barbero al lado de la posada para cambiarte el peinado, la barba y la pintura cuando quieras. Además ahora llevás un colgante y dos baratijas que se ven colgando del cuello y del cinto, y en la creación cada opción muestra cómo te queda.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "personajes"
+    },
+    {
+      "id": "51a78c44e4-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Un aventurero con otra cara",
+      "texto": "El humano estrena melena, barba, cejas y ojos hechos con mucho más detalle, y el guerrero arranca con ropa de verdad: jubón, faja de cuero y botas. Además corre y pega con la espada con animaciones nuevas.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "personajes"
+    },
+    {
+      "id": "0e35cb00b2-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Mochilas de oficio",
+      "texto": "Cada oficio tiene su lugar en la bolsa: las mochilas nuevas traen ranuras solo para minería, tala, despellejado, pesca y recolección, y lo que cosechás va solo a su bloque. Veintitrés mochilas nuevas, de la bolsa de aprendiz a la legendaria Mochila de Tatoxz con cien ranuras.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "oficios"
+    },
+    {
+      "id": "a6f333dfd3-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Tu armadura se gasta a la vista",
+      "texto": "Ahora el equipo muestra cómo está: nuevo brilla, gastado se mancha y roto se ve oxidado y sucio, hasta que lo reparás. Además el pelo puede llevar dos colores, de la raíz a las puntas o en mechones, y cada clase arranca con su ropa de todos los días.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "objetos"
+    },
+    {
+      "id": "a9ccd6bbe5-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "El mundo se reordena: un camino de islas hasta el Confín Helado",
+      "texto": "Las islas cambiaron de lugar para armar un camino claro: del Despertar al Ángel, dos cadenas de islas hasta las capitales y arriba de todo, el Confín Helado. Hay rutas de barco nuevas y el barco volador ahora sale de Trébol.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "mapa"
+    },
+    {
+      "id": "6f23752802-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Cada isla, en su lugar del camino",
+      "texto": "Con el mapa nuevo, cada isla tiene el nivel que le toca en el recorrido: Trébol y Sahrim para los que salen del Ángel, Ventoria y las Ascuas como capitales del medio del juego y arriba de todo los enemigos más duros.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "enemigos"
+    },
+    {
+      "id": "17a5dc646a-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Atacá en una ciudad y la guardia te cae encima",
+      "texto": "El PvP ya vale en todos lados, hasta en los pueblos. Pero si le pegás a alguien en una zona segura, los guardias del pueblo salen a perseguirte y no paran hasta que caés o te vas.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "combate"
+    },
+    {
+      "id": "bec98df672-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Misiones nuevas para las facciones",
+      "texto": "La Armada Real, los Ashenz y Nakiti ahora te piden escoltar a los suyos por caminos peligrosos y aguantar oleadas de enemigos para defender lo que es de ellos. Subir de rango cuesta un poco más.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "misiones"
+    },
+    {
+      "id": "d3a17aad2e-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Cada golpe pega distinto",
+      "texto": "Se acabaron los golpes calcados: ahora cada ataque y cada hechizo pega un poco más o un poco menos, y los números que aparecen sobre los enemigos cambian golpe a golpe.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "combate"
+    },
+    {
+      "id": "e5545221b4-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Cada hechizo, su propio gesto",
+      "texto": "Bolas de fuego, lluvias de estrellas, curas, trampas y zarpazos ya no se lanzan todos igual: cada habilidad tiene su movimiento. Alzá los brazos al cielo, abrí una nova o clavá un pisotón.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "combate"
+    },
+    {
+      "id": "fbe08482bc-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Los enemigos ya no hablan todos a la vez",
+      "texto": "Los bandidos y demas enemigos de un grupo ahora se turnan para hablar: cada uno dice lo suyo en su momento y nunca repiten la misma frase uno detras del otro.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "enemigos"
+    },
+    {
+      "id": "0864c46e97-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Cada hechizo, su propio gesto",
+      "texto": "Las bolas de fuego, las lluvias de estrellas, las curas y las trampas ya no se lanzan todas igual: cada habilidad tiene su propio movimiento. Alzá los brazos al cielo, abrí una nova de escarcha o agachate a poner una trampa.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "combate"
+    },
+    {
+      "id": "7f6ebf9032-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-15",
+      "titulo": "Nelulen, la ciudad de los elfos, ahora es un sendero entre árboles",
+      "texto": "Seguí la Senda de Luna entre arcos élficos, casas escondidas en sus claros y jardines, hasta los tres árboles gigantes de Nelulen. Conocé a sus nuevos vecinos.",
+      "imagen": null,
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "ciudades"
     }
   ]
 }
