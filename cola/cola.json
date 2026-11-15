@@ -769,10 +769,13 @@
       "titulo": "La nieve profunda te traga hasta la cadera",
       "texto": "En el Confín Helado y en las cumbres del Yunque hay ventisqueros: te hundís hasta la cadera y avanzás más lento. Mejor buscar el camino.",
       "imagen": "imagenes/fuente/54a7ea6eb3-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "terreno",
-      "video": "videos/54a7ea6eb3-0.mp4"
+      "video": "videos/54a7ea6eb3-0.mp4",
+      "publicado": "2026-11-15T22:38:35+00:00",
+      "ig_id": "17986383494898859",
+      "enlace": "https://www.instagram.com/p/Dfx3zwMn0_w/"
     },
     {
       "id": "a803c31cde-0",
