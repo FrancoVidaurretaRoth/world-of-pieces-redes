@@ -783,10 +783,13 @@
       "titulo": "Huellas en la arena y en la nieve",
       "texto": "Ahora cada paso se nota: dejás huellas en la playa y en la nieve, levantás polvo en los caminos y salpicás en el agua. Y en las cumbres del Yunque, la lluvia de abajo es nieve arriba.",
       "imagen": "imagenes/fuente/a803c31cde-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "terreno",
-      "video": "videos/a803c31cde-0.mp4"
+      "video": "videos/a803c31cde-0.mp4",
+      "publicado": "2026-11-16T01:09:13+00:00",
+      "ig_id": "18118778009121063",
+      "enlace": "https://www.instagram.com/p/DfyJDpwkRHj/"
     },
     {
       "id": "0333e31563-0",
