@@ -798,9 +798,10 @@
       "texto": "Al sur de la Isla Perdida, una islita vacía envuelta en niebla esconde un portal que solo ven los espíritus. Del otro lado te espera Duermevela, la ciudad amurallada de los blinks, y algo en el fondo de la Raíz Hueca que se come sus recuerdos.",
       "imagen": "imagenes/fuente/0333e31563-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "islas",
-      "video": "videos/0333e31563-0.mp4"
+      "video": "videos/0333e31563-0.mp4",
+      "ultimo_error": "The read operation timed out"
     },
     {
       "id": "corregidos-0",
