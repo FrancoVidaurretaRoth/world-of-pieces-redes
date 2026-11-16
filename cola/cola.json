@@ -812,11 +812,14 @@
       "titulo": "Así se ve de verdad",
       "texto": "Algunos videos que subimos antes salieron con errores de grabación: el piso del pueblo en blanco, criaturas quietas y la cámara en mal lugar. Acá van como se ven hoy en el juego: el Pueblo del Ángel, el bestiario, el cazador con su lobo, el druida con su bosque, las armas en acción y el Cangrejo Emperador.",
       "imagen": "imagenes/fuente/corregidos-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 1,
       "categoria": "novedades",
       "video": "videos/corregidos-0.mp4",
-      "ultimo_error": "The read operation timed out"
+      "ultimo_error": "The read operation timed out",
+      "publicado": "2026-11-16T22:39:09+00:00",
+      "ig_id": "18100104920655299",
+      "enlace": "https://www.instagram.com/p/Df0cqpyj_ie/"
     },
     {
       "id": "0894c7f03c-0",
