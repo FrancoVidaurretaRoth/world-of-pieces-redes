@@ -841,10 +841,13 @@
       "titulo": "El portal de Oniria no tiene un solo lado",
       "texto": "La puerta al mundo de los muertos ahora rodea todo Oniria. Entrás al portal por el norte y aparecés en el norte del bosque; caminás hacia afuera por cualquier lado del reino y despertás vivo, de ese mismo lado de la Isla Mística.",
       "imagen": "imagenes/fuente/9505fdd000-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "islas",
-      "video": "videos/9505fdd000-0.mp4"
+      "video": "videos/9505fdd000-0.mp4",
+      "publicado": "2026-11-17T15:09:42+00:00",
+      "ig_id": "18041394332894567",
+      "enlace": "https://www.instagram.com/p/Df2OBpnCpix/"
     },
     {
       "id": "c807200cf7-0",
