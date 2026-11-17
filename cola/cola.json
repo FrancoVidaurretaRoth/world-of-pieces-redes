@@ -827,10 +827,13 @@
       "titulo": "Los axolos toman la Playa de las Branquias",
       "texto": "En la playa del oeste de Ventoria viven los axolos, un pueblo anfibio de piel rosada y branquias en flecos que sonríe mientras te roba las redes. El mareomante, turquesa, llama al agua.",
       "imagen": "imagenes/fuente/0894c7f03c-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "enemigos",
-      "video": "videos/0894c7f03c-0.mp4"
+      "video": "videos/0894c7f03c-0.mp4",
+      "publicado": "2026-11-17T01:10:15+00:00",
+      "ig_id": "18119473013079985",
+      "enlace": "https://www.instagram.com/p/Df0t9UoCvST/"
     },
     {
       "id": "9505fdd000-0",
