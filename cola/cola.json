@@ -1058,10 +1058,11 @@
       "fecha": "2026-11-12",
       "titulo": "Los íconos ahora muestran el objeto real",
       "texto": "Las armas, armaduras, herramientas, muebles y monturas del inventario ahora tienen como ícono una imagen del mismo modelo que ves en el juego. Lo que tenés en la bolsa es exactamente lo que vas a llevar puesto.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/deb547428c-0.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "categoria": "interfaz"
+      "categoria": "interfaz",
+      "video": "videos/deb547428c-0.mp4"
     },
     {
       "id": "7efee35351-0",
@@ -1117,10 +1118,11 @@
       "fecha": "2026-11-13",
       "titulo": "Un aventurero con otra cara",
       "texto": "El humano estrena melena, barba, cejas y ojos hechos con mucho más detalle, y el guerrero arranca con ropa de verdad: jubón, faja de cuero y botas. Además corre y pega con la espada con animaciones nuevas.",
-      "imagen": null,
+      "imagen": "imagenes/fuente/51a78c44e4-0.jpg",
       "estado": "pendiente",
       "intentos": 0,
-      "categoria": "personajes"
+      "categoria": "personajes",
+      "video": "videos/51a78c44e4-0.mp4"
     },
     {
       "id": "0e35cb00b2-0",
@@ -1205,17 +1207,6 @@
       "intentos": 0,
       "categoria": "combate",
       "video": "videos/d3a17aad2e-0.mp4"
-    },
-    {
-      "id": "e5545221b4-0",
-      "imagen_propia": false,
-      "fecha": "2026-11-15",
-      "titulo": "Cada hechizo, su propio gesto",
-      "texto": "Bolas de fuego, lluvias de estrellas, curas, trampas y zarpazos ya no se lanzan todos igual: cada habilidad tiene su movimiento. Alzá los brazos al cielo, abrí una nova o clavá un pisotón.",
-      "imagen": null,
-      "estado": "pendiente",
-      "intentos": 0,
-      "categoria": "combate"
     },
     {
       "id": "fbe08482bc-0",
