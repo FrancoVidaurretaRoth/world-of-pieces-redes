@@ -915,10 +915,13 @@
       "titulo": "Puerto Ballena, el pueblo nórdico del Confín Helado",
       "texto": "Cabañas de troncos con techos cargados de nieve, un salón largo con fogón para entrar en calor y el esqueleto de una ballena en la plaza. Y en Albacumbre, el Rey Haldor y la Thane Ingrid ya tienen su propia figura.",
       "imagen": "imagenes/fuente/9d4cb7c088-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "ciudades",
-      "video": "videos/9d4cb7c088-0.mp4"
+      "video": "videos/9d4cb7c088-0.mp4",
+      "publicado": "2026-11-19T22:38:35+00:00",
+      "ig_id": "18223312342356084",
+      "enlace": "https://www.instagram.com/p/Df8K_hflOSH/"
     },
     {
       "id": "3fab7024df-0",
