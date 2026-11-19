@@ -885,10 +885,13 @@
       "titulo": "El mar cobra vida",
       "texto": "Los barcos ahora dejan estela y levantan espuma en la proa, las olas siguen al viento y crecen con la tormenta, y bajo el agua se ve el fondo con la luz que baja quebrada. Cuando nieva, la nieve se junta sobre los techos y sobre tu personaje.",
       "imagen": "imagenes/fuente/3f3e24f78f-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "barcos",
-      "video": "videos/3f3e24f78f-0.mp4"
+      "video": "videos/3f3e24f78f-0.mp4",
+      "publicado": "2026-11-19T17:39:34+00:00",
+      "ig_id": "17885711001628892",
+      "enlace": "https://www.instagram.com/p/Df7ow6ukp8J/"
     },
     {
       "id": "48cfdecce5-0",
