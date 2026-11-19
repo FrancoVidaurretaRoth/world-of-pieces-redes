@@ -900,10 +900,13 @@
       "titulo": "Calidad gráfica Muy baja",
       "texto": "Sumamos una calidad gráfica Muy baja para que World of Pieces ande en las computadoras más humildes: menos resolución, menos pasto y la vista más corta, apuntando a 30 cuadros por segundo.",
       "imagen": "imagenes/fuente/48cfdecce5-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "rendimiento",
-      "video": "videos/48cfdecce5-0.mp4"
+      "video": "videos/48cfdecce5-0.mp4",
+      "publicado": "2026-11-19T20:08:42+00:00",
+      "ig_id": "17941582644403852",
+      "enlace": "https://www.instagram.com/p/Df7516ljQdR/"
     },
     {
       "id": "9d4cb7c088-0",
