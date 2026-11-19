@@ -870,10 +870,13 @@
       "titulo": "Cada instrumento se toca a su manera",
       "texto": "La guitarra se rasguea, la flauta se sopla, los bombos piden las dos manos y la pandereta se sacude. Hay más de sesenta canciones para aprender, con Para Elisa y la Marcha turca enteras, y cada ciudad estrena su propia música.",
       "imagen": "imagenes/fuente/61fb0aaaa8-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "oficios",
-      "video": "videos/61fb0aaaa8-0.mp4"
+      "video": "videos/61fb0aaaa8-0.mp4",
+      "publicado": "2026-11-19T15:08:25+00:00",
+      "ig_id": "18035936378677352",
+      "enlace": "https://www.instagram.com/p/Df7XewDFvRj/"
     },
     {
       "id": "3f3e24f78f-0",
