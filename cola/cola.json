@@ -975,10 +975,13 @@
       "titulo": "Faroles y antorchas para la noche",
       "texto": "Ahora podés llevar una antorcha o un farol en la mano izquierda. De noche y en las mazmorras te alumbran el camino, y te dejan ver de más lejos a los que andan escondidos.",
       "imagen": "imagenes/fuente/0c6277152e-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "objetos",
-      "video": "videos/0c6277152e-0.mp4"
+      "video": "videos/0c6277152e-0.mp4",
+      "publicado": "2026-11-20T20:08:35+00:00",
+      "ig_id": "17894340852685131",
+      "enlace": "https://www.instagram.com/p/Df-eoAOjTfc/"
     },
     {
       "id": "7bf0b95835-0",
