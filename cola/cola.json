@@ -960,10 +960,13 @@
       "titulo": "Los NPC ahora tienen personalidad",
       "texto": "Cada habitante del mundo habla a su manera, se acuerda de vos y te saluda distinto cuando volvés. Y toda la charla queda en una sola ventana, con lo que te dijeron y lo que contestaste.",
       "imagen": "imagenes/fuente/b3ad17bcf3-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "npcs",
-      "video": "videos/b3ad17bcf3-0.mp4"
+      "video": "videos/b3ad17bcf3-0.mp4",
+      "publicado": "2026-11-20T17:38:42+00:00",
+      "ig_id": "18117417677026779",
+      "enlace": "https://www.instagram.com/p/Df-NdWmgj0W/"
     },
     {
       "id": "0c6277152e-0",
