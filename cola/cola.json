@@ -945,10 +945,13 @@
       "titulo": "Íconos nuevos para todos los objetos",
       "texto": "Renovamos los íconos de todo el inventario: armas, armaduras, materiales, comida y objetos de misión ahora comparten un mismo estilo, con un fondo de color según de qué está hecho cada cosa. La bolsa se lee de un vistazo.",
       "imagen": "imagenes/fuente/2325052d3d-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "interfaz",
-      "video": "videos/2325052d3d-0.mp4"
+      "video": "videos/2325052d3d-0.mp4",
+      "publicado": "2026-11-20T15:08:40+00:00",
+      "ig_id": "18099127616407164",
+      "enlace": "https://www.instagram.com/p/Df98TUplY07/"
     },
     {
       "id": "b3ad17bcf3-0",
