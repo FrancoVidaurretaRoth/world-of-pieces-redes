@@ -1020,10 +1020,13 @@
       "titulo": "Personajes más vivos",
       "texto": "Quietos ya no son estatuas: se estiran, cambian de postura y se acomodan el arma. Cada golpe fuerte los hace tambalear, y al morir caen de distintas maneras hasta desplomarse de verdad.",
       "imagen": "imagenes/fuente/a548719732-1.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "personajes",
-      "video": "videos/a548719732-1.mp4"
+      "video": "videos/a548719732-1.mp4",
+      "publicado": "2026-11-21T15:09:02+00:00",
+      "ig_id": "18114368687236149",
+      "enlace": "https://www.instagram.com/p/DgAhI0wFSCt/"
     },
     {
       "id": "a548719732-2",
