@@ -1050,10 +1050,13 @@
       "titulo": "Opciones nuevas y modo foto",
       "texto": "Las opciones se rediseñaron: todo ordenado por secciones, con explicación al pasar el mouse y un buscador de teclas. Suman modos para daltónicos, tamaño de texto y un modo foto para sacar las mejores capturas de tus aventuras.",
       "imagen": "imagenes/fuente/a548719732-3.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "interfaz",
-      "video": "videos/a548719732-3.mp4"
+      "video": "videos/a548719732-3.mp4",
+      "publicado": "2026-11-21T20:08:42+00:00",
+      "ig_id": "18189302539421056",
+      "enlace": "https://www.instagram.com/p/DgBDbCulCu7/"
     },
     {
       "id": "a548719732-4",
