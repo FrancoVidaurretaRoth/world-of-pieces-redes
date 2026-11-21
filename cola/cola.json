@@ -1005,10 +1005,13 @@
       "titulo": "Un dios celoso",
       "texto": "Si absorbés el fragmento de otro dios, el tuyo te abandona y se lleva sus mejoras y su bendición: te quedás solo con el nuevo, desde su primer fragmento. Antes de canalizar, el juego te avisa a quién vas a perder.",
       "imagen": "imagenes/fuente/a548719732-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "dioses",
-      "video": "videos/a548719732-0.mp4"
+      "video": "videos/a548719732-0.mp4",
+      "publicado": "2026-11-21T01:08:28+00:00",
+      "ig_id": "18132343048830225",
+      "enlace": "https://www.instagram.com/p/Df_A7x4D2dS/"
     },
     {
       "id": "a548719732-1",
