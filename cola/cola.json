@@ -1110,10 +1110,13 @@
       "titulo": "Los íconos ahora muestran el objeto real",
       "texto": "Las armas, armaduras, herramientas, muebles y monturas del inventario ahora tienen como ícono una imagen del mismo modelo que ves en el juego. Lo que tenés en la bolsa es exactamente lo que vas a llevar puesto.",
       "imagen": "imagenes/fuente/deb547428c-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "interfaz",
-      "video": "videos/deb547428c-0.mp4"
+      "video": "videos/deb547428c-0.mp4",
+      "publicado": "2026-11-22T17:39:27+00:00",
+      "ig_id": "18135960532759688",
+      "enlace": "https://www.instagram.com/p/DgDXJcTCXMN/"
     },
     {
       "id": "7efee35351-0",
