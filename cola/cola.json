@@ -1140,10 +1140,13 @@
       "titulo": "Secretos sobre las nubes",
       "texto": "Volvé a la isla en las nubes: además de Puerto Cirro y los Aeronautas, las Islas de Cirro ahora esconden miradores, cofres y cinco páginas perdidas del Códice. Juntalas todas y ganate el título de Cronista de Cirro.",
       "imagen": "imagenes/fuente/06b81ba904-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "islas",
-      "video": "videos/06b81ba904-0.mp4"
+      "video": "videos/06b81ba904-0.mp4",
+      "publicado": "2026-11-22T22:38:57+00:00",
+      "ig_id": "18345653794275931",
+      "enlace": "https://www.instagram.com/p/DgD5awjDRBZ/"
     },
     {
       "id": "a06075ba8f-0",
