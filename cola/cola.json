@@ -1080,10 +1080,13 @@
       "titulo": "Ahora los golpes se sienten (y las caídas también)",
       "texto": "Los personajes ya no se quedan duros: si te quedás quieto miran alrededor y se estiran, cada golpe fuerte te tira el cuerpo para atrás y al morir caés de distintas formas, con el cuerpo que se desploma de verdad. Las bestias también se mueven más: giran la cabeza y rugen antes de sus ataques especiales.",
       "imagen": "imagenes/fuente/be77faf4d9-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "combate",
-      "video": "videos/be77faf4d9-0.mp4"
+      "video": "videos/be77faf4d9-0.mp4",
+      "publicado": "2026-11-22T01:09:44+00:00",
+      "ig_id": "18077659874766330",
+      "enlace": "https://www.instagram.com/p/DgBl4Gckq_O/"
     },
     {
       "id": "9802b94b9c-0",
