@@ -1125,10 +1125,13 @@
       "titulo": "Iluminación avanzada",
       "texto": "En Opciones → Gráficos ya podés pasar a Vulkan: luz que rebota en las paredes, sombras de contacto y niebla con volumen. Si tu placa no lo soporta, el juego sigue como siempre.",
       "imagen": "imagenes/fuente/7efee35351-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "rendimiento",
-      "video": "videos/7efee35351-0.mp4"
+      "video": "videos/7efee35351-0.mp4",
+      "publicado": "2026-11-22T20:08:37+00:00",
+      "ig_id": "17980862193069191",
+      "enlace": "https://www.instagram.com/p/DgDoM3anMLR/"
     },
     {
       "id": "06b81ba904-0",
@@ -1177,6 +1180,18 @@
       "intentos": 0,
       "categoria": "personajes",
       "video": "videos/51a78c44e4-0.mp4"
+    },
+    {
+      "id": "0e35cb00b2-0",
+      "imagen_propia": false,
+      "fecha": "2026-11-13",
+      "titulo": "Mochilas de oficio",
+      "texto": "Cada oficio tiene su lugar en la bolsa: las mochilas nuevas traen ranuras solo para minería, tala, despellejado, pesca y recolección, y lo que cosechás va solo a su bloque. Veintitrés mochilas nuevas, de la bolsa de aprendiz a la legendaria Mochila de Tatoxz con cien ranuras.",
+      "imagen": "imagenes/fuente/0e35cb00b2-0.jpg",
+      "estado": "pendiente",
+      "intentos": 0,
+      "categoria": "oficios",
+      "video": "videos/0e35cb00b2-0.mp4"
     },
     {
       "id": "a6f333dfd3-0",
