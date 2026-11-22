@@ -1095,10 +1095,13 @@
       "titulo": "Tu arma, con la pinta que quieras",
       "texto": "Ahora podés elegir cómo se ve tu arma sin cambiar la que usás: guardá la que pega fuerte y lucí la que más te gusta. Tus compañeros la ven igual.",
       "imagen": "imagenes/fuente/9802b94b9c-0.jpg",
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "objetos",
-      "video": "videos/9802b94b9c-0.mp4"
+      "video": "videos/9802b94b9c-0.mp4",
+      "publicado": "2026-11-22T15:09:02+00:00",
+      "ig_id": "18022311983987550",
+      "enlace": "https://www.instagram.com/p/DgDF7JkkTO8/"
     },
     {
       "id": "deb547428c-0",
