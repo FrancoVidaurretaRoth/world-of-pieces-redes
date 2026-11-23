@@ -1185,9 +1185,10 @@
       "texto": "El humano estrena melena, barba, cejas y ojos hechos con mucho más detalle, y el guerrero arranca con ropa de verdad: jubón, faja de cuero y botas. Además corre y pega con la espada con animaciones nuevas. Son cambios distintos de las poses de quietud y de muerte que sumamos antes.",
       "imagen": "imagenes/fuente/51a78c44e4-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "personajes",
-      "video": "videos/51a78c44e4-0.mp4"
+      "video": "videos/51a78c44e4-0.mp4",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AtFQ98N6UqVlLXolwerkeVk\"}}"
     },
     {
       "id": "0e35cb00b2-0",
