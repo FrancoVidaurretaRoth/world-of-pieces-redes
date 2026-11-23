@@ -1155,10 +1155,13 @@
       "titulo": "Un mapa más limpio",
       "texto": "El mapa ahora muestra los nombres según cuánto te acercás: de lejos las islas, más cerca los pueblos y de cerca cada rincón. Las zonas de enemigos solo aparecen cuando una misión te manda ahí, y el minimapa te dice dónde estás arriba del anillo.",
       "imagen": null,
-      "estado": "pendiente",
+      "estado": "publicado",
       "intentos": 0,
       "categoria": "interfaz",
-      "video": "videos/a06075ba8f-0.mp4"
+      "video": "videos/a06075ba8f-0.mp4",
+      "publicado": "2026-11-23T01:08:25+00:00",
+      "ig_id": "18402880204165294",
+      "enlace": "https://www.instagram.com/p/DgEKhtJGMyr/"
     },
     {
       "id": "8df85b6b25-0",
