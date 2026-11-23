@@ -1171,9 +1171,10 @@
       "texto": "Cada ciudad tiene su barbero al lado de la posada para cambiarte el peinado, la barba y la pintura cuando quieras. Además ahora llevás un colgante y dos baratijas que se ven colgando del cuello y del cinto, y en la creación cada opción muestra cómo te queda.",
       "imagen": "imagenes/fuente/8df85b6b25-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "personajes",
-      "video": "videos/8df85b6b25-0.mp4"
+      "video": "videos/8df85b6b25-0.mp4",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"ANUMEBwa48yhqm1erUGoIxb\"}}"
     },
     {
       "id": "51a78c44e4-0",
