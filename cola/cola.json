@@ -1198,11 +1198,11 @@
       "titulo": "Mochilas de oficio",
       "texto": "Cada oficio tiene su lugar en la bolsa: las mochilas nuevas traen ranuras solo para minería, tala, despellejado, pesca y recolección, y lo que cosechás va solo a su bloque. Veintitrés mochilas nuevas, de la bolsa de aprendiz a la legendaria Mochila de Tatoxz con cien ranuras.",
       "imagen": "imagenes/fuente/0e35cb00b2-0.jpg",
-      "estado": "pendiente",
-      "intentos": 2,
+      "estado": "error",
+      "intentos": 3,
       "categoria": "oficios",
       "video": "videos/0e35cb00b2-0.mp4",
-      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"APVhuN47VV-4mVjdKh5avOI\"}}",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AnNBKfDlMQJRIGbSA_Z5_aI\"}}",
       "sin_video": true
     },
     {
