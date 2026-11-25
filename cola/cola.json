@@ -1227,9 +1227,10 @@
       "texto": "Las islas cambiaron de lugar para armar un camino claro: del Despertar al Ángel, dos cadenas de islas hasta las capitales y arriba de todo, el Confín Helado. Hay rutas de barco nuevas y el barco volador ahora sale de Trébol.",
       "imagen": "imagenes/fuente/a9ccd6bbe5-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "mapa",
-      "video": "videos/a9ccd6bbe5-0.mp4"
+      "video": "videos/a9ccd6bbe5-0.mp4",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AUllKrsL_tkLlfjR3Yfvlwb\"}}"
     },
     {
       "id": "6f23752802-0",
