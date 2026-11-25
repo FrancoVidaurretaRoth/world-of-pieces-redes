@@ -1213,9 +1213,10 @@
       "texto": "Ahora el equipo muestra cómo está: nuevo brilla, gastado se mancha y roto se ve oxidado y sucio, hasta que lo reparás. Además el pelo puede llevar dos colores, de la raíz a las puntas o en mechones, y cada clase arranca con su ropa de todos los días.",
       "imagen": "imagenes/fuente/a6f333dfd3-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "objetos",
-      "video": "videos/a6f333dfd3-0.mp4"
+      "video": "videos/a6f333dfd3-0.mp4",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"Ayb77wzkyQ1TuiPFe2bjfaT\"}}"
     },
     {
       "id": "a9ccd6bbe5-0",
