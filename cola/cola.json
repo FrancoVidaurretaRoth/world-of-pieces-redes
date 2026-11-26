@@ -1241,9 +1241,10 @@
       "texto": "Con el mapa nuevo, cada isla tiene el nivel que le toca en el recorrido: Trébol y Sahrim para los que salen del Ángel, Ventoria y las Ascuas como capitales del medio del juego y arriba de todo los enemigos más duros.",
       "imagen": "imagenes/fuente/6f23752802-0.jpg",
       "estado": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "categoria": "enemigos",
-      "video": "videos/6f23752802-0.mp4"
+      "video": "videos/6f23752802-0.mp4",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AUt_OeSIOCSaVuZ209xrduS\"}}"
     },
     {
       "id": "17a5dc646a-0",
