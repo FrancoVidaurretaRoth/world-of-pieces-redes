@@ -1226,11 +1226,11 @@
       "titulo": "El mundo se reordena: un camino de islas hasta el Confín Helado",
       "texto": "Las islas cambiaron de lugar para armar un camino claro: del Despertar al Ángel, dos cadenas de islas hasta las capitales y arriba de todo, el Confín Helado. Hay rutas de barco nuevas y el barco volador ahora sale de Trébol.",
       "imagen": "imagenes/fuente/a9ccd6bbe5-0.jpg",
-      "estado": "pendiente",
-      "intentos": 2,
+      "estado": "error",
+      "intentos": 3,
       "categoria": "mapa",
       "video": "videos/a9ccd6bbe5-0.mp4",
-      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"Ah8RgtzY-RxXDw6C3m6GWUI\"}}",
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AFyXGAIy8zXrmRgZIsdC5cO\"}}",
       "sin_video": true
     },
     {
