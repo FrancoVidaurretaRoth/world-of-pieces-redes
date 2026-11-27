@@ -1255,10 +1255,11 @@
       "texto": "El PvP ya vale en todos lados, hasta en los pueblos. Pero si le pegás a alguien en una zona segura, los guardias del pueblo salen a perseguirte y no paran hasta que caés o te vas.",
       "imagen": "imagenes/fuente/17a5dc646a-0.jpg",
       "estado": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "categoria": "combate",
       "video": "videos/17a5dc646a-0.mp4",
-      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AkJJaD4UnyGTYUloXaJL3FC\"}}"
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AJyvSQsYEuLXJr4Y1Fg3O4n\"}}",
+      "sin_video": true
     },
     {
       "id": "bec98df672-0",
