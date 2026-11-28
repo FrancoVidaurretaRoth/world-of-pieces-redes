@@ -1283,10 +1283,11 @@
       "texto": "Se acabaron los golpes calcados: ahora cada ataque y cada hechizo pega un poco más o un poco menos, y los números que aparecen sobre los enemigos cambian golpe a golpe. No es solo cómo se ve el golpe: lo que cambia es el daño mismo.",
       "imagen": "imagenes/fuente/d3a17aad2e-0.jpg",
       "estado": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "categoria": "combate",
       "video": "videos/d3a17aad2e-0.mp4",
-      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AFuMFmkUeiTALs3xrtUnxar\"}}"
+      "ultimo_error": "HTTP 400 en https://graph.facebook.com/v26.0/17841468148082209/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AgvGjY2ZHEgzl1FvZ6L6BQx\"}}",
+      "sin_video": true
     },
     {
       "id": "fbe08482bc-0",
